@@ -1,0 +1,44 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title= post.title %}
+{% endif %}
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src=
+          {% if teaser contains "://" %}
+            "{{ teaser }}"
+          {% else %}
+            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+          {% endif %}
+          alt="">
+      </div>
+    {% endif %}
+    <h3 class="archive__item-title" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ post.title }}</a>
+      {% else %}
+        {{ post.title }}
+      {% endif %}
+    </h3>
+    {% if post.venue %}<p class="archive__item-excerpt" itemprop="description"><b>{{post.venue}}</b>, <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date| date: '%Y' }}
+	{% if post.coauthor %}, with <i>{{ post.coauthor }}</i> {% endif %}
+      	{% if post.wpurl %} <a href=" {{ post.wpurl }} ">WP version</a> {% endif %}
+	{% if post.code %} <a href=" {{ post.code }} ">Code</a> {% endif %}
+	{% if post.corrigendum %} <a href=" {{ post.corrigendum }} ">Corrigendum</a> {% endif %}
+	{% if post.other %} {{ post.other }} {% endif %}
+	</p>{% endif %}
+	{% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+  </article>
+</div>
