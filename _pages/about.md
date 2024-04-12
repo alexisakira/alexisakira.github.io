@@ -1,49 +1,56 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About"
+excerpt: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
+I am an associate professor at the [Department of Economics, University of California San Diego](http://economics.ucsd.edu/). In fall 2024, I will join the [Economics Department at Emory University](https://economics.emory.edu/) as a professor. I was born in [Montréal](https://en.wikipedia.org/wiki/Montreal) (paternal side is Japanese and maternal side is French Canadian) and speak English, French, and Japanese. According to [WikiTree](https://www.wikitree.com/wiki/Toda-2), I am distant cousins with [Celine Dion](https://www.wikitree.com/index.php?title=Special:Relationship&action=calculate&person1Name=Toda-2&person2Name=Dion-75) (singer), [Justin Trudeau](https://www.wikitree.com/index.php?title=Special:Relationship&action=calculate&person1Name=Toda-2&person2Name=Trudeau-195) (Prime Minister of Canada), and [Taylor Swift](https://www.wikitree.com/index.php?title=Special:Relationship&action=calculate&person1Name=Toda-2&person2Name=Swift-1298) (singer).
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+## My research
+I am a mathematical economist with strong interests in applications, in particular macroeconomics and finance. The topics I have worked on include
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over -- just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+- [computational algorithm for solving macroeconomic models with realistic wealth distributions](https://doi.org/10.3982/QE1817),
+- [simple formula and mathematical foundation for Pareto exponents that arise in random multiplicative processes in Markovian environments](https://dx.doi.org/10.3982/ECTA17984),
+- [optimal epidemic control when testing and government enforcement are imperfect](https://doi.org/10.1016/j.jet.2022.105570),
+- [simple explanation for the saving behavior of the rich that does not rely on ad hoc utility functions](https://doi.org/10.1016/j.jet.2021.105193),
+- [verification of the random multiplicative process to explain the spread of COVID-19](https://doi.org/10.1016/j.physd.2020.132649),
+- [wealth inequality and stock market returns](https://doi.org/10.1093/rfs/hhz121),
+- [determination of academic salaries](https://econjwatch.org/articles/publications-citations-position-and-compensation-of-economics-professors),
+- [implication of financial development to international capital flows and welfare](https://doi.org/10.1016/j.jfineco.2018.08.011),
+- [impossibility of canonical macroeconomic models to explain wealth inequality](https://doi.org/10.1016/j.jet.2019.04.001),
+- [efficient discretization of non-linear, non-Gaussian Markov processes](https://doi.org/10.3982/QE737),
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+among others.
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+I have published papers in journals such as [Econometrica](https://onlinelibrary.wiley.com/journal/14680262), [Journal of Political Economy](https://www.journals.uchicago.edu/toc/jpe/current), [Theoretical Economics](https://econtheory.org/), [Quantitative Economics](http://qeconomics.org/ojs/index.php/qe), [Journal of Economic Theory](https://www.journals.elsevier.com/journal-of-economic-theory), [Review of Financial Studies](https://academic.oup.com/rfs), [Journal of Financial Economics](https://www.journals.elsevier.com/journal-of-financial-economics), [Journal of Monetary Economics](https://www.journals.elsevier.com/journal-of-monetary-economics), [American Mathematical Monthly](https://www.maa.org/press/periodicals/american-mathematical-monthly), [SIAM Journal on Numerical Analysis](https://www.siam.org/publications/journals/siam-journal-on-numerical-analysis-sinum), [Operations Research Letters](https://www.journals.elsevier.com/operations-research-letters), and [Physical Review E](https://journals.aps.org/pre/), among others. I am also a medical doctor (anesthesiologist) and an associate editor at [Economic Theory](https://www.springer.com/journal/199) and a co-editor at [Journal of Mathematical Economics](https://www.journals.elsevier.com/journal-of-mathematical-economics). Please see my [research page](/research/) for more details.
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+## My values
+I find it beautiful when regularity and complexity come together. Some corollaries of this statement are:
 
-**Markdown generator**
+- I like mathematics,
+- I like power law behavior,
+- I like bubbles,
+- My favorite composer is [J. S. Bach](https://en.wikipedia.org/wiki/Johann_Sebastian_Bach),
+- My favorite artist is [M. C. Escher](https://mcescher.com/),
+- I like short, simple papers that are to the point.
 
-I have also created [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the academicpages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+I also like programming, chess, and tennis, although I am not particularly good at those.
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+<!--
+I believe in individual freedom. We are free to choose whatever we want, within the rules set by law and other social norms, as long as we respect other people's freedom. Freedom comes with responsibility. Whatever we choose to do (or not to do), we must accept the consequences.
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+In my professional life as a researcher, mentor, and teacher, I promise that I will evaluate others based solely on merit and nothing else. For example, if I write a referee report for a paper, your affiliation, authority, fame, or personal connection to me will play no role. If I evaluate your file for admission to graduate school, I will not read your diversity statement but yet will give you the highest mark for "diversity" if I have to select a mark. If I assign a grade or write a letter of recommendation, I will base my evaluation solely on your academic performance and promise. If I am involved with recruiting, I will be interested only in your scientific achievements and future prospect, and I will ignore everything else including your age, height, hair style, dietary preferences, skin color, ancestral heritage, nationality, gender, sexual orientation, marital status, number of children, political views, religious beliefs, among others.
+-->
 
-For more info
-------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+## My Erdős number
+My current [Erdős number](http://en.wikipedia.org/wiki/Erd%C5%91s_number) is 3, based on the following connections (you can use [this tool](https://zbmath.org/collaboration-distance/) to compute your Erdős number or the collaboration distance between anybody, though the tool is not perfect):
+
+| 0 | 1 | 2| 3 |
+| :---: | :---: | :---: | :---: |
+| [Paul Erdős][Erdos] | [Noga Alon](https://en.wikipedia.org/wiki/Noga_Alon) | [Gregory Gutin](https://en.wikipedia.org/wiki/Gregory_Gutin) | Alexis Akira Toda |
+
+[Erdos]: http://en.wikipedia.org/wiki/Paul_Erd%C5%91s

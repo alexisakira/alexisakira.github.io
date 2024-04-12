@@ -1,0 +1,20 @@
+---
+layout: archive
+title: "Publications"
+permalink: /pubs/
+author_profile: true
+---
+
+This page is still under construction. I plan to replace my "Research" page in the future.
+
+My best papers are indicated with 👍. You can also find my articles on <u><a href="https://scholar.google.com/citations?user=29tiOI0AAAAJ">my Google Scholar profile</a></u>.
+
+{% if author.googlescholar %}
+  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
+{% endif %}
+
+{% include base_path %}
+
+{% for post in site.publications reversed %}
+  {% include archive-pubs.html %}
+{% endfor %}
