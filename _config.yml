@@ -24,9 +24,9 @@ author:
   avatar           : "Alexis_website_photo2_resize.jpg"
   name             : "Alexis Akira Toda"
   pronouns         : "he/his"  
-  bio              : "Mathematical economist <br> <br> Associate Professor at UC San Diego, <a style='color: black;' href='https://economics.ucsd.edu/'>Department of Economimcs</a>"
-  location         : "San Diego, CA"
-  employer         : "University of California San Diego"
+  bio              : "Mathematical economist"
+  location         : "<a href='https://www.google.com/maps/@32.8741227,-117.2334423,14z?entry=ttu'>San Diego, CA</a>"
+  employer         : "<a href='https://economics.ucsd.edu/'>University of California San Diego</a>"
   uri              : # URL
   email            : "atoda@ucsd.edu" 
 
