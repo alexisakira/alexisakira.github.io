@@ -7,10 +7,10 @@ author_profile: true
 
 This page is still under construction. I plan to replace my "Research" page in the future.
 
-My best papers are indicated with 👍. You can also find my articles on <u><a href="https://scholar.google.com/citations?user=29tiOI0AAAAJ">my Google Scholar profile</a></u>.
+My best papers are indicated with 👍.
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
 {% include base_path %}
