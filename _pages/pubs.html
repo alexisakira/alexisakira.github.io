@@ -21,8 +21,20 @@ My best papers are indicated with 👍.
   {% include archive-pubs.html %}
 {% endfor %}
 
-<h2>Proceedings</h2>
+<h2>Working papers</h2>
+
+{% for post in site.WP reversed %}
+  {% include archive-pubs.html %}
+{% endfor %}
+
+<h2>Conference proceedings</h2>
 
 {% for post in site.proceedings reversed %}
+  {% include archive-pubs.html %}
+{% endfor %}
+
+<h2>Other publications</h2>
+
+{% for post in site.other reversed %}
   {% include archive-pubs.html %}
 {% endfor %}
