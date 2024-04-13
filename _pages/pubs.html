@@ -18,3 +18,9 @@ My best papers are indicated with 👍.
 {% for post in site.publications reversed %}
   {% include archive-pubs.html %}
 {% endfor %}
+
+<h2>Proceedings</h2>
+
+{% for post in site.publications.proceedings reversed %}
+  {% include archive-pubs.html %}
+{% endfor %}
