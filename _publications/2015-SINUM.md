@@ -6,5 +6,6 @@ venue: "SIAM Journal on Numerical Analysis"
 date: 2015-09-01
 coauthor: "Ken'ichiro Tanaka"
 wpurl: https://arxiv.org/abs/1308.3753
+slides: https://alexisakira.github.io/files/slides/slides_errest.pdf
 excerpt: "(Numerical method, Mathematics) Convergence and error analysis of maximum entropy discretization of [Tanaka & Toda (2013)](https://doi.org/10.1016/j.econlet.2012.12.020)."
 ---
