@@ -208,6 +208,12 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
+  other:
+    output: true
+    permalink: /:collection/:path/
+  WP:
+    output: true
+    permalink: /:collection/:path/
   proceedings:
     output: true
     permalink: /:collection/:path/
