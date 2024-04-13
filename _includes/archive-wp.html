@@ -34,8 +34,10 @@
     </h3>
 
 <p class="archive__item-excerpt" itemprop="description">
-    	{% if post.venue %}<b>{{post.venue}}</b> {% endif %}
-	<i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date| date: '%Y' }}
+    	{% if post.venue %}<b>{{post.venue}}</b>, <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date| date: '%Y'/'%M' }}
+	{% else %}
+	<i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date| date: '%Y'/'%M' }}
+	{% endif %}
 	{% if post.coauthor %}, with <i>{{ post.coauthor }}</i> {% endif %}
       	{% if post.wpurl %} <a href=" {{ post.wpurl }} ">WP version</a> {% endif %}
 	{% if post.slides %} <a href=" {{ post.slides }} ">Slides</a> {% endif %}
