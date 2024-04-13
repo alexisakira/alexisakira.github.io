@@ -2,30 +2,18 @@
 main:
   - title: "CV"
     url: /cv/
-    
-  - title: "Research"
-    url: /research/
 
   - title: "Publications"
     url: /pubs/
 
   - title: "Talks"
     url: /talks/    
-    
-#  - title: "Discretization"
-#    url: /discretization/
 
   - title: "Teaching"
     url: /teaching/
     
   - title: "Miscellaneous"
     url: /misc/
-    
-#  - title: "Portfolio"
-#    url: /portfolio/
         
   - title: "Blog Posts"
     url: /year-archive/
-    
-#  - title: "Guide"
-#    url: /markdown/
