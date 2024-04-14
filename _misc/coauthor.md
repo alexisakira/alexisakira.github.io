@@ -23,7 +23,7 @@ Below is a list of my coauthors (in alphabetical order by last name). Let me kno
  14. [Yifei Lyu](https://sites.google.com/view/yifeilyu)
  15. [Yoshiyuki Miyoshi](https://www.rieti.go.jp/users/miyoshi-yoshiyuki/index_en.html)
  16. [Qingyin Ma](https://qingyin-ma.github.io/)
- 17. Mitsuhiro Nakamura
+ 17. [Mitsuhiro Nakamura](https://www.shinano-mc.com/?page_id=122)
  18. [Philip Neary](https://sites.google.com/site/prneary/)
  19. [Gregory Phelan](https://sites.google.com/site/gregoryphelan/)
  20. [Thomas Phelan](https://sites.google.com/a/umn.edu/thomasphelan/)
