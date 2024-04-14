@@ -1,0 +1,34 @@
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
+
+Below is the complete publication list. My best papers are indicated with 👍.
+
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+{% endif %}
+
+{% include base_path %}
+
+<h2>Refereed research articles</h2>
+
+{% for post in site.publications reversed %}
+  {% include archive-pubs.html %}
+{% endfor %}
+
+<h2>Working papers</h2>
+
+{% for post in site.wp reversed %}
+  {% include archive-wp.html %}
+{% endfor %}
+
+<h2>Other publications</h2>
+
+Below is a list of other publications including comments, conference proceedings, corrigenda, etc.
+
+{% for post in site.other reversed %}
+  {% include archive-pubs.html %}
+{% endfor %}
