@@ -208,10 +208,10 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  other:
+  wp:
     output: true
     permalink: /:collection/:path/
-  WP:
+  other:
     output: true
     permalink: /:collection/:path/
   portfolio:
