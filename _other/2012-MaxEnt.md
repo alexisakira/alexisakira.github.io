@@ -1,6 +1,6 @@
 ---
 title: "Axiomatization of Maximum Entropy without the Bayes Rule"
-collection: publications
+collection: other
 link: https://doi.org/10.1063/1.3703614
 venue: "Bayesian Inference and Maximum Entropy Methods in Science and Engineering"
 date: 2012-05-03
