@@ -272,7 +272,7 @@ defaults:
   # _wp
   - scope:
       path: ""
-      type: publications
+      type: wp
     values:
       layout: single
       author_profile: true
@@ -281,7 +281,7 @@ defaults:
   # _other
   - scope:
       path: ""
-      type: publications
+      type: other
     values:
       layout: single
       author_profile: true
