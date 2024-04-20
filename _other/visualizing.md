@@ -1,6 +1,6 @@
 ---
 title: "Visualizing the Contraction Mapping Theorem"
-collection: publications
+collection: other
 link: https://doi.org/10.32388/JSO1M3
 venue: "Qeios"
 date: 2024-02-09
