@@ -3,7 +3,7 @@ title: "My research philosophy"
 excerpt: "My personal thoughts on how to do research"
 collection: misc
 permalink: /misc/research
-date:  2024-04-20
+date:  2024-04-21
 ---
 
 A picture is worth a thousand words. To learn about somebody's research, it is more informative to look at what they do (look at the quantity and quality of publications and working papers listed on their CVs) than to hear what they say (read research statements and proposals). Thus you can stop reading here, and instead look at my [publication list](/publications/) and the histories of my papers. But in case somebody finds it useful, I will keep writing about my research philosophy.
