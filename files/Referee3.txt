@@ -1,0 +1,12 @@
+Referee: 3
+
+Comments to the Author
+This is an interesting useful paper. The fundamental insight of the paper is the following:  heterogeneous agents macro models driven by stochastic uninsurable labor earnings necessarily produce counterfactual implications regarding the wealth distribution. These models in fact induce a stationary distribution of wealth which is (theoretically shown to be) not thicker  than the driving distribution of earnings;  and this is generally counterfactual.
+
+This is an interesting insight but it is not new, as it appears in a series of papers by Benhabib and co-authors, which the authors cite. The underlying math result pertains to a class of linear stochastic difference equation which can be mapped into several macroeconomic models of wealth dynamics.
+
+This paper characterizes precisely a set of sufficient conditions on preferences to obtain this mapping. On the other hand, the class of economies is restricted to consider only constant rate of  return on wealth, which is a severe restriction in the wealth distribution  literature.
+
+The method of proof, based on previous results of one of the authors on policy function iteration, is also a useful contribution. 
+
+For this reason I believe the paper is useful and should be published. But it's a technical note rather than a AERI paper, in my opinion. I would have no reservations to suggest acceptance e.g., in Economics Letters.
