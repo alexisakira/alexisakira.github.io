@@ -34,7 +34,7 @@ As mentioned above, I don't worry too much about the journal outlet. I send what
 
 ## Reviewing papers
 
-I have countless of unpleasant experiences with referees. Some move the goal post at each round. Some are not experts in the subject matter and do not understand the contribution. Some dismiss theoretical work entirely, writing "this is a theory paper and not general interest", and some are like [this](/publications/2019-JET). There are also many reasonable and professional reviewers, to whom I am grateful. I would like to be one of those, so when I work as a reviewer or editor, I try to limit major revisions to only once, to limit my suggestions to things that are doable with reasonable effort, to provide concrete references, and not to ask for extensions or robustness checks. I hope we can all do so.
+I have countless of unpleasant experiences with referees. Some move the goal post at each round. Some are not experts in the subject matter and do not understand the contribution. Some dismiss theoretical work entirely, writing "this is a theory paper and not general interest", and some cause [trauma](/publications/2019-JET). There are also many reasonable and professional reviewers, to whom I am grateful. I would like to be one of those, so when I work as a reviewer or editor, I try to limit major revisions to only once, to limit my suggestions to things that are doable with reasonable effort, to provide concrete references, and not to ask for extensions or robustness checks. I hope we can all do so.
 
 ## Applying for grants
 
