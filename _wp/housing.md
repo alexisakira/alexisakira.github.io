@@ -1,7 +1,8 @@
 ---
-title: "A Theory of Rational Housing Bubbles with Phase Transitions"
+title: "Housing Bubbles with Phase Transitions"
 collection: publications
 link: https://arxiv.org/abs/2303.11365
+slides: https://alexisakira.github.io/files/slides/slides_housing_bubble.pdf
 date: 2023-04-19
 coauthor: "Tomohiro Hirano"
 ---
