@@ -1,7 +1,7 @@
 ---
 title: "👍Bubble Necessity Theorem"
 collection: publications
-venue: "Accepted at Journal of Political Economy"
+venue: "Journal of Political Economy"
 date: 2024-4-23
 tags:
   - theoretical

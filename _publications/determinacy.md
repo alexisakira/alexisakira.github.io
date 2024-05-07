@@ -2,7 +2,7 @@
 title: "On Equilibrium Determinacy in Overlapping Generations Models
 with Money"
 collection: publications
-venue: "Economics Letters"
+venue: "Accepted at Economics Letters"
 date: 2024-05-07
 tags:
   - theoretical
