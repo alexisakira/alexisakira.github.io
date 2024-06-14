@@ -2,7 +2,7 @@
 title: "How to string a racquet"
 excerpt: "How to string a racquet"
 collection: misc
-permalink: /misc/racquet
+permalink: /misc/string
 date:  2024-06-13
 ---
 
