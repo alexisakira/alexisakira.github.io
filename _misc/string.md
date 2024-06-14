@@ -29,10 +29,14 @@ Place the racquet with the bevel in the "up" side as in the picture below, where
 
 Identify the string pattern of the racquet from the information on the frame. Most racquets (like the picture below) have string patterns 16/19, meaning there are 16 mains and 19 crosses.
 
-![Tools for stringing](/assets/images/string_pattern.jpg)
+![String pattern](/assets/images/string_pattern.jpg)
 
 To determine the length of the string for the mains, count "main plus 1". For instance, if the string pattern is 16/19, count 17 from inside the frame to outside the frame.
 
-![Tools for stringing](/assets/images/string_count.jpg)
+![Counting mains](/assets/images/string_main_count.jpg)
+
+After counting correctly (you can count "main plus 1.5" if you want to be safe), cut the string diagonally. ("Diagonally" is important for reducing the friction when stringing.)
+
+![Cutting strings](/assets/images/string_cut.jpg)
 
 
