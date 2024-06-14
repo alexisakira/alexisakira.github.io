@@ -19,8 +19,20 @@ Before getting started, you need a string machine and tools. The tools you need 
 
 ![Tools for stringing](/assets/images/string_tools.jpg)
 
-## Placing the racquet
+## Place the racquet
 
 Place the racquet with the bevel in the "up" side as in the picture below, where you can read "JAPAN". This step is not essential but is important for consistent results.
 
 ![Bevel](/assets/images/string_bevel.jpg)
+
+## Prepare the main strings
+
+Identify the string pattern of the racquet from the information on the frame. Most racquets (like the picture below) have string patterns 16/19, meaning there are 16 mains and 19 crosses.
+
+![Tools for stringing](/assets/images/string_pattern.jpg)
+
+To determine the length of the string for the mains, count "main plus 1". For instance, if the string pattern is 16/19, count 17 from inside the frame to outside the frame.
+
+![Tools for stringing](/assets/images/string_count.jpg)
+
+
