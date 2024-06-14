@@ -39,4 +39,17 @@ After counting correctly (you can count "main plus 1.5" if you want to be safe),
 
 ![Cutting strings](/assets/images/string_cut.jpg)
 
+## Start stringing the mains
+
+Look carefully at the bottom of the racquet head. Usually, there are either 6 or 8 holes at the bottom. If there are 6 holes, start stringing from the bottom. If there are 8 holes, start stringing from the top. (In the picture below, there are 8 holes, so I am starting from the top and hence you see the ends of the main strings at the bottom.)
+
+![Starting mains](/assets/images/string_main_start1.jpg)
+
+Using the string machine, pull **both** ends simultaneously. Clamp the far side (inside the frame) with the clamp of the string machine, and the near side (outside the frame) with the stringing clamp. Because you pulled both ends, the tension becomes 1/2 of the setting, but you don't need to worry about.
+
+![Starting mains](/assets/images/string_main_start2.jpg)
+
+Release the tension. Now pull only the end that you did not clamp in the previous step (which is the left end in the picture) and clamp the string with the clamp of the string machine (inside and as close as possible to the frame). This string has the desired tension.
+
+![Starting mains](/assets/images/string_main_start3.jpg)
 
