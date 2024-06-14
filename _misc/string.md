@@ -13,8 +13,14 @@ This page explains how to string a tennis racquet. When my kids started playing 
 Before getting started, you need a string machine and tools. The tools you need are shown in the picture below. From left to right, the items are:
 
 1. [stringing clamp](https://www.amazon.com/gp/product/B002N1SM3Q/) (useful for starting the mains and making knots)
-1. [small wire cutter](https://www.amazon.com/gp/product/B09SL2TCH7/)
+1. [small wire cutter](https://www.amazon.com/gp/product/B09SL2TCH7/) (necessary for cutting strings)
 1. needle nose plier (useful for removing old strings)
 1. [straight awl](https://www.amazon.com/Lixada-Racquet-Stringing-Straight-Badminton/dp/B07J5T9M57/) (useful for working in narrow area)
 
 ![Tools for stringing](/assets/images/string_tools.jpg)
+
+## Placing the racquet
+
+Place the racquet with the bevel in the "up" side as in the picture below, where you can read "JAPAN". This step is not essential but is important for consistent results.
+
+![Bevel](/assets/images/string_bevel.jpg)
