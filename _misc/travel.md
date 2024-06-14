@@ -3,23 +3,23 @@ title: "Travel"
 excerpt: "Places that I have visited"
 collection: misc
 permalink: /misc/travel
-date: 2024-04-09
+date: 2024-05-24
 ---
 
 I like traveling to new places and eating local food. At the bottom of this page, there is a list of countries and territories that I have visited. The table below lists (in alphabetical order) the places that I particularly like. 
 
-| Places |	Why I like |	What I don't like |
+| Places | What I like | What I don't like |
 | --- | --- | --- |
-Canada |	Natural beauty; Ethnic diversity; Liberal society |	High taxes |
-France |	Great food, bread, cheese, and wine |	Many people smoke; Dog poop on sidewalks |
-Germany |	Musical heritage (Bach); Well organized | |
-Hong Kong |	Great food; Capitalism |	Hot and humid climate |
-Italy |	Great food; History |	A bit disorganized |
-Japan |	Hot springs; Public transportation; Well organized |	Very conservative society; Highly regulated (socialist?) economy |
-Scotland |	Natural beauty | |
-Taiwan |	Great (and cheap) food; Friendly people |	Hot and humid climate |
-Turkey |	Great food; History; Friendly people | |
-United States |	Capitalism; Meritocracy; Relatively low taxes |	Gun violence; Public transportation; Healthcare system; Non-SI units (mile, ounce, etc.); Department of Motor Vehicles; Bureaucracy in California |
+Canada | Natural beauty; Ethnic diversity; Liberal society | High taxes |
+France | Great food, bread, cheese, and wine |	Many people smoke; Dog poop on sidewalks |
+Germany | Musical heritage (Bach); Well organized | |
+Hong Kong |	Great food; Capitalism | Hot and humid climate |
+Italy |	Great food; History | A bit disorganized |
+Japan |	Hot springs; Public transportation; Politeness; Well organized | Very conservative society; Highly regulated (socialist?) economy |
+Scotland | Natural beauty | |
+Taiwan | Great (and cheap) food; Friendly people | Hot and humid climate |
+Turkey | Great food; History; Friendly people | |
+United States |	Capitalism; Individualism; Meritocracy; Money can buy (almost) anything; Relatively low taxes |	Gun violence; Healthcare system; Public transportation; Non-SI units (mile, ounce, etc.); Department of Motor Vehicles; Bureaucracy in California |
 
 1. Argentina
 1. Australia
@@ -49,6 +49,7 @@ United States |	Capitalism; Meritocracy; Relatively low taxes |	Gun violence; Pu
 1. Morocco
 1. Netherlands
 1. New Zealand
+1. Norway
 1. Panama
 1. Portugal
 1. Russia
