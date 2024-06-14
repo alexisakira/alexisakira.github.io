@@ -129,6 +129,20 @@ To weave the crosses quickly, guide the loose end with your middle fingers (one 
 
 ![Weaving crosses](/assets/images/string_cross_weave4.jpg)
 
+Towards the end, the mains are blocking the grommet in which the cross needs to be inserted. Use the awl to gently move the mains to create enough space so that the cross can be inserted smoothly. To prevent strings from crossing each other in the grommet, if the cross is supposed to go **above** the main after entering the frame (like in the picture below), then go **above** the main in the grommet too.
 
+![Weaving crosses](/assets/images/string_cross_weave5.jpg)
 
+When exiting the frame in the opposite side, if you went **above** in the previous step, you need to go **below**.
 
+![Weaving crosses](/assets/images/string_cross_weave6.jpg)
+
+## Tie finishing knot
+
+Identify the grommet to tie the finishing knot. Usually it is not indicated, so find the grommet in which you can insert the cross smoothly.
+
+![Tieing knots](/assets/images/string_cross_knot1.jpg)
+
+Finally, tie a [pro knot](https://www.keohi.com/tennis/misc/knots.htm) just as you did for finishing the mains.
+
+![Tieing knots](/assets/images/string_cross_knot2.jpg)
