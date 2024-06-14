@@ -31,11 +31,11 @@ Identify the string pattern of the racquet from the information on the frame. Mo
 
 ![String pattern](/assets/images/string_pattern.jpg)
 
-To determine the length of the string for the mains, count "main plus 1". For instance, if the string pattern is 16/19, count 17 from inside the frame to outside the frame.
+To determine the length of the string for the mains, count "main plus 1". For instance, if the string pattern is 16/19, count 17 times from inside the frame to outside the frame. ("Inside-to-outside" is important; if you count "inside-to-inside", the string may be too short. If you want to be safe, you may count "main plus 1.5".)
 
 ![Counting mains](/assets/images/string_main_count.jpg)
 
-After counting correctly (you can count "main plus 1.5" if you want to be safe), cut the string diagonally. ("Diagonally" is important for reducing the friction when stringing.)
+After counting correctly, cut the string diagonally using the wire cutter. ("Diagonally" is important for reducing the friction when stringing.)
 
 ![Cutting strings](/assets/images/string_cut.jpg)
 
@@ -45,11 +45,24 @@ Look carefully at the bottom of the racquet head. Usually, there are either 6 or
 
 ![Starting mains](/assets/images/string_main_start1.jpg)
 
-Using the string machine, pull **both** ends simultaneously. Clamp the far side (inside the frame) with the clamp of the string machine, and the near side (outside the frame) with the stringing clamp. Because you pulled both ends, the tension becomes 1/2 of the setting, but you don't need to worry about.
+Using the string machine, pull **both** ends simultaneously. Clamp the far side (inside the frame) with the clamp of the string machine, and the near side (outside the frame) with the stringing clamp. Because you pulled both ends, the tension becomes 1/2 of the setting, but you don't need to worry about that yet.
 
 ![Starting mains](/assets/images/string_main_start2.jpg)
 
-Release the tension. Now pull only the end that you did not clamp in the previous step (which is the left end in the picture) and clamp the string with the clamp of the string machine (inside and as close as possible to the frame). This string has the desired tension.
+Release tension. Now pull **only** the end that you did not clamp in the previous step (which is the left end in the picture) and clamp the string with the clamp of the string machine (inside and as close as possible to the frame). This string has the desired tension.
 
 ![Starting mains](/assets/images/string_main_start3.jpg)
 
+## Weaving the mains
+
+Keep weaving the same end of the main 3 times. Each time, lock the turn table, apply tension, clamp, release tension, and unlock the turn table.
+
+![Weaving mains](/assets/images/string_main_weave1.jpg)
+
+After weaving one end of the main 3 times, weave the other end 6 times. In general, to maintain good balance, the difference in the number of weaved mains should not exceed 3. (In this example, \\(3-0=3\\) and \\(6-3=3\\).)
+
+![Weaving mains](/assets/images/string_main_weave2.jpg)
+
+Towards the end, depending on the specification of the racquet, you may need to skip a grommet, like in the picture below. Use common sense to judge, but the rule of thumb is that the distance between the mains needs to be the same.
+
+![Weaving mains](/assets/images/string_main_weave3.jpg)
