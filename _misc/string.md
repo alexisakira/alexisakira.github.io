@@ -12,4 +12,4 @@ This page explains how to string a tennis racquet. When my kids started playing 
 
 Before getting started, you need a string machine and tools. The tools you need are shown in the picture below.
 
-![Tools for stringing](/assets/string_tools.jpg)
+![Tools for stringing](/assets/string_tools.png)
