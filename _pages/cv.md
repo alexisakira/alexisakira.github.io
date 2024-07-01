@@ -17,6 +17,7 @@ redirect_from:
 - Language: English (fluent), French (fluent), Japanese (native)
 
 ## Research Interests
+- Macro-finance
 - Asset price bubbles
 - Power law in economics and finance
 - Mathematical economics
@@ -25,7 +26,8 @@ redirect_from:
 ## Appointments and Affiliations
 
 ### Academic positions
-- Associate Professor, [Department of Economics, University of California San Diego](https://economics.ucsd.edu/), 2019-Present
+- Professor, [Department of Economics, Emory University](https://economics.emory.edu/), 2024-Present
+- Associate Professor, [Department of Economics, University of California San Diego](https://economics.ucsd.edu/), 2019-2024
 - Assistant Professor, [Department of Economics, University of California San Diego](https://economics.ucsd.edu/), 2013-2019
 
 ### Non-academic positions
