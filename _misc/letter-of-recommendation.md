@@ -3,7 +3,7 @@ title: "Letter of recommendation"
 excerpt: "My policy for writing letters of recommendation"
 collection: misc
 permalink: /misc/letter-of-recommendation
-date: 2020-08-08
+date: 2024-08-07
 ---
 
 Every year I receive many requests for letters of recommendation. Before you ask me for a letter, please read the instructions carefully.
@@ -33,11 +33,11 @@ Below is the logistics on how to request a letter of recommendation.
 
 | Item | Suggestion |
 | --- | --- |
-| Title | Prof., Dr., or Mr. |
+| Title | Prof. or Dr. |
 | First name | Alexis Akira |
 | Last name | Toda |
-| Affiliation | University of California San Diego (if too long, enter "UC San Diego") |
-| Position | Associate Professor |
+| Affiliation | Emory University |
 | Department | Economics |
-| Address | 9500 Gilman Dr 0508, La Jolla, CA 92093 |
-| Phone number | 858-534-3383 |
+| Position | Professor |
+| Address | 1602 FIshburne Dr, Atlanta, GA 30322 |
+| Phone number | 404-727-6364 |
