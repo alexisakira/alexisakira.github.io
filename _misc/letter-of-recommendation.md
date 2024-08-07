@@ -39,5 +39,5 @@ Below is the logistics on how to request a letter of recommendation.
 | Affiliation | Emory University |
 | Department | Economics |
 | Position | Professor |
-| Address | 1602 FIshburne Dr, Atlanta, GA 30322 |
+| Address | 1602 Fishburne Dr, Atlanta, GA 30322 |
 | Phone number | 404-727-6364 |
