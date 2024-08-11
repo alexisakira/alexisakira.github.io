@@ -2,7 +2,7 @@
 title: "Essential Mathematics for Economics"
 collection: other
 link: https://doi.org/10.1201/9781032698953
-venue: CRC Press
+venue: Chapman and Hall/CRC
 date: 2024-08-11
 history: https://alexisakira.github.io/other/EME
 slides: https://github.com/alexisakira/EME
