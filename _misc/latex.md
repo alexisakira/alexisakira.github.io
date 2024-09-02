@@ -32,3 +32,4 @@ date:  2024-09-01
 
 1. [MacTeX](https://www.tug.org/mactex/) is a no-brainer \\(\LaTeX\\) distribution for Mac.
 1. After installing MacTeX, go to [this page](https://github.com/amunn/make-local-texmf) and run make-local-texmf to create a local texmf folder that stores custom files (.sty, .bib, etc.).
+1. In TeXShop, the default BibTeX engine is bibtex. To use biber, go to ``TeXShop -> Settings -> Engine`` and type ``biber`` in BibTeX Engine. Finally, to compile documents with a single command-T, write ``% !TEX TS-program = pdflatexmk`` at the first line of the .tex document.
