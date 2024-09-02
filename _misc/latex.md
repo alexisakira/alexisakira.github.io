@@ -3,14 +3,14 @@ title: "LaTeX"
 excerpt: "Resources on LaTeX"
 collection: misc
 permalink: /misc/latex
-date:  2023-09-27
+date:  2024-09-01
 ---
 
 \\(\LaTeX\\) is "the" standard document preparation system in economics and finance (and many other fields that are math-intensive, such as mathematics, physics, computer science, statistics, etc.).  Nowadays writing a paper without using \\(\LaTeX\\) will signal that your research is not serious, so all Ph.D. students seeking academic jobs should learn how to use \\(\LaTeX\\) at an early stage.  (A good commitment device is to typeset all homework assignments with \\(\LaTeX\\).)  The fixed cost of learning is high, but the marginal cost of creating complex documents is really low!  Since there are abundant online resources on \\(\LaTeX\\), I will list only a few links that I feel particularly useful.
 
+## Small tips
+
 1. [Overleaf](https://www.overleaf.com) is an online \\(\LaTeX\\) editor, which is my preferred choice when working online.
-1. [MiKTeX](https://miktex.org/) is a no-brainer \\(\LaTeX\\) distribution for Windows, Linux, and macOS.
-1. Although any text editor can be used to create \\(\LaTeX\\) documents offline, there are many that are developed specifically for the use with \\(\LaTeX\\). See [here](https://en.wikipedia.org/wiki/Comparison_of_TeX_editors) for a comparison of various editors.  After experimenting with many of them, I have converged to [TeXstudio](https://texstudio.org/).
 1. [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX) is an online tutorial for using \\(\LaTeX\\).
 1. When you write research papers, you need to create a reference list. See [here](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management) for how to manage the bibliography (I recommend BibLaTeX). [JabRef](http://www.jabref.org/) is a useful reference manager compatible with BibTeX.
 1. [Here](/files/latextips.pdf) is a writing tip.
@@ -21,3 +21,14 @@ date:  2023-09-27
 1. [Here](/files/test.sty) is a style file that I use whenever I write papers.
 1. For writing coauthored papers, [Overleaf](https://www.overleaf.com) is the simplest, though you need the paid version for more than two coauthors.
 1. When you get stuck or want to do something with \\(\LaTeX\\) but don't know what or how to do, just google it.  Oftentimes the search will lead you to [LaTeX Stack Exchange](https://tex.stackexchange.com/), which is quite useful for resolving your questions.
+
+## \\(\LaTeX\\) for Windows
+
+1. [MiKTeX](https://miktex.org/) is a no-brainer \\(\LaTeX\\) distribution for Windows.
+1. After installing MikTeX, open the MikTeX console and set path to your favorite folder that stores custom files (.sty, .bib, etc.).
+1. Although any text editor can be used to create \\(\LaTeX\\) documents offline, there are many that are developed specifically for the use with \\(\LaTeX\\). See [here](https://en.wikipedia.org/wiki/Comparison_of_TeX_editors) for a comparison of various editors.  After experimenting with many of them, I have converged to [TeXstudio](https://texstudio.org/).
+
+## \\(\LaTeX\\) for Mac
+
+1. [MacTeX](https://www.tug.org/mactex/) is a no-brainer \\(\LaTeX\\) distribution for Mac.
+1. After installing MacTeX, go to [this page](https://github.com/amunn/make-local-texmf) and run make-local-texmf to create a local texmf folder that stores custom files (.sty, .bib, etc.).
