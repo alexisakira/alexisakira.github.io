@@ -10,14 +10,14 @@ I list some legal tax-saving tips that I learned over the years.
 
 ## HSA
 
-With an HSA (Health Savings Account), you can contribute up to \$8,300 in 2024 as a family and deduct the amount from income. The investment grows tax-free. You can then spend the fund for qualified health care expenses such as medical/dental bills and drug prescriptions. As healthcare expenses are exorbitant in the U.S., HSAs relieve part of the pain.
+With an HSA (Health Savings Account), you can contribute up to \$8,300 in 2024 as a family and deduct the amount from income. The investment grows tax-free. You can then spend the fund for qualified healthcare expenses such as medical/dental bills and drug prescriptions. As healthcare expenses are exorbitant in the U.S., HSAs relieve part of the pain.
 
 ## Retirement accounts
 
-There are employer-sponsored accounts such as 401b/457b and individual accounts (IRA). Both have similar functions and you can use either traditional or Roth accounts. With traditional, you invest pre-tax and pay taxes when you withdraw the funds during retirement. With Roth, you invest after-tax and withdrawals are tax-free. There are two considerations to choose between traditional and Roth.
+There are employer-sponsored accounts such as 401b/457b and individual accounts (IRA). Both have similar functions and you can use either traditional or Roth accounts. With traditional, you invest pre-tax and pay taxes when you withdraw the funds during retirement. With Roth, you invest after-tax and withdrawals are tax-free. There are two considerations for choosing between traditional and Roth.
 
 1. If you are in a high (low) tax bracket now but expect to be in a low (high) tax bracket in retirement, traditional (Roth) may be better. But it is difficult to predict future tax rates. Diversifying between traditional and Roth may be a good idea.
-2. If the tax rates between now and the future are the same, then Roth is strictly better than traditional. This is because Roth does not have required minimum distribution (RMD), so it is more flexible, and because the nominal contribution limits of traditional and Roth are the same, Roth allows larger investments in terms of after-tax dollars. (E.g., if your marginal tax rate is 33.3%, investing \$10,000 to traditional pre-tax is equivalent to investing \$6,666 to Roth after-tax. In this example, the contribution limit of Roth is effectively \\(1/(1-0.333)=1.5\\) times larger.)
+2. If the tax rates between now and the future are the same, then Roth is strictly better than traditional. This is because (a) Roth does not have required minimum distribution (RMD), so it is more flexible, and (b) because the nominal contribution limits of traditional and Roth are the same, Roth allows larger investments in terms of after-tax dollars. (E.g., if your marginal tax rate is 33.3%, investing \$10,000 to traditional pre-tax is equivalent to investing \$6,666 to Roth after-tax. In this example, the contribution limit of Roth is effectively \\(1/(1-0.333)=1.5\\) times larger than traditional.)
 
 ## Roth conversion
 
