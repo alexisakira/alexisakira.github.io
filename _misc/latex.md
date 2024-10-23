@@ -37,7 +37,7 @@ date:  2024-10-22
 
 ## `biblatex`
 
-I find `biblatex` to be the most convenient way to compile a bibliography because there is so much freedom in customization. For writing economics papers, below is my format.
+I find `biblatex` to be the most convenient way to compile a bibliography because there is so much freedom in customization. Below is my format for writing economics papers.
 
 ````
 \usepackage[style=ext-authoryear-comp,
