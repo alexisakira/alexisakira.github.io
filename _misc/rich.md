@@ -14,7 +14,7 @@ Let me first explain what I mean by being "rich". I use "rich" synonymously to "
 
 To become rich, we need to understand a few equations. One of them is the budget constraint, which looks like
 \\[ W'=R(W+Y-C-T).\\]
-Here, \\(W\\) is your current wealth, \\(Y\\) is your current income, \\(C\\) is your current consumption, and \\(T\\) is your current tax bill, \\(R\\) is the gross return on savings, and \\(W'\\) is your wealth next period. Looking at the budget constraint, we see that there are only five ways to become rich.
+Here, \\(W\\) is your current wealth, \\(Y\\) is your current income, \\(C\\) is your current consumption, \\(T\\) is your current tax bill, \\(R\\) is the gross return on savings, and \\(W'\\) is your wealth next period. Looking at the budget constraint, we see that there are only five ways to become rich.
 
 1. Start rich (high \\(W\\))
 1. Increase income (high \\(Y\\))
@@ -22,7 +22,7 @@ Here, \\(W\\) is your current wealth, \\(Y\\) is your current income, \\(C\\) is
 1. Reduce taxes (low \\(T\\))
 1. Earn a high return on savings (high \\(R\\))
 
-I will not discuss how to start rich, because you cannot choose your parents and it is not easy to marry somebody rich. I also do not discuss how to increase income, because I don't know how to do it other than working hard, which is obvious. My tips discussed below falls into one of the remaining categories.
+I will not discuss how to start rich, because you cannot choose your parents and it is not easy to marry somebody rich. I also do not discuss how to increase income, because I don't know how to do it other than working hard, which is obvious. (However, you may want to look at [some data](https://www.newyorkfed.org/research/college-labor-market#--:explore:outcomes-by-major) before deciding college major.) My tips discussed below falls into one of the remaining categories.
 
 ## Avoid high-interest debt
 
@@ -77,7 +77,7 @@ Tax avoidance is different from tax evasion. Both seek to pay less tax, but avoi
 - avoid living in high-tax states such as California, Hawaii, and New York,
 - donate stocks with capital gains to charity instead of cash,
 
-and so on. My impression is that, the more the tax code is complicated, the more there are loopholes.
+and so on. My impression is that, the more complex the tax code is, the more loopholes there are, and the more homework pays off.
 
 ## Invest in stock market index funds
 
