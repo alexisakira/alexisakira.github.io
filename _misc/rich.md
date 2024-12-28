@@ -32,6 +32,10 @@ Taking a high-interest loan such as credit card debt is one of the most stupid t
 
 Most people buy houses with 15- or 30-year mortgages. Because the amount borrowed is typically substantial, even reducing the mortgage interest rate by 0.5% will make a big difference. Pay attention to the long term interest rate and consider refinancing when the rates are sufficiently low. When refinancing, consider choosing a shorter term (say 15-year instead of 30-year) because the interest rate tends to be lower.
 
+## Optimize credit card usage
+
+Although you should never take credit card debt, that does not mean you should not use credit cards. To the contrary, credit cards are useful for accumulating points and deferring payment interest-free by one month. Different cards provide different benefits, so it is important to choose which cards to use. See [here](https://alexisakira.github.io/posts/2024/12/blog-post-25/) for what I do, though it may not be for everybody.
+
 ## Stay away from big houses
 
 I must admit, when I drive my kids to their friends' homes and see a big, nice house with a big yard, I feel some envy. However, real estates are bad investments because you need to pay property taxes, they are not liquid (you can't easily buy or sell when you want and transaction costs are high), and you need to pay maintenance costs such as insurance, air conditioning, landscaping, home owner association fees, etc. Even without those costs, with a big house you have more furniture to buy and space to clean. Just be happy with the space and quality you need and don't go for more than that.
