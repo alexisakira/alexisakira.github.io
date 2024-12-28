@@ -22,11 +22,11 @@ Here, \\(W\\) is your current wealth, \\(Y\\) is your current income, \\(C\\) is
 1. Reduce taxes (low \\(T\\))
 1. Earn a high return on savings (high \\(R\\))
 
-I will not discuss how to start rich, because you cannot choose your parents and it is not easy to marry somebody rich. My tips discussed below falls into one or more categories. I also do not discuss how to increase income, because I don't know how to do it.
+I will not discuss how to start rich, because you cannot choose your parents and it is not easy to marry somebody rich. I also do not discuss how to increase income, because I don't know how to do it other than working hard, which is obvious. My tips discussed below falls into one of the remaining categories.
 
 ## Avoid high-interest debt
 
-Taking a high-interest loan such as credit card debt is one of the most stupid things you can do. As I discuss below, historically, you can expect to earn an annual return of 6% on investment. Credit cards often charge more than 20%, which eclipses the gains from investments. Therefore, you should never take a high-interest loan, and if you already have one, you need to pay it down first. If you can't manage your finances without taking a high-interest loan, it just means your lifestyle is wrong.
+Taking a high-interest loan such as credit card debt is one of the most stupid things you can do. As I discuss below, historically, you can expect to earn an annual return of 6% on investment. Credit cards often charge more than 20% interest, which eclipses the gains from investments. Therefore, you should never take a high-interest loan. If you already have one, you need to pay it down first. If you can't manage your finances without taking a high-interest loan, it just means your lifestyle is wrong.
 
 ## Pay attention to mortgage rates and refinance if necessary
 
@@ -34,7 +34,7 @@ Most people buy houses with 15- or 30-year mortgages. Because the amount borrowe
 
 ## Stay away from big houses
 
-I must admit, when I drive my kids to their friends' homes and see a big, nice house with a big yard, I feel some envy. However, real estates are bad investments because you need to pay property taxes, they are not liquid (you can't easily buy or sell when you want and transaction costs are high), and you need to pay maintenance costs such as insurance, air conditioning, landscaping, home owner association fees, etc. Even without those costs, with a big house you need more furniture and you have more space to clean. Just be happy with the space and quality you need and don't go for more than that.
+I must admit, when I drive my kids to their friends' homes and see a big, nice house with a big yard, I feel some envy. However, real estates are bad investments because you need to pay property taxes, they are not liquid (you can't easily buy or sell when you want and transaction costs are high), and you need to pay maintenance costs such as insurance, air conditioning, landscaping, home owner association fees, etc. Even without those costs, with a big house you have more furniture to buy and space to clean. Just be happy with the space and quality you need and don't go for more than that.
 
 Recall that most real estate agents or property management companies don't own many properties themselves. They know that it is more profitable to charge home owners transaction fees or management fees than investing in real estate on their own.
 
@@ -44,19 +44,19 @@ Just as real estates, cars are also bad investments. Car dealers often say "inve
 
 ## Eat out strategically
 
-Never order drinks when you eat out unless your host covers it for you. When I pay myself, I just order tap water if it is safe to drink. (In some European countries like Germany, if you just say "water", they will bring bottled water. Do your research in advance how to order "tap water".)
+Never order drinks when you eat out unless your host covers it for you. When I pay myself, I just order tap water if it is safe to drink. (In some European countries like Germany, if you just say "water", they will bring bottled water that costs a few euros. Do your research in advance how to order "tap water".)
 
 I like to drink coffee, but I usually drink coffee at home. Sometimes I go to Starbucks, but it is not for drinking coffee but to have a place to sit down with wifi.
 
 I like to drink beer, but I usually drink beer at home. There are a few exceptions, though. When I travel, it is fun to try local beer in a pub. When I go to the burger place [Chicago Fire Grill](https://chicagofiregrill.com/) at University City, I often have a beer because they are ridiculously cheap ($2).
 
-When you choose a restaurant, think about your purpose. Is it to have a nice meal with family and friends, or is it to just satisfy your hunger? If the purpose is to have a nice meal, and if you can afford it, you can choose whatever you want. But sometimes we need to eat out just because you are hungry, for instance during a road trip. In those cases, one of my top choices is to go to the Costco food court, where you can feed a family with less than $10 by buying their $1.5 hotdog. It's far cheaper than going to, say, McDonald's. Another option is to buy the $4.99 rotisserie chicken at Costco and eat it at the hotel room. When I go to Atlanta, I try to eat at either the airport lounge (free) or the Emory dining hall ($11.5 all-you-can-eat with the meal plan).
+When you choose a restaurant, think about your purpose. Is it to have a nice meal with family and friends, or is it to just satisfy your hunger? If the purpose is to have a nice meal, and if you can afford it, you can choose whatever you want. But sometimes we need to eat out just because you are hungry, for instance during a road trip. In those cases, one of my top choices is to go to the Costco food court, where you can feed a family with less than $10 by buying their $1.5 hotdog. It's far cheaper than going to, say, McDonald's. Another option is to buy the $4.99 rotisserie chicken at Costco and eat it at a park or the hotel room. When I go to Atlanta, I try to eat at either the airport lounge (free) or the Emory dining hall ($11.5 all-you-can-eat with the meal plan).
 
-When you eat out with friends or coworkers, volunteer to pay the bill and ask the others to pay you in cash or Venmo. That way, you can accumulate more credit card points and defer the payment by one month.
+When you eat out with friends or coworkers, volunteer to pay the bill and ask the others to reimburse you in cash or Venmo. That way, you can accumulate more credit card points and defer the payment by one month.
 
 ## If possible, avoid rideshare
 
-Uber and Lyft are convenient but expensive. Before you travel, do a bit of research whether you can take public transportation. My sample is limited, but for Atlanta and Washington, D.C., taking the train from the airport is quite cheap and convenient. Emory gives a free MARTA pass to faculty members not requiring parking (see [here](https://transportation.emory.edu/transit-subsidy)), so when I go to Atlanta, I just ride the train and bus to get around, which is fun.
+Uber and Lyft are convenient but expensive. Before you travel, do a bit of research whether public transportation is available. My sample is limited, but for Atlanta and Washington, D.C., taking the train from the airport is quite cheap and convenient. Emory gives a free MARTA pass to faculty members not requiring parking (see [here](https://transportation.emory.edu/transit-subsidy)), so when I go to Atlanta, I just ride the train and bus to get around, which is fun.
 
 ## Embrace a minimalist lifestyle
 
@@ -64,7 +64,7 @@ In my opinion, you don't need that much money to have a decent lifestyle. For in
 
 ## Avoid paying taxes as much as possible
 
-Tax avoidance and tax evasion are different. Both seek to pay less tax, bot avoidance is legal, while evasion is illegal. Do you research on tax avoidance. I have already written on this subject [here](https://alexisakira.github.io/misc/tax). There are many things you can do to save taxes, such as
+Tax avoidance is different from tax evasion. Both seek to pay less tax, but avoidance is legal, while evasion is illegal. Do your research on tax avoidance. I have already written on this subject [here](https://alexisakira.github.io/misc/tax). There are many things you can do to save taxes, such as
 
 - invest in a health savings account (HSA) to pay for healthcare bills,
 - invest in Roth IRA accounts,
@@ -73,7 +73,7 @@ Tax avoidance and tax evasion are different. Both seek to pay less tax, bot avoi
 - avoid living in high-tax states such as California, Hawaii, and New York,
 - donate stocks with capital gains to charity instead of cash,
 
-and so on.
+and so on. My impression is that, the more the tax code is complicated, the more there are loopholes.
 
 ## Invest in stock market index funds
 
@@ -81,4 +81,8 @@ According to the [mutual fund theorem](https://en.wikipedia.org/wiki/Mutual_fund
 
 Index funds are boring, but they are also amazing. In ordinary activities, like studying, doing research, or playing tennis, if you don't put any effort, you will be pretty bad. But the amazing thing of index fund investment is that you get the average return of the economy with zero effort. All the hard work is done by the managers and employees of firms that create value, and all you need to do is to own the stocks to get paid the capital gains and dividends. I view index funds as one of the greatest inventions of the 20th century. Historically, the average return has been 6% per year after adjusting for inflation and volatility. This is why I claim that it is easy to become rich. Imagine that starting at age 20, you open a Roth IRA account, contribute to the max (assume $7000 per year), and invest in an index fund that yields 6% real return per year. Then after 40 years, your investment grows to
 \\[ 7000\times(1+1.06+\dotsc+1.06^{39})=7000\times \frac{1-1.06^{40}}{1-1.06}=1,083,334,\\]
-so you are a millionaire. Invest a bit more or longer, and you can be a multi-millionaire. You don't really need a high income to be rich. The reason why most people are not rich is simply because they either don't save enough or don't know how to invest.
+so you are a millionaire. Invest a bit more or longer, and you can be a multi-millionaire.
+
+## Conclusion
+
+You don't really need a high income to be rich. You don't need special skills or luck either. The difficulty of becoming rich is that you need a lot of discipline: you need to resist temptations, establish wise spending habits, avoid paying unnecessary taxes, and consistently invest in a stock market index fund. The reason why most people are not rich is simply because they lack discipline: they either don't save enough or don't know how to invest.
