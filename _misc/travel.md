@@ -19,7 +19,7 @@ Japan |	Hot springs; Public transportation; Politeness; Well organized | Very co
 Scotland | Natural beauty | |
 Taiwan | Great (and cheap) food; Friendly people | Hot and humid climate |
 Turkey | Great food; History; Friendly people | |
-United States |	Capitalism; Individualism; Meritocracy; Money can buy (almost) anything; Relatively low taxes |	Gun violence; Healthcare system; Public transportation; Non-SI units (mile, ounce, etc.); Department of Motor Vehicles; Bureaucracy in California |
+United States |	Capitalism; Individualism; Meritocracy; Money can buy (almost) anything; Relatively low taxes |	Gun violence; Healthcare system; Public transportation; Non-SI units (mile, ounce, etc.); Bread; Department of Motor Vehicles; Bureaucracy in California |
 
 1. Argentina
 1. Australia
