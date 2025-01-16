@@ -13,8 +13,8 @@ redirect_from:
 
 ## Personal Information
 - Place of birth: [Montréal](https://en.wikipedia.org/wiki/Montreal), [Québec](https://en.wikipedia.org/wiki/Quebec), Canada
-- Citizenship: Canadian, Japanese (U.S. Permanent Resident)
-- Language: English (fluent), French (fluent), Japanese (native)
+- Citizenship: Canada, Japan, United States
+- Language: English (fluent), French (rusty), Japanese (native)
 
 ## Research Interests
 - Macro-finance
