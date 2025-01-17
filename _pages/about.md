@@ -13,7 +13,7 @@ Alexis Akira Toda (pronounced `Alexy Akira Toda`) was born in [Montréal, Canada
 ## My research
 I am a mathematical economist with strong interests in applications, in particular macroeconomics and finance. The topics I have worked on include
 
-- [necessity of asset price bubbles](https://doi.org/10.1086/732528)
+- [necessity of asset price bubbles](https://doi.org/10.1086/732528),
 - [computational algorithm for solving macroeconomic models with realistic wealth distributions](https://doi.org/10.3982/QE1817),
 - [simple formula and mathematical foundation for Pareto exponents that arise in random multiplicative processes in Markovian environments](https://dx.doi.org/10.3982/ECTA17984),
 - [optimal epidemic control when testing and government enforcement are imperfect](https://doi.org/10.1016/j.jet.2022.105570),
