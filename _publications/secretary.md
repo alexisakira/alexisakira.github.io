@@ -4,6 +4,7 @@ collection: publications
 link: https://doi.org/10.1007/s00182-025-00922-w
 venue: "International Journal of Game Theory"
 date: 2025-01-17
+history: https://alexisakira.github.io/publications/secretary
 tags:
  - theoretical
 coauthor: "Longjian Li"
