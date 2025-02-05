@@ -3,7 +3,7 @@ title: "Recent Advances on Uniqueness of Competitive Equilibrium"
 collection: publications
 link: https://doi.org/10.1016/j.jmateco.2024.103008
 venue: "Journal of Mathematical Economics"
-date: 2024-06-04
+date: 2024-08-01
 history: https://alexisakira.github.io/publications/2024-JME-uniqueness
 tags:
   - theoretical
