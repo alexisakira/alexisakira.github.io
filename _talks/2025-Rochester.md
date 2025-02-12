@@ -1,5 +1,5 @@
 ---
-title: "TBA"
+title: "TBD"
 collection: talks
 type: "Seminar"
 venue: "University of Rochester, Department of Economics"
