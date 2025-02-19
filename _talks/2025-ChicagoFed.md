@@ -1,5 +1,5 @@
 ---
-title: "TBA"
+title: "TBD"
 collection: talks
 type: "Seminar"
 venue: "Federal Reserve Bank of Chicago"
