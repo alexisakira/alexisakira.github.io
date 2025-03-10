@@ -1,5 +1,5 @@
 ---
-title: "Unbalanced Growth and Land Overvaluation"
+title: "👍Unbalanced Growth and Land Overvaluation"
 collection: publications
 venue: "Accepted at Proceedings of the National Academy of Science"
 date: 2025-03-10
