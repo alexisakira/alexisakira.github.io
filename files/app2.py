@@ -1,14 +1,13 @@
 import streamlit as st
 import math
 
-def compute_y(T, N_pub, N_top5, D_assoc, D_full):
-    log_y = 12.14 - 0.0104 * T + 0.0053 * N_pub + 0.0206 * N_top5 + 0.2269 * D_assoc + 0.4877 * D_full
+def compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
+    log_y = 11.6539 + 0.0058904 * TPhD - 0.010903 *THired + 0.0016841 * (N_pub - N_top5) + 0.02791 * N_top5 + 0.1643 * Tenure + 0.19684 * D_full + 0.1249 * USNews
     return int(round(math.exp(log_y)))
 
 st.set_page_config(page_title="Compute Projected Salary", page_icon="📈", layout="centered")
 
-st.title("Projected Base Salaries of Economics Professors in the United States")
-st.subheader("This tool estimates the expected base salary of economics professors at higher education institutions across the United States. The model accounts for key determinants of compensation, including academic tenure, research output, and publication record.")
+st.title("Predicting Salaries of Economics Professors in the United States")
 
 st.markdown("""
     <style>
@@ -43,12 +42,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown('<p class="highlight-text">The variables to input are listed below:</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">1️⃣ The total number of years since completing your PhD</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">2️⃣ Your total number of publications in academic journals (only peer-reviewed research or review articles that you normally include in your CV - exclude conference proceedings, comments, corrigenda, etc.)</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">3️⃣ Your total number of publications in the top 5 Economics journals</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">4️⃣ Your status as an Associate or Full Professor</p>', unsafe_allow_html=True)
-
-
+st.markdown('<p class="list-text">- Number of years elapsed since completing PhD</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Number of years elapsed since being hired</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Publications in academic journals (only peer-reviewed research or review articles that you normally include in your CV - exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, etc.)</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Publications in the top 5 economics journals</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Job rank</p>', unsafe_allow_html=True)
 
 st.markdown("""
     <style>
@@ -137,31 +135,23 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.markdown('<p class="main-title">Compute Projected Salary</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub-text">Enter your values below and click Compute.</p>', unsafe_allow_html=True)
-
-st.markdown('<p class="sub-text">The model is based on the equation below:</p>', unsafe_allow_html=True)
-st.latex(r"""
-\log y = 12.14 - 0.0104T + 0.0053N_{\text{pub}} + 0.0206N_{\text{top5}} + 0.2269D_{\text{assoc}} + 0.4877D_{\text{full}}
-""")
-st.caption('Source: Lyu and Toda "Publications, Citations, Position, and Compensation of Economics Professor", Econ Journal Watch, 2019. Equation updated to 2023 at https://alexisakira.github.io/publications/2019-EJW/.')
-
-st.subheader("Input each of these values below to determine your projected salary!")
+st.markdown('<p class="main-title">Enter your values below and click Compute.</p>', unsafe_allow_html=True)
 
 with st.container():
     col1, col2 = st.columns(2)
 
     with col1:
-        T = st.number_input("Number of Years since PhD Completion (T)", min_value=0, step=1, format="%d")
-        N_pub = st.number_input("Number of Publications (N_pub)", min_value=0, step=1, format="%d")
+        TPhD = st.number_input("How many years ago did you finish PhD? (TPhD)", min_value=0, step=1, format="%d")
+        THired = st.number_input("How many years ago were you hired at your current institution? (THired)", min_value=0, step=1, format="%d")
+        N_pub = st.number_input("How many papers have you published? (N_pub)", min_value=0, step=1, format="%d")
     
     with col2:
-        N_top5 = st.number_input("Number of Publications in Top 5 Journals (N_top5)", min_value=0, step=1, format="%d")
-        D_assoc = st.radio("Are you currently an Associate Professor 0 (No) or 1 (Yes)? (D_assoc)", [0, 1])
-        D_full = st.radio("Are you currently a Full Professor 0 (No) or 1 (Yes)? (D_full)", [0, 1])
-
+        N_top5 = st.number_input("How many papers have you published in 'Top 5' economics journals? (N_top5)", min_value=0, step=1, format="%d")
+        Tenure = st.radio("Do you have tenure? 0 (No) or 1 (Yes) (Tenure)", [0, 1])
+        Full = st.radio("Are you currently a full professor? 0 (No) or 1 (Yes) (Full)", [0, 1])
+        USNews = st.number_input("What is the US News Peer Assessment Score of your department? It must be between 1 and 5. (USNews)", min_value = 1, max_value=5)
 
 if st.button("🔍 Compute Salary"):
-    salary = compute_y(T, N_pub, N_top5, D_assoc, D_full)
+    salary = compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
     st.success(f"💰 Your expected salary is **${salary:,}**")
 
