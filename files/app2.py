@@ -2,10 +2,10 @@ import streamlit as st
 import math
 
 def compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
-    log_y = 11.6539 + 0.0058904 * TPhD - 0.010903 *THired + 0.0016841 * (N_pub - N_top5) + 0.02791 * N_top5 + 0.1643 * Tenure + 0.19684 * D_full + 0.1249 * USNews
+    log_y = 11.6539 + 0.0058904 * TPhD - 0.010903 *THired + 0.0016841 * (N_pub - N_top5) + 0.02791 * N_top5 + 0.1643 * Tenure + 0.19684 * Full + 0.1249 * USNews
     return int(round(math.exp(log_y)))
 
-st.set_page_config(page_title="Compute Projected Salary", page_icon="📈", layout="centered")
+st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
 
 st.title("Predicting Salaries of Economics Professors in the United States")
 
@@ -149,7 +149,7 @@ with st.container():
         N_top5 = st.number_input("How many papers have you published in 'Top 5' economics journals? (N_top5)", min_value=0, step=1, format="%d")
         Tenure = st.radio("Do you have tenure? 0 (No) or 1 (Yes) (Tenure)", [0, 1])
         Full = st.radio("Are you currently a full professor? 0 (No) or 1 (Yes) (Full)", [0, 1])
-        USNews = st.number_input("What is the US News Peer Assessment Score of your department? It must be between 1 and 5. (USNews)", min_value = 1, max_value=5)
+        USNews = st.number_input("What is the US News Peer Assessment Score of your department? It must be between 1 and 5. (USNews)", min_value = 1, max_value=5, step=0.1)
 
 if st.button("🔍 Compute Salary"):
     salary = compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
