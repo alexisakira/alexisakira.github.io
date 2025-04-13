@@ -3,7 +3,7 @@ import math
 
 def compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
     log_y = 11.6539 + 0.0058904 * TPhD - 0.010903 *THired + 0.0016841 * (N_pub - N_top5) + 0.02791 * N_top5 + 0.1643 * Tenure + 0.19684 * Full + 0.1249 * USNews
-    return int(round(math.exp(log_y)))
+    return int(round(1.029*math.exp(log_y)))
 
 st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
 
@@ -150,5 +150,5 @@ with st.container():
 
 if st.button("🔍 Compute Salary"):
     salary = compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
-    st.success(f"💰 Your expected salary is **${salary:,}**")
+    st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
 
