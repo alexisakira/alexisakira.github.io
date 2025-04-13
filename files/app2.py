@@ -41,7 +41,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="highlight-text">The prediction is based on the following variables:</p>', unsafe_allow_html=True)
+st.markdown('<p class="highlight-text">The prediction is based on the following parameters:</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Education</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Employment</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Publications</p>', unsafe_allow_html=True)
@@ -133,7 +133,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.markdown('<p class="main-title">Enter your values below and click Compute.</p>', unsafe_allow_html=True)
+st.markdown('<p class="main-title">Enter your values below and click '🔍 Compute Salary'.</p>', unsafe_allow_html=True)
 
 with st.container():
     TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, format="%d")
