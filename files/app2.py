@@ -5,10 +5,6 @@ def compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
     log_y = 11.6539 + 0.0058904 * TPhD - 0.010903 *THired + 0.0016841 * (N_pub - N_top5) + 0.02791 * N_top5 + 0.1643 * Tenure + 0.19684 * Full + 0.1249 * USNews
     return int(round(math.exp(log_y)))
 
-st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
-
-st.title("Predicting Salaries of Economics Professors in the United States")
-
 st.markdown("""
     <style>
     @media (prefers-color-scheme: dark) {
@@ -41,11 +37,14 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="highlight-text">The variables to input are listed below:</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Number of years elapsed since completing PhD</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Number of years elapsed since being hired</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Publications in academic journals (only peer-reviewed research or review articles that you normally include in your CV - exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, etc.)</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Publications in the top 5 economics journals</p>', unsafe_allow_html=True)
+st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
+
+st.title("Predicting Salaries of Economics Professors in the United States")
+
+st.markdown('<p class="highlight-text">The prediction is based on the following variables:</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Academic history</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Job history</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Publications</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Job rank</p>', unsafe_allow_html=True)
 
 st.markdown("""
@@ -140,7 +139,7 @@ st.markdown('<p class="main-title">Enter your values below and click Compute.</p
 with st.container():
     TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, format="%d")
     THired = st.number_input("How many years ago were you hired at your current institution?", min_value=0, step=1, format="%d")
-    N_pub = st.number_input("How many papers have you published?", min_value=0, step=1, format="%d")
+    N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research': exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, etc.", min_value=0, step=1, format="%d")
     N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
     Tenure = st.radio("Do you have tenure? Yes (1) or No (0)", [0, 1])
     Full = st.radio("Are you currently a full professor? Yes (1) or No (0)", [0, 1])
