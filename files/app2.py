@@ -138,13 +138,13 @@ st.markdown("""
 st.markdown('<p class="main-title">Enter your values below and click Compute.</p>', unsafe_allow_html=True)
 
 with st.container():
-    TPhD = st.number_input("How many years ago did you finish PhD? (TPhD)", min_value=0, step=1, format="%d")
-    THired = st.number_input("How many years ago were you hired at your current institution? (THired)", min_value=0, step=1, format="%d")
-    N_pub = st.number_input("How many papers have you published? (N_pub)", min_value=0, step=1, format="%d")
-    N_top5 = st.number_input("How many papers have you published in 'Top 5' economics journals? (N_top5)", min_value=0, step=1, format="%d")
-    Tenure = st.radio("Do you have tenure? 0 (No) or 1 (Yes) (Tenure)", [0, 1])
-    Full = st.radio("Are you currently a full professor? 0 (No) or 1 (Yes) (Full)", [0, 1])
-    USNews = st.number_input("What is the US News Peer Assessment Score of your department? It must be between 1 and 5. (USNews)", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
+    TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, format="%d")
+    THired = st.number_input("How many years ago were you hired at your current institution?", min_value=0, step=1, format="%d")
+    N_pub = st.number_input("How many papers have you published?", min_value=0, step=1, format="%d")
+    N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
+    Tenure = st.radio("Do you have tenure? Yes (1) or No (0)", [0, 1])
+    Full = st.radio("Are you currently a full professor? Yes (1) or No (0)", [0, 1])
+    USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? It must be between 1 and 5. (USNews)", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
 
 if st.button("🔍 Compute Salary"):
     salary = compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
