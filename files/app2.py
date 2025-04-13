@@ -133,7 +133,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.markdown('<p class="main-title">Enter your values below and click '🔍 Compute Salary'.</p>', unsafe_allow_html=True)
+st.markdown('<p class="main-title">Enter your values below and click 'Compute Salary'.</p>', unsafe_allow_html=True)
 
 with st.container():
     TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, format="%d")
