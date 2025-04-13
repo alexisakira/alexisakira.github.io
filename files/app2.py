@@ -42,10 +42,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown('<p class="highlight-text">The prediction is based on the following variables:</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Academic history</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Job history</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Education</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Employment</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Publications</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Job rank</p>', unsafe_allow_html=True)
 
 st.markdown("""
     <style>
