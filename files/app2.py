@@ -144,7 +144,7 @@ with st.container():
     N_top5 = st.number_input("How many papers have you published in 'Top 5' economics journals? (N_top5)", min_value=0, step=1, format="%d")
     Tenure = st.radio("Do you have tenure? 0 (No) or 1 (Yes) (Tenure)", [0, 1])
     Full = st.radio("Are you currently a full professor? 0 (No) or 1 (Yes) (Full)", [0, 1])
-    USNews = st.number_input("What is the US News Peer Assessment Score of your department? It must be between 1 and 5. (USNews)", min_value = 1, max_value = 5, step=0.1, format="%0.1f")
+    USNews = st.number_input("What is the US News Peer Assessment Score of your department? It must be between 1 and 5. (USNews)", min_value = 1, max_value = 5, format="%0.1f")
 
 if st.button("🔍 Compute Salary"):
     salary = compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
