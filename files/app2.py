@@ -141,7 +141,7 @@ st.markdown('<p class="main-title">Enter your values below and click Compute Sal
 
 with st.container():
     TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, format="%d")
-    THired = st.number_input("How many years ago were you hired at your current institution?", min_value=0, step=1, format="%d")
+    THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, format="%d")
     N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
     N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
     Tenure = st.radio("Do you have tenure? Yes (1) or No (0)", [0, 1])
