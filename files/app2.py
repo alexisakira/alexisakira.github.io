@@ -42,7 +42,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown('<p class="highlight-text">Developed by:</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Alexis Akira Toda, Emory University (data analysis)</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- [Alexis Akira Toda](https://alexisakira.github.io/), Emory University (data analysis)</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Zachary Etzioni, Emory University (web tool)</p>', unsafe_allow_html=True)
 
 st.markdown('<p class="highlight-text">The prediction is based on the following parameters:</p>', unsafe_allow_html=True)
