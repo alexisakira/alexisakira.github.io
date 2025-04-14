@@ -50,6 +50,9 @@ st.markdown('<p class="list-text">- Education</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Employment</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Publications</p>', unsafe_allow_html=True)
 
+st.markdown('<p class="highlight-text">The predictive model is an extension of <a href="https://econjwatch.org/articles/publications-citations-position-and-compensation-of-economics-professors">Lyu & Toda (2019)</a>:</p>', unsafe_allow_html=True)
+
+
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
