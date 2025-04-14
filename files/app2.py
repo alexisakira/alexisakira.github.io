@@ -144,9 +144,9 @@ with st.container():
     THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, format="%d")
     N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
     N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
-    Tenure = st.radio("Do you have tenure? Yes (1) or No (0)", [0, 1])
-    Full = st.radio("Are you a full professor? Yes (1) or No (0)", [0, 1])
-    USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? Enter 1.0 if your school is not listed", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
+    Tenure = st.radio("Do you have tenure? Choose Yes (1) or No (0).", [0, 1])
+    Full = st.radio("Are you a full professor? Choose Yes (1) or No (0).", [0, 1])
+    USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? Enter 1.0 if your school is not listed.", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
 
 if st.button("🔍 Compute Salary"):
     salary = compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
