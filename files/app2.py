@@ -2,8 +2,9 @@ import streamlit as st
 import math
 
 def compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
-    log_y = 12.0328 + 0.018798 * TPhD - 0.00022417 * TPhD**2 - 0.010634 *THired + 0.0016286 * (N_pub - N_top5) + 0.023884 * N_top5 \
-    + 0.11238 * Tenure + 0.15731 * Full - 0.16499 * USNews + 0.043573 * USNews**2
+    log_y = 12.0328 + 0.019676 * TPhD - 0.00023849 * TPhD**2 - 0.01095 *THired \
+    + 0.0015629 * (N_pub - N_top5) + 0.024239 * N_top5 \
+    + 0.10954 * Tenure + 0.15688 * Full + 0.041223 * USNews + 0.06979 * (max(USNews - 3,0))**2
     return int(round(1.029*math.exp(log_y)))
 
 st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
