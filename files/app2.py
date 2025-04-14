@@ -53,7 +53,7 @@ st.markdown('<p class="list-text">- Employment</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Publications</p>', unsafe_allow_html=True)
 
 st.markdown('<p class="highlight-text">The predictive model is an extension of <a href="https://econjwatch.org/articles/publications-citations-position-and-compensation-of-economics-professors">Lyu and Toda (2019)</a></p>', unsafe_allow_html=True)
-
+st.markdown('<p class="list-text">Disclaimer: the model is still experimental</p>', unsafe_allow_html=True)
 
 st.markdown("""
     <style>
