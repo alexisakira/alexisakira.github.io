@@ -7,8 +7,8 @@ from supabase import create_client, Client
 st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
 
 # ---------- Supabase Setup ----------
-SUPABASE_URL = "https://auqqsiljywsnqghtechh.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1cXFzaWxqeXdzbnFnaHRlY2hoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3MjEwMzAsImV4cCI6MjA2MDI5NzAzMH0.jaDhkMMokUoBIOep1x2gUvdo5kVNzLcd6P_LZbQm8f4"
+SUPABASE_URL = "https://rdgleakkzdrpzmseynyg.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJkZ2xlYWtremRycHptc2V5bnlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3MzQ2MjEsImV4cCI6MjA2MDMxMDYyMX0.cc7BVKP49Be5K-EWWHpCYQq4N1DMIhfHJVTIgTLbn4M"
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # ---------- Visitor Counter (Once Per Session) ----------
