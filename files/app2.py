@@ -2,6 +2,7 @@ import streamlit as st
 import math
 from supabase import create_client, Client
 
+st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
 
 SUPABASE_URL = "https://auqqsiljywsnqghtechh.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1cXFzaWxqeXdzbnFnaHRlY2hoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3MjEwMzAsImV4cCI6MjA2MDI5NzAzMH0.jaDhkMMokUoBIOep1x2gUvdo5kVNzLcd6P_LZbQm8f4"
@@ -26,8 +27,6 @@ def compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, U
     + 0.0015756 * (N_pub - N_top5) + 0.024981 * N_top5 \
     + 0.11574 * Tenure + 0.14999 * Full + 0.04377 * USNews + 0.068116 * (max(USNews - 3,0))**2
     return int(round(1.029*math.exp(log_y)))
-
-st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
 
 st.title("Predicting Salaries of Economics Professors in the United States")
 
