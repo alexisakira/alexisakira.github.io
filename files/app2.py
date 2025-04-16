@@ -1,7 +1,7 @@
 import streamlit as st
 import math
 
-def compute_y(Theory,Econometrics,TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
+def compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
     log_y = 11.8184 - 0.011855 * Theory + 0.028621 * Econometrics \
     + 0.025465 * TPhD - 0.00035786 * TPhD**2 - 0.021768 * THired + 0.00029833 * THired**2 \
     + 0.0015756 * (N_pub - N_top5) + 0.024981 * N_top5 \
@@ -158,5 +158,5 @@ with st.container():
     USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? Enter 1.0 if your school is not listed.", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
 
 if st.button("🔍 Compute Salary"):
-    salary = compute_y(Theory,Econometrics,TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
+    salary = compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
     st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
