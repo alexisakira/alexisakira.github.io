@@ -1,10 +1,11 @@
 import streamlit as st
 import math
 
-def compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
-    log_y = 11.8168 + 0.024968 * TPhD - 0.00035015 * TPhD**2 - 0.02136 * THired + 0.00028627 * THired**2 \
-    + 0.0016265 * (N_pub - N_top5) + 0.024801 * N_top5 \
-    + 0.11679 * Tenure + 0.15147 * Full + 0.044897 * USNews + 0.06796 * (max(USNews - 3,0))**2
+def compute_y(Theory,Econometrics,TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
+    log_y = 11.8184 - 0.011855 * Theory + 0.028621 * Econometrics \
+    + 0.025465 * TPhD - 0.00035786 * TPhD**2 - 0.021768 * THired + 0.00029833 * THired**2 \
+    + 0.0015756 * (N_pub - N_top5) + 0.024981 * N_top5 \
+    + 0.11574 * Tenure + 0.14999 * Full + 0.04377 * USNews + 0.068116 * (max(USNews - 3,0))**2
     return int(round(1.029*math.exp(log_y)))
 
 st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
@@ -50,6 +51,7 @@ st.markdown('<p class="list-text">- <a href="https://www.linkedin.com/in/zachary
 st.markdown('<p class="highlight-text">The prediction is based on the following parameters (R-squared 79%):</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Education</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Employment</p>', unsafe_allow_html=True)
+st.markdown('<p class="list-text">- Field</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Publications</p>', unsafe_allow_html=True)
 
 st.markdown('<p class="highlight-text">The predictive model is an extension of <a href="https://econjwatch.org/articles/publications-citations-position-and-compensation-of-economics-professors">Lyu and Toda (2019)</a></p>', unsafe_allow_html=True)
@@ -147,6 +149,8 @@ st.markdown('<p class="main-title">Enter your values below and click Compute Sal
 with st.container():
     TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, format="%d")
     THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, format="%d")
+    Theory = st.radio("Is your research mainly about theoretical analysis of economic models? Choose Yes (1) or No (0).", [0, 1])
+    Econometrics = st.radio("Is your research mainly about econometrics or statistics? Choose Yes (1) or No (0).", [0, 1])
     N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
     N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
     Tenure = st.radio("Do you have tenure? Choose Yes (1) or No (0).", [0, 1])
@@ -154,5 +158,5 @@ with st.container():
     USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? Enter 1.0 if your school is not listed.", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
 
 if st.button("🔍 Compute Salary"):
-    salary = compute_y(TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
+    salary = compute_y(Theory,Econometrics,TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
     st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
