@@ -28,8 +28,6 @@ def compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, U
     + 0.11574 * Tenure + 0.14999 * Full + 0.04377 * USNews + 0.068116 * (max(USNews - 3,0))**2
     return int(round(1.029*math.exp(log_y)))
 
-st.title("Predicting Salaries of Economics Professors in the United States")
-
 
 st.markdown("""
     <style>
