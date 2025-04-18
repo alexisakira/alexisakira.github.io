@@ -65,7 +65,7 @@ st.markdown('<p class="highlight-text">Developed by:</p>', unsafe_allow_html=Tru
 st.markdown('<p class="list-text">- <a href="https://alexisakira.github.io/">Alexis Akira Toda</a>, Professor, Emory University (data analysis)</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- <a href="https://www.linkedin.com/in/zachary-etzioni-5904aa296/">Zachary Etzioni</a>, Class of 2027, Emory University (web tool)</p>', unsafe_allow_html=True)
 
-st.markdown('<p class="highlight-text">The prediction is based on the following parameters (R-squared 79%):</p>', unsafe_allow_html=True)
+st.markdown('<p class="highlight-text">The prediction is based on the following parameters (R-squared 80%):</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Education</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Employment</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Field</p>', unsafe_allow_html=True)
