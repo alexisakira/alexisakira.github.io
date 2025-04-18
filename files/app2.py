@@ -22,10 +22,10 @@ st.title("Predicting Salaries of Economics Professors in the United States")
 st.markdown(f"#### 👥 Total Visitors: `{visits}`")
 
 def compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
-    log_y = 11.8994 - 0.003579 * Theory + 0.03034 * Econometrics \
-    + 0.022333 * TPhD - 0.0002299 * TPhD**2 - 0.020117 * THired + 0.00025841 * THired**2 \
-    + 0.0014289 * (N_pub - N_top5) + 0.043705 * N_top5 - 0.00069059 * TPhD * N_top5\
-    + 0.10568 * Tenure + 0.14074 * Full - 0.0014599 * USNews + 0.04287 * (max(USNews - 2,0))**2
+    log_y = 11.8583 - 0.0026605 * Theory + 0.030356 * Econometrics \
+    + 0.023127 * TPhD - 0.0002489 * TPhD**2 - 0.02081 * THired + 0.00027308 * THired**2 \
+    + 0.0014252 * (N_pub - N_top5) + 0.042406 * N_top5 - 0.00064717 * TPhD * N_top5\
+    + 0.10419 * Tenure + 0.14185 * Full + 0.090521 * max(USNews-2,0) + 0.15594 * max(USNews - 4,0)
     return int(round(1.029*math.exp(log_y)/1000)*1000)
 
 
