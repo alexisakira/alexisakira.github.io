@@ -4,8 +4,8 @@ from supabase import create_client, Client
 
 st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
 
-SUPABASE_URL = "https://auqqsiljywsnqghtechh.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1cXFzaWxqeXdzbnFnaHRlY2hoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3MjEwMzAsImV4cCI6MjA2MDI5NzAzMH0.jaDhkMMokUoBIOep1x2gUvdo5kVNzLcd6P_LZbQm8f4"
+SUPABASE_URL = st.secrets["https://auqqsiljywsnqghtechh.supabase.co"]
+SUPABASE_KEY = st.secrets["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1cXFzaWxqeXdzbnFnaHRlY2hoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3MjEwMzAsImV4cCI6MjA2MDI5NzAzMH0.jaDhkMMokUoBIOep1x2gUvdo5kVNzLcd6P_LZbQm8f4"]
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 if "already_logged" not in st.session_state:
@@ -15,8 +15,11 @@ if "already_logged" not in st.session_state:
         st.warning("Visitor logging failed.")
     st.session_state["already_logged"] = True
 
-res = supabase.table("visits").select("id", count="exact").execute()
-visits = res.count
+try:
+    res = supabase.table("visits").select("id", count="exact").execute()
+    visits = res.count
+except Exception:
+    visits = "N/A"
 
 st.title("Predicting Salaries of Economics Professors in the United States")
 st.markdown(f"#### 👥 Total Visitors: `{visits}`")
@@ -27,7 +30,6 @@ def compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, U
     + 0.0014252 * (N_pub - N_top5) + 0.042406 * N_top5 - 0.00064717 * TPhD * N_top5\
     + 0.10419 * Tenure + 0.14185 * Full + 0.090521 * max(USNews-2,0) + 0.15594 * max(USNews - 4,0)
     return int(round(1.029*math.exp(log_y)/1000)*1000)
-
 
 st.markdown("""
     <style>
@@ -159,7 +161,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 st.markdown('<p class="main-title">Enter your values below and click Compute Salary.</p>', unsafe_allow_html=True)
 
