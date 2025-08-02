@@ -4,6 +4,7 @@ collection: publications
 link: https://doi.org/10.1007/s11698-025-00316-8
 venue: "Cliometrica"
 date: 2025-08-01
+history: https://alexisakira.github.io/publications/pareto_limit
 tags:
     - empirical
 coauthor: "Vincent Geloso"
