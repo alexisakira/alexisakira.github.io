@@ -1,6 +1,5 @@
 ---
-title: "Leverage, Endogenous Unbalanced Growth, and Asset
-Price Bubbles"
+title: "Leverage, Endogenous Unbalanced Growth, and Asset Price Bubbles"
 collection: talks
 type: "Seminar"
 venue: "UC Irvine, Department of Economics"

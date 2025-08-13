@@ -1,6 +1,5 @@
 ---
-title: "Leverage, Endogenous Unbalanced Growth, and Asset
-Price Bubbles"
+title: "Leverage, Endogenous Unbalanced Growth, and Asset Price Bubbles"
 collection: talks
 type: "Conference"
 venue: "Cowles Conference on General Equilibrium and its Applications"
