@@ -58,7 +58,7 @@ Ministry of Health, Labor and Welfare; Ministry of Education, Culture, Sports, S
 1. [The Reopening Dilemma: Saving Lives vs. Saving the Economy is a False Tradeoff, Economists
 Say](https://fortune.com/2020/05/04/reopening-reopen-economy-coronavirus-covid-19-lifting-lockdown-economists), Fortune, May 2020
 1. [Early Draconian Social Distancing May Be Suboptimal for Fighting the COVID-19 Epidemic](https://voxeu.org/article/early-draconian-social-distancing-may-be-suboptimal-fighting-covid-19-epidemic#), VoxEu, April 2020
-1. I was featured in TV Asahi "[あいつ今何してる？(=what is that guy doing now?)](https://www.tv-asahi.co.jp/aitsuima2021/backnumber_new/0126/)" #126, December 18, 2019 (in Japanese)
+1. I was featured in TV Asahi "[あいつ今何してる？(=what do you do now?)](https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%84%E3%81%A4%E4%BB%8A%E4%BD%95%E3%81%97%E3%81%A6%E3%82%8B%3F)" in [Episode #126](https://www.tv-asahi.co.jp/aitsuima2021/backnumber_new/0126/), December 18, 2019 (in Japanese)
 1. I wrote an [article](https://alexisakira.github.io/files/tetsumon_dayori.pdf) for 東京大学医学部「鉄門だより」(a magazine issued by University of Tokyo Faculty of Medicine, in Japanese), 2019
 1. I was featured in an interview article at [m3.com](https://www.m3.com/news/open/iryoishin/647648), 2019 (in Japanese)
 1. I was featured in an interview article in "[東大理III 1998 (University of Tokyo College of Arts and Sciences, Science III, 1998 cohort](http://www.amazon.co.jp/%E6%9D%B1%E5%A4%A7%E7%90%863%E3%83%BB1998%E2%80%95%E5%A4%A9%E6%89%8D%E3%81%9F%E3%81%A1%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8-%E3%80%8C%E6%9D%B1%E5%A4%A7%E7%90%8631998%E3%80%8D%E7%B7%A8%E9%9B%86%E5%A7%94%E5%93%A1%E4%BC%9A/dp/4887185022), 1998 (in Japanese)
