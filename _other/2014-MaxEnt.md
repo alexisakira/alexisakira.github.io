@@ -1,6 +1,5 @@
 ---
-title: "Error Estimate and Convergence Analysis of Moment-Preserving
-Discrete Approximations of Continuous Distributions"
+title: "Error Estimate and Convergence Analysis of Moment-Preserving Discrete Approximations of Continuous Distributions"
 collection: other
 link: https://doi.org/10.1063/1.4903706
 venue: "Bayesian Inference and Maximum Entropy Methods in Science and Engineering"
