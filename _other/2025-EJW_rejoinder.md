@@ -4,7 +4,7 @@ collection: other
 link: https://econjwatch.org/1400
 venue: "Econ Journal Watch"
 date: 2025-09-27
-history: https://alexisakira.github.io/publications/2025-EJW_rejoinder
+history: https://alexisakira.github.io/other/2025-EJW_rejoinder
 coauthor: "Tomohiro Hirano"
 ---
 
