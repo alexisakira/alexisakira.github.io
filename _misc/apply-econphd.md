@@ -16,7 +16,7 @@ Since a Ph.D. is a big time commitment, make sure you know what happens after ge
 1. Industry (e.g., finance, tech, consulting, etc.),
 1. Government (e.g., central bank, IMF, etc.)
 
-I have little insight about the trade-off of these jobs, as I have spent all my professional career as a research professor. The advantage of being a research professor is that some of us get paid reasonably well (see my analysis [here](https://alexisakira.github.io/publications/2019-EJW/)), and we have plenty of free time to do research, which for me is leisure. I am assuming teaching professors are paid less well but have plenty of free time to do whatever they like to do with their lives. Industry jobs pay the most; I heard of stories from former students getting 300k starting salaries, but you will have to work like a bee.
+I have little insight about the trade-off of these jobs, as I have spent all my professional career as a research professor. The advantage of being a research professor is that some of us get paid reasonably well (see my analysis [here](https://alexisakira.github.io/publications/2019-EJW/)), and we have plenty of free time to do research, which for me is leisure. I am assuming teaching professors are paid less well but have plenty of free time to do whatever they like to do with their lives. Industry jobs pay the most; I heard of stories from former students getting $300k starting salaries, but you will have to work like a bee.
 
 The vast majority of Ph.D. students end up *not* being a research professor, just like most college tennis players don't turn pro. This is obvious by doing simple accounting. Assume each cohort of Ph.D. program consists of 20 students. Assume each department hires two people per year. Then only 10% of graduates can get research-oriented academic jobs. The truth is that it is even harder, because research-oriented academic positions are competitive, and you need to compete against students from top schools as well as advanced assistant professors that are not going to get tenure from top schools, and many of them are very smart. Hence unless you think you are very smart, and even if indeed you are, keep the expectations low. But honestly, academia has its own downside such as internal politics and bureaucracy, so industry jobs are very attractive. No matter where you end up, you will have a good life.
 
@@ -34,6 +34,7 @@ If you would like to be admitted to a good Ph.D. program, think about how we run
 - this student took such-and-such class (some course description) in 20XX and ranked \\(n\\) among \\(N\\) students,
 - among all students I have interacted with, this student compares to so-and-so who graduated in 20XX and went to such-and-such program,
 - this student came to my office hour, corrected an error in the lecture, generalized a model, etc.
+
 If I don't see these kinds of concrete information in the letter, I will just ignore it.
 
 ## Purpose of Ph.D. program
