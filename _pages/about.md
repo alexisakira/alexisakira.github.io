@@ -30,7 +30,7 @@ among others.
 I have published papers in journals such as [Econometrica](https://onlinelibrary.wiley.com/journal/14680262), [Journal of Political Economy](https://www.journals.uchicago.edu/toc/jpe/current), [Theoretical Economics](https://econtheory.org/), [Quantitative Economics](https://www.econometricsociety.org/publications/quantitative-economics), [Journal of Economic Theory](https://www.journals.elsevier.com/journal-of-economic-theory), [Review of Financial Studies](https://academic.oup.com/rfs), [Journal of Financial Economics](https://www.journals.elsevier.com/journal-of-financial-economics), [Journal of Monetary Economics](https://www.journals.elsevier.com/journal-of-monetary-economics), [American Mathematical Monthly](https://www.maa.org/press/periodicals/american-mathematical-monthly), [SIAM Journal on Numerical Analysis](https://www.siam.org/publications/journals/siam-journal-on-numerical-analysis-sinum), [Operations Research Letters](https://www.journals.elsevier.com/operations-research-letters), and [Physical Review E](https://journals.aps.org/pre/), among others. I am also a medical doctor (anesthesiologist), a co-editor at [Journal of Mathematical Economics](https://www.journals.elsevier.com/journal-of-mathematical-economics), and an associate editor at [Economic Theory](https://www.springer.com/journal/199). Please see my [research page](/publications/) for more details.
 
 ## My values
-I find it beautiful when regularity and complexity come together. Some corollaries of this statement are:
+I am a classical liberal and oppose unnecessary government intervention. I find it beautiful when regularity and complexity come together. Some corollaries of this statement are:
 
 - I like mathematics,
 - I like power law behavior,
@@ -39,7 +39,7 @@ I find it beautiful when regularity and complexity come together. Some corollari
 - My favorite artist is [M. C. Escher](https://mcescher.com/),
 - I like short, simple papers that are to the point.
 
-I also like programming, chess, and tennis, although I am not particularly good at those.
+I also like programming, chess, and tennis, although I am not particularly good at those activities.
 
 ## My Erdős number
 My current [Erdős number](https://en.wikipedia.org/wiki/Erd%C5%91s_number) is 3, based on the following connections (you can use [this tool](https://zbmath.org/collaboration-distance/) to compute your Erdős number or the collaboration distance between anybody, though the tool is not perfect):
