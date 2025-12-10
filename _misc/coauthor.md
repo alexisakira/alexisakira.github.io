@@ -6,7 +6,7 @@ permalink: /misc/coauthor
 date: 2025-01-17
 ---
 
-Below is a list of my coauthors (in alphabetical order by last name, published papers only). Let me know if the links are outdated. 
+Below is a list of my coauthors (in alphabetical order by last name, limited to published papers). Let me know if the links are outdated.
 
  1. [Sherzod Akhundjanov](https://sites.google.com/site/sherzodba/)
  1. Johji Arakawa

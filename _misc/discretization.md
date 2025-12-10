@@ -15,4 +15,4 @@ I have compiled the discretization codes in a [Matlab package](https://github.co
 - discretize the [Cox-Ingersoll-Ross model](https://en.wikipedia.org/wiki/Cox%E2%80%93Ingersoll%E2%80%93Ross_model),
 - calibrate a discrete distribution directly from data.
 
-The package also contains a [tutorial](https://github.com/alexisakira/discretization/blob/master/discretization.pdf) on how to write your own discretization codes. If you find any bugs or you have other processes that you would like to be discretized, please let me know by email. 
+The package also contains a [tutorial](https://github.com/alexisakira/discretization/blob/master/discretization.pdf) on how to write your own discretization codes. If you find any bugs or have other processes you would like discretized, please let me know by email.

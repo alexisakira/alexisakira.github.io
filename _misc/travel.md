@@ -6,20 +6,20 @@ permalink: /misc/travel
 date: 2024-05-24
 ---
 
-I like traveling to new places and eating local food. At the bottom of this page, there is a list of countries and territories that I have visited. The table below lists (in alphabetical order) the places that I particularly like. 
+I like traveling to new places and eating local food. At the bottom of this page is a list of countries and territories I have visited. The table below lists (in alphabetical order) the places that I particularly like. 
 
 | Places | What I like | What I don't like |
 | --- | --- | --- |
 Canada | Natural beauty; Ethnic diversity; Liberal society | High taxes |
-France | Great food, bread, cheese, and wine |	Many people smoke; Dog poop on sidewalks |
+France | Great food, bread, cheese, and wine | Many people smoke; Dog poop on sidewalks |
 Germany | Musical heritage (Bach); Well organized | |
-Hong Kong |	Great food; Capitalism | Hot and humid climate |
-Italy |	Great food; History | A bit disorganized |
-Japan |	Hot springs; Public transportation; Politeness; Well organized | Very conservative society; Highly regulated (socialist?) economy |
+Hong Kong | Great food; Capitalism | Hot and humid climate |
+Italy | Great food; History | A bit disorganized |
+Japan | Hot springs; Public transportation; Politeness; Well organized | Very conservative society; Highly regulated (socialist?) economy |
 Scotland | Natural beauty | |
 Taiwan | Great (and cheap) food; Friendly people | Hot and humid climate |
 Turkey | Great food; History; Friendly people | |
-United States |	Capitalism; Individualism; Meritocracy; Money can buy (almost) anything; Relatively low taxes |	Gun violence; Healthcare system; Public transportation; Non-SI units (mile, ounce, etc.); Bread; Department of Motor Vehicles; Bureaucracy in California |
+United States | Capitalism; Individualism; Meritocracy; Money can buy (almost) anything; Relatively low taxes | Gun violence; Healthcare system; Public transportation; Non-SI units (mile, ounce, etc.); Bread; Department of Motor Vehicles; Bureaucracy in California |
 
 1. Argentina
 1. Australia

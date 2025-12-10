@@ -6,15 +6,15 @@ permalink: /misc/string
 date:  2024-06-13
 ---
 
-This page explains how to string a tennis racquet. When my kids started playing tennis competitively in 2020, it became expensive and inconvenient to frequently visit a racquet shop for stringing. For Christmas, we bought a string machine and I learned to string watching some Youtube videos and articles. Most of them don't cover all the fine details, so here I try to be as comprehensive as possible.
+This page explains how to string a tennis racquet. When my kids started playing tennis competitively in 2020, it became expensive and inconvenient to frequently visit a racquet shop for stringing. For Christmas, we bought a string machine, and I learned to string by watching some YouTube videos and articles. Most of them don't cover all the fine details, so here I try to be as comprehensive as possible.
 
 ## Before getting started
 
 Before getting started, you need a string machine and tools. The tools you need are shown in the picture below. From left to right, the items are:
 
-1. [stringing clamp](https://www.amazon.com/gp/product/B002N1SM3Q/) (useful for starting the mains and tieing knots)
+1. [stringing clamp](https://www.amazon.com/gp/product/B002N1SM3Q/) (useful for starting the mains and tying knots)
 1. [small wire cutter](https://www.amazon.com/gp/product/B09SL2TCH7/) (necessary for cutting strings)
-1. needle nose plier (useful for removing old strings)
+1. needle-nose plier (useful for removing old strings)
 1. [straight awl](https://www.amazon.com/Lixada-Racquet-Stringing-Straight-Badminton/dp/B07J5T9M57/) (useful for working in narrow area)
 
 ![Tools for stringing](/assets/images/string_tools.jpg)
@@ -35,13 +35,13 @@ To determine the length of the string for the mains, count "main plus 1". For in
 
 ![Counting mains](/assets/images/string_main_count.jpg)
 
-After counting correctly, cut the string diagonally using the wire cutter. ("Diagonally" is important for reducing the friction when stringing.)
+After correctly counting, cut the string diagonally with the wire cutter. ("Diagonally" is important for reducing the friction when stringing.)
 
 ![Cutting strings](/assets/images/string_cut.jpg)
 
 ## Start stringing the mains
 
-Look carefully at the bottom of the racquet head. Usually, there are either 6 or 8 holes at the bottom. If there are 6 holes, start stringing from the bottom. If there are 8 holes, start stringing from the top. (In the picture below, there are 8 holes, so I am starting from the top and hence you see the ends of the main strings at the bottom.)
+Look carefully at the bottom of the racquet head. Usually, there are either 6 or 8 holes at the bottom. If there are 6 holes, start stringing from the bottom. If there are 8 holes, start stringing from the top. (In the picture below, there are 8 holes, so I am starting from the top, and hence you see the ends of the main strings at the bottom.)
 
 ![Starting mains](/assets/images/string_main_start1.jpg)
 
@@ -55,7 +55,7 @@ Release tension. Now pull **only** the end that you did not clamp in the previou
 
 ## Weave the mains
 
-Keep weaving the same end of the main 3 times. Each time, lock the turn table, apply tension, clamp, release tension, and unlock the turn table.
+Keep weaving the same end of the main 3 times. Each time, lock the turntable, apply tension, clamp, release tension, and unlock the turntable.
 
 ![Weaving mains](/assets/images/string_main_weave1.jpg)
 
@@ -63,19 +63,19 @@ After weaving one end of the main 3 times, weave the other end 6 times. In gener
 
 ![Weaving mains](/assets/images/string_main_weave2.jpg)
 
-Towards the end, depending on the specification of the racquet, you may need to skip a grommet, like in the picture below. Use common sense to judge, but the rule of thumb is that the distance between the mains needs to be the same.
+Towards the end, depending on the racquet's specifications, you may need to skip a grommet, as shown in the picture below. Use common sense to judge, but the rule of thumb is that the distance between the mains needs to be the same.
 
 ![Weaving mains](/assets/images/string_main_weave3.jpg)
 
 ## Tie knots
 
-Tieing knots is the most challenging step for beginners. To finish weaving the mains, use the pro knot explained [here](https://www.keohi.com/tennis/misc/knots.htm). It is important to be able to tie knots in both directions (clockwise and counter-clockwise). If the loose end exits the grommet from the right (like in the link above), tie the knot counter-clockwise.
+Tying knots is the most challenging step for beginners. To finish weaving the mains, use the pro knot explained [here](https://www.keohi.com/tennis/misc/knots.htm). It is important to be able to tie knots in both directions (clockwise and counterclockwise). If the loose end exits the grommet from the right (like in the link above), tie the knot counterclockwise.
 
-Here is a step-by-step example. In the picture below, the loose end exits the grommet from the **left**, so I go **clockwise**. Loop the loose end over the main and then under the main to make a single knot. Don't tie it too tightly because you need enough space for the second knot. The inside diameter of the loop needs to be slightly larger than the diameter of the string.
+Here is a step-by-step example. In the picture below, the loose end exits the grommet from the **left**, so I go **clockwise**. Loop the loose end over the main and then under the main to make a single knot. Don't tie it too tightly, or you won't have enough space for the second knot. The inside diameter of the loop should be slightly larger than the string's diameter.
 
 ![Tieing knots](/assets/images/string_main_knot1.jpg)
 
-Again loop the loose end over the main and then under the main, and insert the loose end into the small loop you made in the previous step. As you can see in the picture below, at this point you see a big loop (generated by the second knot), but the loose end **should go outside the big loop**, not inside. Gently pull the loose end to make the second loop sufficiently small (say 5mm in diameter).
+Again, loop the loose end over the main, then under the main, and insert it into the small loop you made in the previous step. As you can see in the picture below, at this point you see a big loop (generated by the second knot), but the loose end **should go outside the big loop**, not inside. Gently pull the loose end to make the second loop sufficiently small (say 5mm in diameter).
 
 ![Tieing knots](/assets/images/string_main_knot2.jpg)
 
@@ -95,7 +95,7 @@ Just as you did for the mains, count the crosses. However, for the crosses count
 
 ## Starting knot
 
-Identify the grommet to start the crosses at the top of the racquet head. In the picture below, it is the third main grommet, but it depends on the racquet. Sometimes it is explicitly indicated. If not, find the grommet in which you can insert the cross string smoothly.
+Identify the grommet to start the crosses at the top of the racquet head. In the picture below, it is the third main grommet, but it depends on the racquet. Sometimes it is explicitly indicated. If not, find a grommet where you can insert the cross string smoothly.
 
 ![Starting crosses](/assets/images/string_cross_start1.jpg)
 
@@ -107,7 +107,7 @@ Third, using your left hand, insert the loose end into the double loop you have 
 
 ![Starting crosses](/assets/images/string_cross_start3.jpg)
 
-Finally, hold the loose end gently not to lose it, and pull both ends to gently tie the knot. It should look like the picture below.
+Finally, hold the loose end gently so you don't lose it, and pull both ends to tie the knot. It should look like the picture below.
 
 ![Starting crosses](/assets/images/string_cross_start4.jpg)
 
@@ -129,7 +129,7 @@ To weave the crosses quickly, guide the loose end with your middle fingers (one 
 
 ![Weaving crosses](/assets/images/string_cross_weave4.jpg)
 
-Towards the end, the mains are blocking the grommet in which the cross needs to be inserted. Use the awl to gently move the mains to create enough space so that the cross can be inserted smoothly. To prevent strings from crossing each other in the grommet, if the cross is supposed to go **above** the main after entering the frame (like in the picture below), then go **above** the main in the grommet too.
+Towards the end, the mains are blocking the grommet in which the cross needs to be inserted. Use the awl to gently move the mains to create enough space for the cross to be inserted smoothly. To prevent strings from crossing each other in the grommet, if the cross is supposed to go **above** the main after entering the frame (like in the picture below), then go **above** the main in the grommet too.
 
 ![Weaving crosses](/assets/images/string_cross_weave5.jpg)
 
@@ -139,7 +139,7 @@ When exiting the frame in the opposite side, if you went **above** in the previo
 
 ## Tie finishing knot
 
-Identify the grommet to tie the finishing knot. Usually it is not indicated, so find the grommet in which you can insert the cross smoothly.
+Identify the grommet to tie the finishing knot. Usually, it is not indicated, so find the grommet in which you can insert the cross smoothly.
 
 ![Tieing knots](/assets/images/string_cross_knot1.jpg)
 
