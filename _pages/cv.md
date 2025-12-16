@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-## [Detailed PDF version](https://drive.google.com/file/d/1LwWnbQ-aqI-jE9X8EFXQ4eJqTmIDm1mk)
+## [Detailed PDF version](/files/alexisakira_toda_CV.pdf)
 
 ## Personal Information
 - Place of birth: [Montréal](https://en.wikipedia.org/wiki/Montreal), [Québec](https://en.wikipedia.org/wiki/Quebec), Canada
