@@ -13,16 +13,16 @@ Below is the complete publication list. My best papers are indicated with 👍.
 
 {% include base_path %}
 
-<h2>Refereed research articles</h2>
-
-{% for post in site.publications reversed %}
-  {% include archive-pubs.html %}
-{% endfor %}
-
 <h2>Working papers</h2>
 
 {% for post in site.wp reversed %}
   {% include archive-wp.html %}
+{% endfor %}
+
+<h2>Refereed research articles</h2>
+
+{% for post in site.publications reversed %}
+  {% include archive-pubs.html %}
 {% endfor %}
 
 <h2>Other publications</h2>
