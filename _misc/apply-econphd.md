@@ -10,7 +10,7 @@ So you want to be a grad student? Well, think twice. It's not easy to be a grad 
 
 ## After getting a Ph.D.
 
-Since a Ph.D. is a big-time commitment, make sure you know what happens after getting a Ph.D. Typical jobs are
+Since a Ph.D. requires a significant time commitment, make sure you know what happens after getting a Ph.D. Typical jobs are
 1. Professor at research-oriented universities,
 1. Professor at teaching-oriented universities,
 1. Industry (e.g., finance, tech, consulting, etc.),
@@ -22,15 +22,15 @@ The vast majority of Ph.D. students end up *not* being a research professor, jus
 
 ## Getting a Ph.D.
 
-The first year consists of core courses, including mathematics for economics, microeconomics, macroeconomics, and econometrics. The second year consists of taking electives based on your interests. The rest is spent on working on the dissertation. [Fumio Hayashi](https://en.wikipedia.org/wiki/Fumio_Hayashi), who taught me macro and econometrics at the University of Tokyo, told us: "Study 10 hours a day, every day. When I was at Harvard, I studied 80 hours a week." I think this is typical. Successful Ph.D. students are driven by strong internal motivation (whether it is wealth, fame, or scientific discovery) and have a strong work ethic. If you don't like hard work, a Ph.D. is not for you.
+The first year consists of core courses, including mathematics for economics (by the way, [this](https://doi.org/10.1201/9781032698953) is the best textbook out there), microeconomics, macroeconomics, and econometrics. The second year consists of taking electives based on your interests. The rest is spent on working on the dissertation. [Fumio Hayashi](https://en.wikipedia.org/wiki/Fumio_Hayashi), who taught me macro and econometrics at the University of Tokyo, told us: "Study 10 hours a day, every day. When I was at Harvard, I studied 80 hours a week." I think this is typical. Successful Ph.D. students are driven by strong internal motivation (whether it is wealth, fame, or scientific discovery) and have a strong work ethic. If you don't like hard work, a Ph.D. is not for you.
 
 ## Getting into a Ph.D. program
 
-If you would like to be admitted to a good Ph.D. program, consider how admissions decisions are made. I have served on the admissions committee for many years. In a typical year, I evaluate about 200 files. Due to time constraints, I spend only 5–10 minutes on each file and cannot review the entire package. Here is the process I (not necessarily others) follow:
+If you would like to be admitted to a good Ph.D. program, consider how admissions decisions are made. I have served on the admissions committee for many years. In a typical year, I evaluate about 200 files. Due to time constraints, I spend only 5-10 minutes on each file and cannot review the entire package. Here is the process I (not necessarily others) follow:
 
 1. **Transcript, especially mathematics.** I browse the transcript and check whether the applicant has taken some advanced mathematics courses (real analysis is the bare minimum) and whether they are all A or close to it. Modern economics is highly mathematical, and experience tells us that students with insufficient mathematical preparation struggle. I don't pay much attention to GPA, as it may have been inflated with ping-pong, dance, social justice, etc. At this point, all I care about are good grades in hard sciences like mathematics, physics, statistics, and (quantitative) economics.
 1. **Writing sample.** I check whether a writing sample is attached. If a writing sample is not attached, I take it as a signal of a lack of ambition or creativity. If a writing sample is attached, I skim it. A research paper reveals a lot of information. What I mean is that attaching a research paper as a writing sample to your application can increase or decrease the likelihood of acceptance. When I see a sloppy term paper that just runs regressions, I would downgrade my evaluation. On the other hand, if I see something solid, I would upgrade my evaluation.
-1. **Letter of recommendation.** I feel that letters of recommendation are becoming less informative because the content is inflated. What I would like to see are short but concrete letters that mention, for instance,
+1. **Letter of recommendation.** I feel that letters of recommendation are becoming less informative because there is so much content inflation. What I would like to see are short but concrete letters that mention, for instance,
 - this student took such-and-such class (some course description) in 20XX and ranked \\(n\\) among \\(N\\) students,
 - among all students I have interacted with, this student compares to so-and-so who graduated in 20XX and went to such-and-such program,
 - This student came to my office hour, corrected an error in the lecture, generalized a model, etc.
