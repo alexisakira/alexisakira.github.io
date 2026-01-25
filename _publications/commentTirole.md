@@ -1,5 +1,5 @@
 ---
-title: "👍Correction to 'Asset Bubbles and Overlapping Generations'"
+title: "👍Comment on 'Asset Bubbles and Overlapping Generations'"
 collection: publications
 link: 
 venue: "Accepted at Econometrica"
