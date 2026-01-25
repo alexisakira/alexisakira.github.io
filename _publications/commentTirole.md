@@ -1,5 +1,5 @@
 ---
-title: "👍Rational Bubbles on Dividend-Paying Assets: A Comment on Tirole (1985)"
+title: "👍Correction to 'Asset Bubbles and Overlapping Generations'"
 collection: publications
 link: 
 venue: "Accepted at Econometrica"
