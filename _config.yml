@@ -21,7 +21,7 @@ repository               : "alexisakira/alexisakira.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "Alexis_website_photo2_resize.jpg"
+  avatar           : "ProfilePicture.jpg"
   name             : "Alexis Akira Toda"
   pronouns         : # "he/his"  
   bio              : "Mathematical economist"
