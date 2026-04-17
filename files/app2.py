@@ -157,7 +157,7 @@ st.markdown('<p class="main-title">Enter your values below and click Compute Sal
 
 with st.container():
     TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, max_value = 50, format="%d")
-    PhD = st.selectbox("What is your PhD granting institution?",
+    PhD = st.selectbox("Where did you get your PhD from?",
                         ["Columbia University",
                          "Harvard University",
                          "Massachusetts Institute of Technology",
@@ -177,7 +177,21 @@ with st.container():
     # THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, max_value = 50, format="%d")
     #N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
     #N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
-    npubtop5 = st.number_input("How many papers have you published in the following journals? American Economic Review (exclude AEA P&P), Econometrica, Journal of Political Economy, Quarterly Journal of Economics, Review of Economic Studies.", min_value=0, step=1, format="%d")
+    npubtop5 = st.number_input("""How many papers have you published in the following journals? American Economic Review (exclude AEA P&P),
+        Econometrica, Journal of Political Economy, Quarterly Journal of Economics, Review of Economic Studies.""", min_value=0, step=1, format="%d")
+    npubAlist = st.number_input("""How many papers have you published in the following journals? 
+    American Journal of Health Economics, Explorations in Economic History, 
+    Games and Economic Behavior, Health Economics, 
+    Journal of the Association of Environmental and Resource Economists, 
+    Journal of Business and Economic Statistics, Journal of Development Econnomics, 
+    Journal of Environmental Economics and Management, Journal of Economic Growth, 
+    Journal of Economic History, Journal of Economic Theory, Journal of Finance, 
+    Journal of Financial Economics, Journal of Health Economics, Journal of Human Resources, 
+    Journal of Industrial Economics, Journal of International Economics, 
+    Journal of Money, Credit, and Banking, Journal of Monetary Economics, Journal of Econometrics, 
+    Journal of Labor Econmics, Journal of Public Economics, Journal of Urban Economics, 
+    Marketing Science, Management Science, Public Choice, RAND Journal of Economics, Theoretical Economics.""",
+        min_value=0, step=1, format="%d")
     
     rank = st.selectbox("What is your job rank?",
                         ["Assistant Professor", "Associate Professor", "Full Professor"])
@@ -227,12 +241,12 @@ def get_rank_variables(rank_string):
 b_PhD = [x / 100 for x in [-0.3308, 6.6550, 2.9384, 8.2474, -1.4849, 5.4350, 1.2887, 3.0795, 1.2507, 3.2425, -4.0482, 2.9087, 4.6110]]
 
 # function to compute salary
-def compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, Tenure, Full):
+def compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, Tenure, Full):
     # pre-compute inner product
     phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
     log_y = (12.0487 - 0.006553 * TPhD + phd_impact
     - 0.0026365 * Theory + 0.014063 * Econometrics
-    + 0.030659 * npubtop5
+    + 0.030659 * npubtop5 + 0.004715 * npubAlist
     + 0.2336 * Tenure + 0.2749 * Full)
     return int(round(1.029*math.exp(log_y)/1000)*1000)
 
@@ -241,5 +255,5 @@ if st.button("🔍 Compute Salary"):
     phd_vec = get_PhD_variables(PhD)
     Theory, Econometrics = get_field_variables(field)
     Tenure, Full = get_rank_variables(rank)
-    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, Tenure, Full)
+    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, Tenure, Full)
     st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
