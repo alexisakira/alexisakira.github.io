@@ -244,16 +244,16 @@ def get_rank_variables(rank_string):
     return 0, 0
 
 # regression coefficients of PhD institution fixed effects
-b_PhD = [x / 100 for x in [-0.3308, 6.6550, 2.9384, 8.2474, -1.4849, 5.4350, 1.2887, 3.0795, 1.2507, 3.2425, -4.0482, 2.9087, 4.6110]]
+b_PhD = [x / 100 for x in [-0.0031, 4.5491, 2.0140, 7.9293,-2.1149, 3.7893, 0.4139, 2.0347, -0.4656, 2.7737,-4.1612, 3.0313, 4.3362]]
 
 # function to compute salary
 def compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full):
     # pre-compute inner product
     phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
-    log_y = (12.0487 - 0.006553 * TPhD + phd_impact
-    - 0.0026365 * Theory + 0.014063 * Econometrics
-    + 0.030659 * npubtop5 + 0.004715 * npubAlist + 0.007545 * npubnonecon
-    + 0.2336 * Tenure + 0.2749 * Full)
+    log_y = (12.0468 - 0.008897 * TPhD + 0.000115 * TPhD**2 + phd_impact
+    - 0.0020497 * Theory + 0.009314 * Econometrics
+    + 0.056833 * npubtop5 + 0.006391 * npubAlist + 0.004467 * npubnonecon - 0.000861 * TPhD * npubtop5
+    + 0.2142 * Tenure + 0.2514 * Full)
     return int(round(1.029*1.027*math.exp(log_y)/1000)*1000)
 
 if st.button("🔍 Compute Salary"):
