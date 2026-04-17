@@ -174,11 +174,10 @@ with st.container():
                          "Other"])
     field = st.selectbox("What is your field?",
                          ["Economic Theory","Econometrics","Other"])
-    # THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, max_value = 50, format="%d")
-    #N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
-    #N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
+    # top 5 journals
     npubtop5 = st.number_input("""How many papers have you published in the following journals? American Economic Review (exclude AEA P&P),
         Econometrica, Journal of Political Economy, Quarterly Journal of Economics, Review of Economic Studies.""", min_value=0, step=1, format="%d")
+    # Alist top journals
     npubAlist = st.number_input("""How many papers have you published in the following journals? 
     American Journal of Health Economics, Explorations in Economic History, 
     Games and Economic Behavior, Health Economics, 
@@ -191,6 +190,13 @@ with st.container():
     Journal of Money, Credit, and Banking, Journal of Monetary Economics, Journal of Econometrics, 
     Journal of Labor Econmics, Journal of Public Economics, Journal of Urban Economics, 
     Marketing Science, Management Science, Public Choice, RAND Journal of Economics, Theoretical Economics.""",
+        min_value=0, step=1, format="%d")
+    # top non-econ journals
+    npubnonecon = st.number_input("""How many papers have you published in the following journals? 
+    Nature, Science, PNAS, JAMA, NEJM, Lancet, 
+    American Political Science Review, American Journal of Political Science, Journal of Politics, 
+    American Journal of Sociology, American Sociological Review, Demography, 
+    Academy of Management Journal, Academy of Management Review, Journal of Management.""",
         min_value=0, step=1, format="%d")
     
     rank = st.selectbox("What is your job rank?",
@@ -241,12 +247,12 @@ def get_rank_variables(rank_string):
 b_PhD = [x / 100 for x in [-0.3308, 6.6550, 2.9384, 8.2474, -1.4849, 5.4350, 1.2887, 3.0795, 1.2507, 3.2425, -4.0482, 2.9087, 4.6110]]
 
 # function to compute salary
-def compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, Tenure, Full):
+def compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full):
     # pre-compute inner product
     phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
     log_y = (12.0487 - 0.006553 * TPhD + phd_impact
     - 0.0026365 * Theory + 0.014063 * Econometrics
-    + 0.030659 * npubtop5 + 0.004715 * npubAlist
+    + 0.030659 * npubtop5 + 0.004715 * npubAlist + 0.007545 * npubnonecon
     + 0.2336 * Tenure + 0.2749 * Full)
     return int(round(1.029*math.exp(log_y)/1000)*1000)
 
@@ -255,5 +261,5 @@ if st.button("🔍 Compute Salary"):
     phd_vec = get_PhD_variables(PhD)
     Theory, Econometrics = get_field_variables(field)
     Tenure, Full = get_rank_variables(rank)
-    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, Tenure, Full)
+    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full)
     st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
