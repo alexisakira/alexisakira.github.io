@@ -217,7 +217,7 @@ def get_rank_variables(rank_string):
     return 0, 0
 
 # regression coefficients of PhD institution fixed effects
-b_PhD = [-0.3308, 6.6550, 2.9384, 8.2474, -1.4849, 5.4350, 1.2887, 3.0795, 1.2507, 3.2425, -4.0482, 2.9087, 4.6110]/100
+b_PhD = [x / 100 for x in [-0.3308, 6.6550, 2.9384, 8.2474, -1.4849, 5.4350, 1.2887, 3.0795, 1.2507, 3.2425, -4.0482, 2.9087, 4.6110]]
 
 # function to compute salary
 def compute_y(TPhD, phd_vec, Theory, Econometrics, THired, N_pub, N_top5, Tenure, Full, USNews):
