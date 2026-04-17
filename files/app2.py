@@ -172,9 +172,11 @@ with st.container():
                          "University of Wisconsin, Madison",
                          "Yale University",
                          "Other"])
+    field = st.selectbox("What is your field?",
+                         ["Economic Theory","Econometrics","Other"])
     # THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, max_value = 50, format="%d")
-    Theory = st.radio("Is your research mainly about theoretical analysis of economic models? Choose Yes (1) or No (0).", [0, 1])
-    Econometrics = st.radio("Is your research mainly about econometrics or statistics? Choose Yes (1) or No (0).", [0, 1])
+    #Theory = st.radio("Is your research mainly about theoretical analysis of economic models? Choose Yes (1) or No (0).", [0, 1])
+    #Econometrics = st.radio("Is your research mainly about econometrics or statistics? Choose Yes (1) or No (0).", [0, 1])
     N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
     N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
     # Tenure = st.radio("Do you have tenure? Choose Yes (1) or No (0).", [0, 1])
@@ -206,6 +208,14 @@ def get_PhD_variables(PhD_string):
     # Return the vector if found, otherwise return a vector of all zeros
     return phd_map.get(PhD_string, [0] * 13)
 
+# mapping logic for field
+def get_field_variables(field_string):
+    if field_string == "Economic Theory":
+        return 1, 0
+    elif field_string == "Econometrics":
+        return 0, 1
+    return 0, 0
+
 # mapping logic for job rank
 def get_rank_variables(rank_string):
     if rank_string == "Assistant Professor":
@@ -233,6 +243,7 @@ def compute_y(TPhD, phd_vec, Theory, Econometrics, N_pub, N_top5, Tenure, Full, 
 if st.button("🔍 Compute Salary"):
     # Convert categorical rank to the binary variables the model needs
     phd_vec = get_PhD_variables(PhD)
+    Theory, Econometrics = get_field_variables(field)
     Tenure, Full = get_rank_variables(rank)
     salary = compute_y(TPhD, phd_vec, Theory, Econometrics, N_pub, N_top5, Tenure, Full, USNews)
     st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
