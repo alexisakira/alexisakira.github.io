@@ -220,18 +220,19 @@ def get_rank_variables(rank_string):
 b_PhD = [x / 100 for x in [-0.3308, 6.6550, 2.9384, 8.2474, -1.4849, 5.4350, 1.2887, 3.0795, 1.2507, 3.2425, -4.0482, 2.9087, 4.6110]]
 
 # function to compute salary
-def compute_y(TPhD, phd_vec, Theory, Econometrics, THired, N_pub, N_top5, Tenure, Full, USNews):
+def compute_y(TPhD, phd_vec, Theory, Econometrics, N_pub, N_top5, Tenure, Full, USNews):
     # pre-compute inner product
     phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
-    log_y = 11.8583 + phd_impact - 0.0026605 * Theory + 0.030356 * Econometrics \
-    + 0.023127 * TPhD - 0.0002489 * TPhD**2 - 0.02081 * THired + 0.00027308 * THired**2 \
-    + 0.0014252 * (N_pub - N_top5) + 0.042406 * N_top5 - 0.00064717 * TPhD * N_top5\
-    + 0.10419 * Tenure + 0.14185 * Full + 0.090521 * max(USNews-2,0) + 0.15594 * max(USNews - 4,0)
+    log_y = (12.0487 - 0.006553 * TPhD + phd_impact
+    - 0.0026365 * Theory + 0.014063 * Econometrics
+    + 0.0014252 * (N_pub - N_top5) + 0.042406 * N_top5 - 0.00064717 * TPhD * N_top5
+    + 0.2336 * Tenure + 0.2749 * Full + 0.090521 * max(USNews-2,0) + 0.15594 * max(USNews - 4,0)
+            )
     return int(round(1.029*math.exp(log_y)/1000)*1000)
 
 if st.button("🔍 Compute Salary"):
     # Convert categorical rank to the binary variables the model needs
     phd_vec = get_PhD_variables(PhD)
     Tenure, Full = get_rank_variables(rank)
-    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, THired, N_pub, N_top5, Tenure, Full, USNews)
+    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, N_pub, N_top5, Tenure, Full, USNews)
     st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
