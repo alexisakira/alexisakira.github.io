@@ -251,7 +251,7 @@ def compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnone
     # pre-compute inner product
     phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
     log_y = (12.0468 - 0.008897 * TPhD + 0.000115 * TPhD**2 + phd_impact
-    - 0.0020497 * Theory + 0.009314 * Econometrics
+    - 0.020497 * Theory + 0.009314 * Econometrics
     + 0.056833 * npubtop5 + 0.006391 * npubAlist + 0.004467 * npubnonecon - 0.000861 * TPhD * npubtop5
     + 0.2142 * Tenure + 0.2514 * Full)
     return int(round(1.029*1.027*math.exp(log_y)/1000)*1000)
