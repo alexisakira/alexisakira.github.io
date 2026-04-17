@@ -233,5 +233,5 @@ if st.button("🔍 Compute Salary"):
     # Convert categorical rank to the binary variables the model needs
     phd_vec = get_PhD_variables(PhD)
     Tenure, Full = get_rank_variables(rank)
-    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, THired, N_pub, N_top5, Tenure, Full, USNews):
+    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, THired, N_pub, N_top5, Tenure, Full, USNews)
     st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
