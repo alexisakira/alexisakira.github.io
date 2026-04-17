@@ -177,8 +177,7 @@ with st.container():
     # THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, max_value = 50, format="%d")
     #N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
     #N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
-    npubtop5 = st.number_input("How many papers have you published in the following journals?
-        American Economic Review, Econometrica, Journal of Political Economy, Quarterly Journal of Economics, Review of Economic Studies.", min_value=0, step=1, format="%d")
+    npubtop5 = st.number_input("How many papers have you published in the following journals? American Economic Review (exclude AEA P&P), Econometrica, Journal of Political Economy, Quarterly Journal of Economics, Review of Economic Studies.", min_value=0, step=1, format="%d")
     
     rank = st.selectbox("What is your job rank?",
                         ["Assistant Professor", "Associate Professor", "Full Professor"])
