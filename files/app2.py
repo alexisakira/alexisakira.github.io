@@ -57,13 +57,13 @@ st.markdown('<p class="highlight-text">Developed by:</p>', unsafe_allow_html=Tru
 st.markdown('<p class="list-text">- <a href="https://alexisakira.github.io/">Alexis Akira Toda</a>, Professor, Emory University (data analysis)</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- <a href="https://www.linkedin.com/in/zachary-etzioni-5904aa296/">Zachary Etzioni</a>, Class of 2027, Emory University (web tool)</p>', unsafe_allow_html=True)
 
-st.markdown('<p class="highlight-text">The prediction is based on the following parameters (R-squared 80%):</p>', unsafe_allow_html=True)
+st.markdown('<p class="highlight-text">The prediction is based on the following parameters (R-squared 70%):</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Education</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Employment</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Field</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- Publications</p>', unsafe_allow_html=True)
 
-st.markdown('<p class="highlight-text">The predictive model is an extension of <a href="https://econjwatch.org/articles/publications-citations-position-and-compensation-of-economics-professors">Lyu and Toda (2019)</a></p>', unsafe_allow_html=True)
+# st.markdown('<p class="highlight-text">The predictive model is an extension of <a href="https://econjwatch.org/articles/publications-citations-position-and-compensation-of-economics-professors">Lyu and Toda (2019)</a></p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">Disclaimer: the model is still experimental</p>', unsafe_allow_html=True)
 
 st.markdown("""
@@ -254,7 +254,7 @@ def compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnone
     - 0.0026365 * Theory + 0.014063 * Econometrics
     + 0.030659 * npubtop5 + 0.004715 * npubAlist + 0.007545 * npubnonecon
     + 0.2336 * Tenure + 0.2749 * Full)
-    return int(round(1.029*math.exp(log_y)/1000)*1000)
+    return int(round(1.029*1.027*math.exp(log_y)/1000)*1000)
 
 if st.button("🔍 Compute Salary"):
     # Convert categorical rank to the binary variables the model needs
@@ -262,4 +262,4 @@ if st.button("🔍 Compute Salary"):
     Theory, Econometrics = get_field_variables(field)
     Tenure, Full = get_rank_variables(rank)
     salary = compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full)
-    st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
+    st.success(f"💰 Your expected salary in 2025 is **${salary:,}**")
