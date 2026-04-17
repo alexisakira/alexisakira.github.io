@@ -157,7 +157,22 @@ st.markdown('<p class="main-title">Enter your values below and click Compute Sal
 
 with st.container():
     TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, max_value = 50, format="%d")
-    THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, max_value = 50, format="%d")
+    PhD = st.selectbox("What is your PhD granting institution?",
+                        ["Columbia University",
+                         "Harvard University",
+                         "Massachusetts Institute of Technology",
+                         "Northwestern University",
+                         "Princeton University",
+                         "Stanford University",
+                         "University of California, Berkeley",
+                         "University of Chicago",
+                         "University of Michigan",
+                         "University of Minnesota",
+                         "University of Pennsylvania",
+                         "University of Wisconsin, Madison",
+                         "Yale University",
+                         "Other"])
+    # THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, max_value = 50, format="%d")
     Theory = st.radio("Is your research mainly about theoretical analysis of economic models? Choose Yes (1) or No (0).", [0, 1])
     Econometrics = st.radio("Is your research mainly about econometrics or statistics? Choose Yes (1) or No (0).", [0, 1])
     N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
@@ -169,6 +184,28 @@ with st.container():
                         ["Assistant Professor", "Associate Professor", "Full Professor"])
     USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? Enter 1.0 if your school is not listed.", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
 
+# mapping logic for PhD institution
+def get_PhD_variables(PhD_string):
+    # Map school names to their respective binary vectors
+    phd_map = {
+        "Columbia University":                  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Harvard University":                   [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Massachusetts Institute of Technology": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Northwestern University":              [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Princeton University":                 [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Stanford University":                  [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        "University of California, Berkeley":   [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        "University of Chicago":                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        "University of Michigan":               [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        "University of Minnesota":              [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+        "University of Pennsylvania":           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+        "University of Wisconsin, Madison":     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+        "Yale University":                      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+    }
+    
+    # Return the vector if found, otherwise return a vector of all zeros
+    return phd_map.get(PhD_string, [0] * 13)
+
 # mapping logic for job rank
 def get_rank_variables(rank_string):
     if rank_string == "Assistant Professor":
@@ -179,9 +216,14 @@ def get_rank_variables(rank_string):
         return 1, 1  # Tenure=1, Full=1
     return 0, 0
 
+# regression coefficients of PhD institution fixed effects
+b_PhD = [-0.3308, 6.6550, 2.9384, 8.2474, -1.4849, 5.4350, 1.2887, 3.0795, 1.2507, 3.2425, -4.0482, 2.9087, 4.6110]/100
+
 # function to compute salary
-def compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
-    log_y = 11.8583 - 0.0026605 * Theory + 0.030356 * Econometrics \
+def compute_y(TPhD, phd_vec, Theory, Econometrics, THired, N_pub, N_top5, Tenure, Full, USNews):
+    # pre-compute inner product
+    phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
+    log_y = 11.8583 + phd_impact - 0.0026605 * Theory + 0.030356 * Econometrics \
     + 0.023127 * TPhD - 0.0002489 * TPhD**2 - 0.02081 * THired + 0.00027308 * THired**2 \
     + 0.0014252 * (N_pub - N_top5) + 0.042406 * N_top5 - 0.00064717 * TPhD * N_top5\
     + 0.10419 * Tenure + 0.14185 * Full + 0.090521 * max(USNews-2,0) + 0.15594 * max(USNews - 4,0)
@@ -189,6 +231,7 @@ def compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, U
 
 if st.button("🔍 Compute Salary"):
     # Convert categorical rank to the binary variables the model needs
+    phd_vec = get_PhD_variables(PhD)
     Tenure, Full = get_rank_variables(rank)
-    salary = compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, USNews)
+    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, THired, N_pub, N_top5, Tenure, Full, USNews):
     st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
