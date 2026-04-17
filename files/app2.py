@@ -175,16 +175,14 @@ with st.container():
     field = st.selectbox("What is your field?",
                          ["Economic Theory","Econometrics","Other"])
     # THired = st.number_input("How many years have you been working at your current institution?", min_value=0, step=1, max_value = 50, format="%d")
-    #Theory = st.radio("Is your research mainly about theoretical analysis of economic models? Choose Yes (1) or No (0).", [0, 1])
-    #Econometrics = st.radio("Is your research mainly about econometrics or statistics? Choose Yes (1) or No (0).", [0, 1])
-    N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
-    N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
-    # Tenure = st.radio("Do you have tenure? Choose Yes (1) or No (0).", [0, 1])
-    # Full = st.radio("Are you a full professor? Choose Yes (1) or No (0).", [0, 1])
-    # Replace the old Tenure and Full radio buttons with this:
+    #N_pub = st.number_input("How many papers have you published? Please include only peer-reviewed research or review articles that you are comfortable listing in your CV under 'research'. Exclude books, book chapters, comments, conference proceedings (no AEA P&P, please!), corrigenda, handbook chapters, etc.", min_value=0, step=1, format="%d")
+    #N_top5 = st.number_input("How many papers have you published in so-called 'Top 5' economics journals?", min_value=0, step=1, format="%d")
+    npubtop5 = st.number_input("How many papers have you published in the following journals?
+        American Economic Review, Econometrica, Journal of Political Economy, Quarterly Journal of Economics, Review of Economic Studies.", min_value=0, step=1, format="%d")
+    
     rank = st.selectbox("What is your job rank?",
                         ["Assistant Professor", "Associate Professor", "Full Professor"])
-    USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? Enter 1.0 if your school is not listed.", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
+    #USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? Enter 1.0 if your school is not listed.", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
 
 # mapping logic for PhD institution
 def get_PhD_variables(PhD_string):
@@ -230,14 +228,13 @@ def get_rank_variables(rank_string):
 b_PhD = [x / 100 for x in [-0.3308, 6.6550, 2.9384, 8.2474, -1.4849, 5.4350, 1.2887, 3.0795, 1.2507, 3.2425, -4.0482, 2.9087, 4.6110]]
 
 # function to compute salary
-def compute_y(TPhD, phd_vec, Theory, Econometrics, N_pub, N_top5, Tenure, Full, USNews):
+def compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, Tenure, Full):
     # pre-compute inner product
     phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
     log_y = (12.0487 - 0.006553 * TPhD + phd_impact
     - 0.0026365 * Theory + 0.014063 * Econometrics
-    + 0.0014252 * (N_pub - N_top5) + 0.042406 * N_top5 - 0.00064717 * TPhD * N_top5
-    + 0.2336 * Tenure + 0.2749 * Full + 0.090521 * max(USNews-2,0) + 0.15594 * max(USNews - 4,0)
-            )
+    + 0.030659 * npubtop5
+    + 0.2336 * Tenure + 0.2749 * Full)
     return int(round(1.029*math.exp(log_y)/1000)*1000)
 
 if st.button("🔍 Compute Salary"):
@@ -245,5 +242,5 @@ if st.button("🔍 Compute Salary"):
     phd_vec = get_PhD_variables(PhD)
     Theory, Econometrics = get_field_variables(field)
     Tenure, Full = get_rank_variables(rank)
-    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, N_pub, N_top5, Tenure, Full, USNews)
+    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, Tenure, Full)
     st.success(f"💰 Your expected salary in 2024 is **${salary:,}**")
