@@ -179,7 +179,7 @@ def get_rank_variables(rank_string):
         return 1, 1  # Tenure=1, Full=1
     return 0, 0
 
-% function to compute salary
+# function to compute salary
 def compute_y(Theory, Econometrics, TPhD, THired, N_pub, N_top5, Tenure, Full, USNews):
     log_y = 11.8583 - 0.0026605 * Theory + 0.030356 * Econometrics \
     + 0.023127 * TPhD - 0.0002489 * TPhD**2 - 0.02081 * THired + 0.00027308 * THired**2 \
