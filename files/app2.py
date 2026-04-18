@@ -157,6 +157,8 @@ st.markdown('<p class="main-title">Enter your values below and click Compute Sal
 
 with st.container():
     TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, max_value = 50, format="%d")
+    region = st.selectbox("Where did you get your undergraduate degree?",
+                         ["North America (Canada and U.S.)","Europe","Latin America (Mexico, Central & South America)","Other"])
     PhD = st.selectbox("Where did you get your PhD from?",
                         ["Columbia University",
                          "Harvard University",
@@ -203,6 +205,16 @@ with st.container():
                         ["Assistant Professor", "Associate Professor", "Full Professor"])
     #USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? Enter 1.0 if your school is not listed.", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
 
+# mapping logic for undergraduate region
+def get_region_variables(region_string):
+    region_map = {
+        "North America":         [1, 0, 0],
+        "Europe":                [0, 1, 0],
+        "Latin America":         [0, 0, 1]
+    }
+    # Return the vector if found, otherwise return a vector of all zeros
+    return regin_map.get(regin_string, [0] * 3)
+
 # mapping logic for PhD institution
 def get_PhD_variables(PhD_string):
     # Map school names to their respective binary vectors
@@ -243,23 +255,28 @@ def get_rank_variables(rank_string):
         return 1, 1  # Tenure=1, Full=1
     return 0, 0
 
+# regression coefficients of region fixed effects
+b_region = [x / 100 for x in [1.8055, 2.2216, 5.3901]]
+
 # regression coefficients of PhD institution fixed effects
-b_PhD = [x / 100 for x in [-0.0031, 4.5491, 2.0140, 7.9293,-2.1149, 3.7893, 0.4139, 2.0347, -0.4656, 2.7737,-4.1612, 3.0313, 4.3362]]
+b_PhD = [x / 100 for x in [0.2449, 5.0381, 2.0904, 7.6036, -1.9453, 3.9239, 0.2782, 1.6398, -0.3535, 2.9533, -4.1081, 3.1088, 4.4463]]
 
 # function to compute salary
-def compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full):
+def compute_y(TPhD, region_vec, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full):
     # pre-compute inner product
+    region_impact = sum(x * coef for x, coef in zip(b_region, region_vec))
     phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
-    log_y = (12.0468 - 0.008897 * TPhD + 0.000115 * TPhD**2 + phd_impact
-    - 0.020497 * Theory + 0.009314 * Econometrics
-    + 0.056833 * npubtop5 + 0.006391 * npubAlist + 0.004467 * npubnonecon - 0.000861 * TPhD * npubtop5
-    + 0.2142 * Tenure + 0.2514 * Full)
+    log_y = (12.0258 - 0.008607 * TPhD + 0.000109 * TPhD**2 + region_impact + phd_impact
+    - 0.017493 * Theory + 0.016830 * Econometrics
+    + 0.056209 * npubtop5 + 0.006409 * npubAlist + 0.004529 * npubnonecon - 0.000845 * TPhD * npubtop5
+    + 0.2129 * Tenure + 0.2513 * Full)
     return int(round(1.029*1.027*math.exp(log_y)/1000)*1000)
 
 if st.button("🔍 Compute Salary"):
     # Convert categorical rank to the binary variables the model needs
+    region_vec = get_region_variables(region)
     phd_vec = get_PhD_variables(PhD)
     Theory, Econometrics = get_field_variables(field)
     Tenure, Full = get_rank_variables(rank)
-    salary = compute_y(TPhD, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full)
+    salary = compute_y(TPhD, region_vec, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full)
     st.success(f"💰 Your expected salary in 2025 is **${salary:,}**")
