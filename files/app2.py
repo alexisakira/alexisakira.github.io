@@ -156,9 +156,9 @@ st.markdown("""
 st.markdown('<p class="main-title">Enter your values below and click Compute Salary.</p>', unsafe_allow_html=True)
 
 with st.container():
-    TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, max_value = 50, format="%d")
     region = st.selectbox("Where did you get your undergraduate degree?",
-                         ["North America (Canada and U.S.)","Europe","Latin America (Mexico, Central & South America)","Other"])
+                         ["North America (Canada and U.S.)","Latin America (Mexico, Central & South America)","Europe","Other"])
+    TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, max_value = 50, format="%d")
     PhD = st.selectbox("Where did you get your PhD from?",
                         ["Columbia University",
                          "Harvard University",
