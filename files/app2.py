@@ -213,7 +213,7 @@ def get_region_variables(region_string):
         "Latin America":         [0, 0, 1]
     }
     # Return the vector if found, otherwise return a vector of all zeros
-    return regin_map.get(regin_string, [0] * 3)
+    return region_map.get(region_string, [0] * 3)
 
 # mapping logic for PhD institution
 def get_PhD_variables(PhD_string):
