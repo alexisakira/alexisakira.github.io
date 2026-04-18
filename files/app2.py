@@ -208,9 +208,9 @@ with st.container():
 # mapping logic for undergraduate region
 def get_region_variables(region_string):
     region_map = {
-        "North America":         [1, 0, 0],
+        "North America (Canada and U.S.)":         [1, 0, 0],
         "Europe":                [0, 1, 0],
-        "Latin America":         [0, 0, 1]
+        "Latin America (Mexico, Central & South America)":         [0, 0, 1]
     }
     # Return the vector if found, otherwise return a vector of all zeros
     return region_map.get(region_string, [0] * 3)
