@@ -256,20 +256,20 @@ def get_rank_variables(rank_string):
     return 0, 0
 
 # regression coefficients of region fixed effects
-b_region = [x / 100 for x in [1.8055, 2.2216, 5.3901]]
+b_region = [x / 100 for x in [1.7616, 2.1908, 5.3902]]
 
 # regression coefficients of PhD institution fixed effects
-b_PhD = [x / 100 for x in [0.2449, 5.0381, 2.0904, 7.6036, -1.9453, 3.9239, 0.2782, 1.6398, -0.3535, 2.9533, -4.1081, 3.1088, 4.4463]]
+b_PhD = [x / 100 for x in [0.3484, 4.9106, 2.1363, 7.5681, -1.9451, 3.9724, 0.3022, 1.6054, -0.4474, 3.1932, -4.0692, 3.1356, 4.3858]]
 
 # function to compute salary
 def compute_y(TPhD, region_vec, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full):
     # pre-compute inner product
     region_impact = sum(x * coef for x, coef in zip(b_region, region_vec))
     phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
-    log_y = (12.0258 - 0.008607 * TPhD + 0.000109 * TPhD**2 + region_impact + phd_impact
-    - 0.017493 * Theory + 0.016830 * Econometrics
-    + 0.056209 * npubtop5 + 0.006409 * npubAlist + 0.004529 * npubnonecon - 0.000845 * TPhD * npubtop5
-    + 0.2129 * Tenure + 0.2513 * Full)
+    log_y = (12.0206 - 0.009136 * TPhD + 0.000114 * TPhD**2 + region_impact + phd_impact
+    - 0.018584 * Theory + 0.017440 * Econometrics
+    + 0.054419 * npubtop5 + 0.006371 * npubAlist + 0.004696 * npubnonecon - 0.000795 * TPhD * npubtop5 + 0.016655 * (1 - Tenure)*npubtop5
+    + 0.2260 * Tenure + 0.2558 * Full)
     return int(round(1.029*1.027*math.exp(log_y)/1000)*1000)
 
 if st.button("🔍 Compute Salary"):
