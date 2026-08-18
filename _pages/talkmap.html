@@ -5,5 +5,43 @@ permalink: /talkmap.html
 author_profile: true
 ---
 
-<p>This map is generated from a Jupyter Notebook file in <a href="https://github.com/academicpages/academicpages.github.io/blob/master/_talks/talkmap.ipynb">/_talks/talkmap.ipynb</a>, which mines the location fields in the .md files in _talks/.</p>
-<iframe src="/talkmap/map.html" height="700" width="850" style="border:none;"></iframe>
+Explore the places where I have presented my research. The map includes in-person
+talks and groups multiple presentations given in the same location. Online talks
+are listed on the [Talks and presentations](/talks/) page but are not placed on
+the geographic map.
+
+<iframe
+  class="talk-map-frame"
+  src="/talkmap/map.html"
+  title="Interactive map of Alexis Akira Toda's in-person talks"
+  loading="lazy"
+></iframe>
+
+<p class="talk-map-help">
+  Select a marker to see the talks given at that location. Select a numbered
+  cluster to zoom in.
+</p>
+
+<style>
+  .talk-map-frame {
+    display: block;
+    width: 100%;
+    height: min(72vh, 760px);
+    min-height: 520px;
+    margin: 1.25rem 0 0.75rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.5rem;
+  }
+
+  .talk-map-help {
+    color: var(--global-text-color-light);
+    font-size: 0.85em;
+  }
+
+  @media (max-width: 600px) {
+    .talk-map-frame {
+      height: 68vh;
+      min-height: 440px;
+    }
+  }
+</style>

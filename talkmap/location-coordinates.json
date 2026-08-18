@@ -1,0 +1,282 @@
+{
+  "Alessandria, Italy": {
+    "display_name": "Alessandria, Piemonte, Italia",
+    "latitude": 44.8349534,
+    "longitude": 8.7450304
+  },
+  "Athens, Greece": {
+    "display_name": "Αθήνα, Δήμος Αθηναίων, Περιφερειακή Ενότητα Κεντρικού Τομέα Αθηνών, Περιφέρεια Αττικής, Αποκεντρωμένη Διοίκηση Αττικής, 105 57, Ελλάς",
+    "latitude": 37.9755648,
+    "longitude": 23.7348324
+  },
+  "Atlanta, Georgia": {
+    "display_name": "Atlanta, Fulton County, Georgia, United States",
+    "latitude": 33.7544657,
+    "longitude": -84.3898151
+  },
+  "Auckland, New Zealand": {
+    "display_name": "Auckland, Waitematā, Auckland, 1010, New Zealand / Aotearoa",
+    "latitude": -36.852095,
+    "longitude": 174.7631803
+  },
+  "Baltimore, Maryland": {
+    "display_name": "Baltimore, Maryland, United States",
+    "latitude": 39.2908816,
+    "longitude": -76.610759
+  },
+  "Bergen, Norway": {
+    "display_name": "Bergen, Vestland, Norge",
+    "latitude": 60.3943055,
+    "longitude": 5.3259192
+  },
+  "Berkeley, California": {
+    "display_name": "Berkeley, Alameda County, California, United States",
+    "latitude": 37.8708393,
+    "longitude": -122.272863
+  },
+  "Boston, Massachusetts": {
+    "display_name": "Boston, Suffolk County, Massachusetts, United States",
+    "latitude": 42.3588336,
+    "longitude": -71.0578303
+  },
+  "Brisbane, Australia": {
+    "display_name": "Brisbane, Queensland, Australia",
+    "latitude": -27.4689623,
+    "longitude": 153.0235009
+  },
+  "Canberra, Australia": {
+    "display_name": "Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+    "latitude": -35.2975906,
+    "longitude": 149.1012676
+  },
+  "Charlottesville, Virginia": {
+    "display_name": "Charlottesville, Virginia, United States",
+    "latitude": 38.029306,
+    "longitude": -78.4766781
+  },
+  "Chicago, Illinois": {
+    "display_name": "Chicago, South Chicago Township, Cook County, Illinois, United States",
+    "latitude": 41.8755616,
+    "longitude": -87.6244212
+  },
+  "Claremont, California": {
+    "display_name": "Claremont, Los Angeles County, California, 91711, United States",
+    "latitude": 34.0966764,
+    "longitude": -117.7197785
+  },
+  "Cleveland, Ohio": {
+    "display_name": "Cleveland, Cuyahoga County, Ohio, United States",
+    "latitude": 41.4996574,
+    "longitude": -81.6936772
+  },
+  "Copenhagen, Denmark": {
+    "display_name": "København, Københavns Kommune, Region Hovedstaden, 1357, Danmark",
+    "latitude": 55.6867243,
+    "longitude": 12.5700724
+  },
+  "Coventry, United Kingdom": {
+    "display_name": "Coventry, West Midlands, England, CV1 1LL, United Kingdom",
+    "latitude": 52.4081812,
+    "longitude": -1.510477
+  },
+  "Dedham, Massachusetts": {
+    "display_name": "Dedham, Norfolk County, Massachusetts, United States",
+    "latitude": 42.2489143,
+    "longitude": -71.1755732
+  },
+  "Fairfax, Virginia": {
+    "display_name": "Fairfax, Virginia, 20030, United States",
+    "latitude": 38.8462236,
+    "longitude": -77.3063733
+  },
+  "Hamburg, Germany": {
+    "display_name": "Hamburg, Deutschland",
+    "latitude": 53.5501721,
+    "longitude": 10.0013165
+  },
+  "Hong Kong, China": {
+    "display_name": "香港 Hong Kong, 中国",
+    "latitude": 22.2818333,
+    "longitude": 114.1582831
+  },
+  "Irvine, California": {
+    "display_name": "Irvine, Orange County, California, United States",
+    "latitude": 33.6856969,
+    "longitude": -117.825981
+  },
+  "Ischia, Italy": {
+    "display_name": "Ischia, Napoli, Campania, Italia",
+    "latitude": 40.734205,
+    "longitude": 13.947125
+  },
+  "Jönköping, Sweden": {
+    "display_name": "Jönköping, Jönköpings kommun, Jönköpings län, 551 86, Sverige",
+    "latitude": 57.7825634,
+    "longitude": 14.165719
+  },
+  "Kobe, Japan": {
+    "display_name": "神戸市, 兵庫県, 日本",
+    "latitude": 34.6932379,
+    "longitude": 135.1943764
+  },
+  "Kyoto, Japan": {
+    "display_name": "京都市, 京都府, 日本",
+    "latitude": 35.0115754,
+    "longitude": 135.7681441
+  },
+  "London, United Kingdom": {
+    "display_name": "Greater London, England, United Kingdom",
+    "latitude": 51.5074456,
+    "longitude": -0.1277653
+  },
+  "Los Angeles, California": {
+    "display_name": "Los Angeles, Los Angeles County, California, United States",
+    "latitude": 34.0536909,
+    "longitude": -118.242766
+  },
+  "Lund, Sweden": {
+    "display_name": "Lund, Lunds kommun, Skåne län, Sverige",
+    "latitude": 55.7029296,
+    "longitude": 13.1929449
+  },
+  "Montreal, Canada": {
+    "display_name": "Montréal, Agglomération de Montréal, Montréal (région administrative), Québec, Canada",
+    "latitude": 45.5031824,
+    "longitude": -73.5698065
+  },
+  "New Haven, Connecticut": {
+    "display_name": "New Haven, South Central Connecticut Planning Region, Connecticut, United States",
+    "latitude": 41.3082138,
+    "longitude": -72.9250518
+  },
+  "New York City, New York": {
+    "display_name": "New York, United States",
+    "latitude": 40.7127281,
+    "longitude": -74.0060152
+  },
+  "Newark, New Jersey": {
+    "display_name": "Newark, Essex County, New Jersey, United States",
+    "latitude": 40.735657,
+    "longitude": -74.1723667
+  },
+  "Osaka, Japan": {
+    "display_name": "大阪市, 大阪府, 日本",
+    "latitude": 34.6937569,
+    "longitude": 135.5014539
+  },
+  "Oslo, Norway": {
+    "display_name": "Oslo, Norge",
+    "latitude": 59.9133301,
+    "longitude": 10.7389701
+  },
+  "Ottawa, Canada": {
+    "display_name": "Ottawa, Eastern Ontario, Ontario, Canada",
+    "latitude": 45.4208777,
+    "longitude": -75.6901106
+  },
+  "Palo Alto, California": {
+    "display_name": "Palo Alto, Santa Clara County, California, United States",
+    "latitude": 37.4443293,
+    "longitude": -122.1598465
+  },
+  "Pasadena, California": {
+    "display_name": "Pasadena, Los Angeles County, California, United States",
+    "latitude": 34.1476507,
+    "longitude": -118.144155
+  },
+  "Pittsburgh, Pennsylvania": {
+    "display_name": "Pittsburgh, Allegheny County, Pennsylvania, United States",
+    "latitude": 40.4406968,
+    "longitude": -80.0025666
+  },
+  "Princeton, New Jersey": {
+    "display_name": "Princeton, Mercer County, New Jersey, United States",
+    "latitude": 40.3496953,
+    "longitude": -74.6597376
+  },
+  "Providence, Rhode Island": {
+    "display_name": "Providence, Providence County, Rhode Island, United States",
+    "latitude": 41.8239891,
+    "longitude": -71.4128343
+  },
+  "Quebec City, Canada": {
+    "display_name": "Québec, Agglomération de Québec, Capitale-Nationale, Québec, Canada",
+    "latitude": 46.8137431,
+    "longitude": -71.2084061
+  },
+  "Rio de Janeiro, Brazil": {
+    "display_name": "Rio de Janeiro, Região Sudeste, Brasil",
+    "latitude": -22.9110137,
+    "longitude": -43.2093727
+  },
+  "Riverside, California": {
+    "display_name": "Riverside, Riverside County, California, United States",
+    "latitude": 33.9824949,
+    "longitude": -117.374238
+  },
+  "Rochester, New York": {
+    "display_name": "City of Rochester, Monroe County, New York, United States",
+    "latitude": 43.157285,
+    "longitude": -77.615214
+  },
+  "San Diego, California": {
+    "display_name": "San Diego, San Diego County, California, United States",
+    "latitude": 32.7174202,
+    "longitude": -117.162772
+  },
+  "Santa Barbara, California": {
+    "display_name": "Santa Barbara, Santa Barbara County, California, United States",
+    "latitude": 34.4221319,
+    "longitude": -119.702667
+  },
+  "Sapporo, Japan": {
+    "display_name": "札幌市, 石狩振興局, 北海道, 北海道地方, 日本",
+    "latitude": 43.061936,
+    "longitude": 141.3542924
+  },
+  "St. Louis, Missouri": {
+    "display_name": "Saint Louis, Missouri, United States",
+    "latitude": 38.6254063,
+    "longitude": -90.190009
+  },
+  "Sydney, Australia": {
+    "display_name": "Sydney, New South Wales, Australia",
+    "latitude": -33.8698439,
+    "longitude": 151.2082848
+  },
+  "Syracuse, New York": {
+    "display_name": "City of Syracuse, Onondaga County, New York, United States",
+    "latitude": 43.0481221,
+    "longitude": -76.1474244
+  },
+  "Taipei, Taiwan": {
+    "display_name": "臺北市, 臺灣",
+    "latitude": 25.0375198,
+    "longitude": 121.5636796
+  },
+  "Tokyo, Japan": {
+    "display_name": "東京都, 日本",
+    "latitude": 35.6768601,
+    "longitude": 139.7638947
+  },
+  "Venezia, Italy": {
+    "display_name": "Venezia, Veneto, 30121-30176, Italia",
+    "latitude": 45.4371908,
+    "longitude": 12.3345898
+  },
+  "Warwick, United Kingdom": {
+    "display_name": "Warwick, Warwickshire, England, United Kingdom",
+    "latitude": 52.2821379,
+    "longitude": -1.5905593
+  },
+  "Washington, D.C.": {
+    "display_name": "Washington, District of Columbia, United States",
+    "latitude": 38.8950982,
+    "longitude": -77.0363849
+  },
+  "Waterloo, Canada": {
+    "display_name": "Waterloo, Region of Waterloo, Southwestern Ontario, Ontario, Canada",
+    "latitude": 43.4652699,
+    "longitude": -80.5222961
+  }
+}

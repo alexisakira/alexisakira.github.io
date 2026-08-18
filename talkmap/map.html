@@ -1,45 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Talk locations</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    >
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+    >
+    <style>
+      html,
+      body,
+      #map {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-    	<title>Leaflet debug page</title>
+      body {
+        color: #1f2937;
+        background: #f8fafc;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
 
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2/leaflet.css" />
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2/leaflet.js"></script>
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<link rel="stylesheet" href="leaflet_dist/screen.css" />
+      .talk-map-marker {
+        background: transparent;
+        border: 0;
+      }
 
-    	<link rel="stylesheet" href="leaflet_dist/MarkerCluster.css" />
-    	<link rel="stylesheet" href="leaflet_dist/MarkerCluster.Default.css" />
-    	<script src="leaflet_dist/leaflet.markercluster-src.js"></script>
-    	<script src="org-locations.js"></script>
+      .talk-map-marker span {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        color: #fff;
+        background: #256f86;
+        border: 3px solid #fff;
+        border-radius: 50% 50% 50% 0;
+        box-shadow: 0 2px 7px rgb(15 23 42 / 35%);
+        font-size: 12px;
+        font-weight: 700;
+        transform: rotate(-45deg);
+      }
 
-    </head>
-    <body>
+      .talk-map-marker span b {
+        transform: rotate(45deg);
+      }
 
-    	<div id="map"></div>
-    	<span>Mouse over a cluster to see the bounds of its children and click a cluster to zoom to those bounds</span>
-    	<script type="text/javascript">
-    		var tiles = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-              maxZoom: 18,
-              attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
-                    }),
-    			latlng = L.latLng(30, 10);
-    		var map = L.map('map', {center: latlng, zoom: 0.7, layers: [tiles]});
-    		var markers = L.markerClusterGroup({
-    			showCoverageOnHover: false,
-    			maxClusterRadius: 80
-    			});
-    		for (var i = 0; i < addressPoints.length; i++) {
-    			var a = addressPoints[i];
-    			var title = a[0];
-    			var marker = L.marker(new L.LatLng(a[1], a[2]), { title: title });
-    			marker.bindPopup(title);
-    			markers.addLayer(marker);
-    		}
-    		map.addLayer(markers);
-    		map.zoomIn();
-    	</script>
-    </body>
-    </html>
-    
+      .talk-map-summary {
+        padding: 0.55rem 0.7rem;
+        color: #1f2937;
+        background: rgb(255 255 255 / 92%);
+        border-radius: 0.35rem;
+        box-shadow: 0 1px 5px rgb(15 23 42 / 25%);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .talk-map-summary strong {
+        display: block;
+        font-size: 14px;
+      }
+
+      .talk-map-popup h2 {
+        margin: 0 0 0.35rem;
+        font-size: 1rem;
+      }
+
+      .talk-map-popup p {
+        margin: 0 0 0.55rem;
+        color: #475569;
+        font-size: 0.82rem;
+      }
+
+      .talk-map-popup ul {
+        max-height: 240px;
+        margin: 0;
+        padding: 0 0 0 1.1rem;
+        overflow-y: auto;
+      }
+
+      .talk-map-popup li {
+        margin: 0 0 0.55rem;
+      }
+
+      .talk-map-popup a {
+        color: #176b87;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .talk-map-popup a:hover,
+      .talk-map-popup a:focus {
+        text-decoration: underline;
+      }
+
+      .talk-map-popup small {
+        display: block;
+        color: #64748b;
+        line-height: 1.35;
+      }
+
+      .talk-map-error {
+        box-sizing: border-box;
+        max-width: 38rem;
+        margin: 2rem auto;
+        padding: 1rem;
+        color: #7f1d1d;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        border-radius: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" role="region" aria-label="Interactive map of in-person talk locations"></div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="org-locations.js"></script>
+    <script>
+      (() => {
+        const data = window.talkMapData;
+        const mapElement = document.getElementById("map");
+
+        if (!data || !Array.isArray(data.locations) || data.locations.length === 0) {
+          mapElement.innerHTML =
+            '<p class="talk-map-error">The talk-map data could not be loaded.</p>';
+          return;
+        }
+
+        const map = L.map(mapElement, {
+          scrollWheelZoom: false,
+          worldCopyJump: true,
+        });
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 18,
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        const clusters = L.markerClusterGroup({
+          maxClusterRadius: 54,
+          showCoverageOnHover: false,
+          spiderfyOnMaxZoom: true,
+        });
+
+        const popupFor = (location) => {
+          const popup = document.createElement("div");
+          popup.className = "talk-map-popup";
+
+          const heading = document.createElement("h2");
+          heading.textContent = location.label;
+          popup.appendChild(heading);
+
+          const summary = document.createElement("p");
+          summary.textContent = `${location.talks.length} in-person ${
+            location.talks.length === 1 ? "talk" : "talks"
+          }`;
+          popup.appendChild(summary);
+
+          const list = document.createElement("ul");
+          location.talks.forEach((talk) => {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            const year = talk.date ? talk.date.slice(0, 4) : "";
+            link.href = talk.url;
+            link.target = "_top";
+            link.textContent = year ? `${year}: ${talk.title}` : talk.title;
+            item.appendChild(link);
+
+            const details = document.createElement("small");
+            details.textContent = [talk.type, talk.venue].filter(Boolean).join(" · ");
+            item.appendChild(details);
+            list.appendChild(item);
+          });
+          popup.appendChild(list);
+          return popup;
+        };
+
+        data.locations.forEach((location) => {
+          const count = location.talks.length;
+          const icon = L.divIcon({
+            className: "talk-map-marker",
+            html: `<span><b>${count}</b></span>`,
+            iconAnchor: [17, 34],
+            iconSize: [34, 34],
+            popupAnchor: [0, -30],
+          });
+          const marker = L.marker([location.latitude, location.longitude], {
+            icon,
+            title: `${location.label}: ${count} ${count === 1 ? "talk" : "talks"}`,
+          });
+          marker.bindPopup(popupFor(location), { maxWidth: 380, minWidth: 260 });
+          clusters.addLayer(marker);
+        });
+
+        map.addLayer(clusters);
+        map.fitBounds(clusters.getBounds(), { maxZoom: 5, padding: [24, 24] });
+
+        const summaryControl = L.control({ position: "topright" });
+        summaryControl.onAdd = () => {
+          const summary = L.DomUtil.create("div", "talk-map-summary");
+          const heading = document.createElement("strong");
+          heading.textContent = `${data.in_person_talk_count} in-person talks`;
+          summary.appendChild(heading);
+          summary.append(`${data.location_count} locations`);
+          L.DomEvent.disableClickPropagation(summary);
+          return summary;
+        };
+        summaryControl.addTo(map);
+      })();
+    </script>
+  </body>
+</html>
