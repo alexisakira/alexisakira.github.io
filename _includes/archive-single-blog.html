@@ -1,6 +1,6 @@
 {% include base_path %}
 
-{% assign blog_topics = post.tags | join: "|" | downcase | replace: "miscellnaneous", "miscellaneous" %}
+{% assign blog_topics = post.tags | join: "|" | downcase %}
 {% capture blog_search_text %}{{ post.title }} {{ post.excerpt | strip_html | strip_newlines }}{% endcapture %}
 
 <article
@@ -15,7 +15,7 @@
   <div class="blog-post-card__topline">
     <div class="blog-post-card__topics" aria-label="Topics">
       {% for tag in post.tags %}
-        {% assign normalized_tag = tag | downcase | replace: "miscellnaneous", "miscellaneous" %}
+        {% assign normalized_tag = tag | downcase %}
         <span>{{ normalized_tag }}</span>
       {% endfor %}
     </div>
