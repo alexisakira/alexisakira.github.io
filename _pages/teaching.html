@@ -5,10 +5,241 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+{% assign teaching_by_venue = site.teaching | group_by: "venue" | sort: "name" %}
+{% assign undergraduate_courses = site.teaching | where_exp: "course", "course.type contains 'Undergraduate'" %}
+{% assign graduate_courses = site.teaching | where_exp: "course", "course.type contains 'Graduate'" %}
 
-Below is the list of courses I have taught. By going to each page you can download lecture notes, past exams, solutions, etc.
+<p class="teaching-intro">
+  Below are courses I have taught at Emory University and UC San Diego.
+  Each course page contains available syllabi, lecture notes, past exams, and
+  other course materials.
+</p>
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+<div class="teaching-overview" aria-label="Teaching summary">
+  <span><strong>{{ site.teaching | size }}</strong> courses</span>
+  <span><strong>{{ teaching_by_venue | size }}</strong> institutions</span>
+  <span><strong>{{ undergraduate_courses | size }}</strong> undergraduate</span>
+  <span><strong>{{ graduate_courses | size }}</strong> graduate</span>
+</div>
+
+<nav class="teaching-section-nav" aria-label="Teaching institutions">
+  {% for institution in teaching_by_venue %}
+    <a href="#teaching-{{ institution.name | slugify }}">
+      <span>{{ institution.name }}</span>
+      <small>{{ institution.items | size }}</small>
+    </a>
+  {% endfor %}
+</nav>
+
+{% for institution in teaching_by_venue %}
+  <section class="teaching-section" aria-labelledby="teaching-{{ institution.name | slugify }}">
+    <h2 class="teaching-section__heading" id="teaching-{{ institution.name | slugify }}">
+      {{ institution.name }} <span class="teaching-count">{{ institution.items | size }}</span>
+    </h2>
+
+    <div class="course-grid">
+      {% for post in institution.items reversed %}
+        <article class="course-card">
+          <div class="course-card__meta">
+            <span class="course-card__level">{{ post.type }}</span>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y" }}</time>
+          </div>
+
+          <h3 class="course-card__title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+
+          {% if post.excerpt %}
+            <div class="course-card__summary">{{ post.excerpt | markdownify }}</div>
+          {% endif %}
+
+          <a class="course-card__action" href="{{ post.url | relative_url }}">
+            View course materials <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
 {% endfor %}
+
+<style>
+  .teaching-intro {
+    max-width: 47rem;
+    line-height: 1.65;
+  }
+
+  .teaching-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 1.3rem 0 0;
+  }
+
+  .teaching-overview span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-text-color-light);
+    font-size: 0.82em;
+  }
+
+  .teaching-overview strong {
+    color: var(--global-text-color);
+  }
+
+  .teaching-section-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin: 1.5rem 0 3.2rem;
+  }
+
+  .teaching-section-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.55rem;
+    color: var(--global-text-color) !important;
+    font-size: 0.9em;
+    font-weight: 600;
+    line-height: 1.25;
+    text-decoration: none !important;
+  }
+
+  .teaching-section-nav a:hover {
+    border-color: var(--global-link-color-hover);
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .teaching-section-nav a:focus-visible,
+  .course-card a:focus-visible {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+
+  .teaching-section-nav small,
+  .teaching-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.7rem;
+    min-height: 1.7rem;
+    padding: 0 0.45rem;
+    border-radius: 999px;
+    background: var(--global-border-color);
+    color: var(--global-text-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .teaching-section {
+    margin-top: 3.25rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .teaching-section__heading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .course-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.65rem;
+    background: var(--global-bg-color);
+  }
+
+  .course-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    color: var(--global-text-color-light);
+    font-size: 0.78em;
+  }
+
+  .course-card__level {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.55rem;
+    padding: 0.12rem 0.45rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-text-color);
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .course-card__title {
+    margin: 0.75rem 0 0;
+    font-size: 1.02rem;
+    line-height: 1.4;
+  }
+
+  .course-card__title a {
+    color: var(--global-text-color) !important;
+    text-decoration: none !important;
+  }
+
+  .course-card__title a:hover {
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .course-card__summary {
+    margin-top: 0.65rem;
+    color: var(--global-text-color-light);
+    font-size: 0.84em;
+    line-height: 1.55;
+  }
+
+  .course-card__summary p {
+    margin: 0;
+  }
+
+  .course-card__action {
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 0.85rem;
+    color: var(--global-link-color) !important;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+
+  .course-card__action:hover {
+    color: var(--global-link-color-hover) !important;
+  }
+
+  @media (max-width: 680px) {
+    .teaching-section-nav,
+    .course-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .teaching-section-nav {
+      margin-bottom: 2.6rem;
+    }
+
+    .course-card {
+      padding: 0.9rem;
+    }
+  }
+</style>
