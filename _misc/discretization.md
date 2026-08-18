@@ -1,9 +1,11 @@
 ---
 title: "Discretization"
-excerpt: "Discretizing probability distributions and stochastic processes"
+excerpt: "Methods and code for discretizing probability distributions and stochastic processes."
 collection: misc
 permalink: /misc/discretization
 date: 2021-08-23
+section: technical
+section_order: 1
 ---
 
 I have written several papers (Tanaka & Toda, [2013](http://doi.org/10.1016/j.econlet.2012.12.020), [2015](http://doi.org/10.1137/140971269); Farmer & Toda, [2017](https://doi.org/10.3982/QE737); Toda, [2021](https://doi.org/10.1007/s10614-020-10012-6)) on discretizing probability distributions and stochastic processes.

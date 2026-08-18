@@ -1,9 +1,11 @@
 ---
 title: "How to string a racquet"
-excerpt: "How to string a racquet"
+excerpt: "A comprehensive, step-by-step guide to stringing a tennis racquet."
 collection: misc
 permalink: /misc/string
 date:  2024-06-13
+section: practical
+section_order: 4
 ---
 
 This page explains how to string a tennis racquet. When my kids started playing tennis competitively in 2020, it became expensive and inconvenient to frequently visit a racquet shop for stringing. For Christmas, we bought a string machine, and I learned to string by watching some YouTube videos and articles. Most of them don't cover all the fine details, so here I try to be as comprehensive as possible.

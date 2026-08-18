@@ -1,9 +1,11 @@
 ---
 title: "Applying to economics Ph.D. programs"
-excerpt: "Advices on applying to economics Ph.D. programs"
+excerpt: "Advice on preparing for and applying to economics Ph.D. programs."
 collection: misc
 permalink: /misc/apply-econphd
 date: 2025-10-31
+section: research
+section_order: 1
 ---
 
 So you want to be a grad student? Well, think twice. It's not easy to be a grad student, and it's not easy to be a professor, either. I tell my students that it's not for everyone. There are already plenty of advices on applying to economics Ph.D. programs out there (see [here](https://www.aeaweb.org/resources/students/grad-prep) or [here](https://econ.ucsb.edu/~startz/A%20Guide%20for%20UCSB%20Undergraduates%20Considering%20a%20PhD%20in%20Economics.pdf)), so I will limit this post to my opinion. Since part of my research involves dynamic programming, let's discuss using backward induction.

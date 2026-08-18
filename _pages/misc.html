@@ -5,9 +5,219 @@ permalink: /misc/
 author_profile: true
 ---
 
-{% include base_path %}
+{% assign research_pages = site.misc | where: "section", "research" | sort: "section_order" %}
+{% assign technical_pages = site.misc | where: "section", "technical" | sort: "section_order" %}
+{% assign practical_pages = site.misc | where: "section", "practical" | sort: "section_order" %}
 
+<style>
+  .misc-intro {
+    max-width: 46rem;
+    margin-bottom: 1.25rem;
+    color: var(--global-text-color-light);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
 
-{% for post in site.misc reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+  .misc-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0 0 1.6rem;
+  }
+
+  .misc-summary__item {
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-text-color-light);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .misc-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 2.8rem;
+  }
+
+  .misc-nav__item {
+    display: block;
+    padding: 1rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.55rem;
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .misc-nav__item:hover,
+  .misc-nav__item:focus-visible {
+    border-color: var(--global-link-color);
+    color: var(--global-link-color-hover);
+    transform: translateY(-2px);
+  }
+
+  .misc-nav__title {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+  }
+
+  .misc-nav__count {
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+  }
+
+  .misc-section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .misc-section__header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .misc-section__title {
+    margin: 0 0 0.25rem;
+    font-size: 1.45rem;
+  }
+
+  .misc-section__description {
+    margin: 0;
+    color: var(--global-text-color-light);
+    line-height: 1.55;
+  }
+
+  .misc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .misc-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1.1rem 1.15rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.55rem;
+  }
+
+  .misc-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.55rem;
+    color: var(--global-text-color-light);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .misc-card__title {
+    margin: 0 0 0.45rem;
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .misc-card__title a {
+    color: var(--global-text-color);
+    text-decoration: none;
+  }
+
+  .misc-card__title a:hover,
+  .misc-card__title a:focus-visible {
+    color: var(--global-link-color-hover);
+  }
+
+  .misc-card__excerpt {
+    margin: 0 0 0.85rem;
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .misc-card__link {
+    margin-top: auto;
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  @media (max-width: 700px) {
+    .misc-nav,
+    .misc-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .misc-nav {
+      margin-bottom: 2.2rem;
+    }
+  }
+</style>
+
+<p class="misc-intro">
+  Long-form notes, practical guides, and reference pages that sit outside Publications, Teaching, and Blog Posts.
+</p>
+
+<div class="misc-summary" aria-label="Miscellaneous page overview">
+  <span class="misc-summary__item">{{ site.misc | size }} pages</span>
+  <span class="misc-summary__item">3 themes</span>
+</div>
+
+<nav class="misc-nav" aria-label="Browse miscellaneous pages by theme">
+  <a class="misc-nav__item" href="#research-notes">
+    <span class="misc-nav__title">Research &amp; academic notes</span>
+    <span class="misc-nav__count">{{ research_pages | size }} pages</span>
+  </a>
+  <a class="misc-nav__item" href="#technical-notes">
+    <span class="misc-nav__title">Technical notes &amp; tools</span>
+    <span class="misc-nav__count">{{ technical_pages | size }} pages</span>
+  </a>
+  <a class="misc-nav__item" href="#practical-guides">
+    <span class="misc-nav__title">Practical guides &amp; interests</span>
+    <span class="misc-nav__count">{{ practical_pages | size }} pages</span>
+  </a>
+</nav>
+
+<section class="misc-section" id="research-notes">
+  <header class="misc-section__header">
+    <h2 class="misc-section__title">Research &amp; academic notes</h2>
+    <p class="misc-section__description">Thoughts on research, collaboration, and the academic path.</p>
+  </header>
+  <div class="misc-grid">
+    {% for item in research_pages %}
+      {% include archive-single-misc.html item=item section_label="Research" %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="misc-section" id="technical-notes">
+  <header class="misc-section__header">
+    <h2 class="misc-section__title">Technical notes &amp; tools</h2>
+    <p class="misc-section__description">Methods, software, and workflows that support research and writing.</p>
+  </header>
+  <div class="misc-grid">
+    {% for item in technical_pages %}
+      {% include archive-single-misc.html item=item section_label="Technical" %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="misc-section" id="practical-guides">
+  <header class="misc-section__header">
+    <h2 class="misc-section__title">Practical guides &amp; interests</h2>
+    <p class="misc-section__description">Personal finance, travel, and hands-on notes from everyday life.</p>
+  </header>
+  <div class="misc-grid">
+    {% for item in practical_pages %}
+      {% include archive-single-misc.html item=item section_label="Guide" %}
+    {% endfor %}
+  </div>
+</section>

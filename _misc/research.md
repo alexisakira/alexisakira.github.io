@@ -1,9 +1,11 @@
 ---
 title: "My research philosophy"
-excerpt: "My personal thoughts on how to do research"
+excerpt: "Personal principles for choosing problems, collaborating, and doing research."
 collection: misc
 permalink: /misc/research
 date:  2024-04-21
+section: research
+section_order: 2
 ---
 
 A picture is worth a thousand words. To learn about someone's research, it is more informative to look at what they do (the quantity and quality of publications and working papers listed on their CVs) than to hear what they say (read research statements and proposals). Thus, you can stop reading here and instead look at my [publication list](/publications/) and the histories of my papers. But if someone finds it useful, I will keep writing about my research philosophy.

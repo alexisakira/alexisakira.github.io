@@ -1,9 +1,11 @@
 ---
 title: "How to get rich"
-excerpt: "Some tips for getting rich"
+excerpt: "Practical principles for building wealth through saving, investing, and career choices."
 collection: misc
 permalink: /misc/rich
 date:  2024-12-27
+section: practical
+section_order: 1
 ---
 
 I regularly teach an undergraduate finance class at the university, and I spend the first few weeks of lectures on personal finance. In this article, I provide some tips for getting rich. I learned these tips from reading countless books and articles on personal finance, as well as making economic decisions such as consumption, saving, and investment over a few decades. I believe that for most people living in developed countries, getting rich (say, becoming a millionaire) is not particularly difficult. You don't need special skills or luck. However, you do need a lot of discipline, which explains why not everybody is rich.

@@ -1,9 +1,11 @@
 ---
 title: "Tax-saving tips"
-excerpt: "Some tips for legally saving taxes"
+excerpt: "Practical notes on legally reducing taxes in the United States."
 collection: misc
 permalink: /misc/tax
 date:  2025-12-10
+section: practical
+section_order: 2
 ---
 
 I list some legal tax-saving tips that I learned over the years.

@@ -1,9 +1,11 @@
 ---
 title: "Travel"
-excerpt: "Places that I have visited"
+excerpt: "A personal guide to favorite places and a record of countries and territories visited."
 collection: misc
 permalink: /misc/travel
 date: 2024-05-24
+section: practical
+section_order: 3
 ---
 
 I like traveling to new places and eating local food. At the bottom of this page is a list of countries and territories I have visited. The table below lists (in alphabetical order) the places that I particularly like. 

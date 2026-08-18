@@ -1,9 +1,11 @@
 ---
 title: "Coauthors"
-excerpt: "List of my coauthors"
+excerpt: "A record of my coauthors and collaborative research."
 collection: misc
 permalink: /misc/coauthor
 date: 2025-01-17
+section: research
+section_order: 3
 ---
 
 Below is a list of my coauthors (in alphabetical order by last name, limited to published papers). Let me know if the links are outdated.

@@ -1,9 +1,11 @@
 ---
 title: "About this website"
-excerpt: "How this website was created"
+excerpt: "Notes on how this website is structured, maintained, and published."
 collection: misc
 permalink: /misc/website
 date:  2024-04-18
+section: technical
+section_order: 3
 ---
 
 I created this website in 2020 by forking [academicpages](https://academicpages.github.io/) (see this [post](/posts/2020/08/blog-post-1/)). I significantly updated it in 2024 to automate [publications](/publications/) and [talks](/talks/). This post is primarily intended for myself so that I don't forget, but it might be useful for others too.

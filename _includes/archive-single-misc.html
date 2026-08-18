@@ -1,0 +1,14 @@
+<article class="misc-card" data-misc-card>
+  <div class="misc-card__meta">
+    <span>{{ include.section_label }}</span>
+    <span aria-hidden="true">&middot;</span>
+    <time datetime="{{ include.item.date | date_to_xmlschema }}">{{ include.item.date | date: "%Y" }}</time>
+  </div>
+  <h3 class="misc-card__title">
+    <a href="{{ include.item.url | relative_url }}">{{ include.item.title }}</a>
+  </h3>
+  <p class="misc-card__excerpt">{{ include.item.excerpt | strip_html | strip }}</p>
+  <a class="misc-card__link" href="{{ include.item.url | relative_url }}" aria-label="Open {{ include.item.title }}">
+    Open page <span aria-hidden="true">&rarr;</span>
+  </a>
+</article>
