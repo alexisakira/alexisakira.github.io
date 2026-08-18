@@ -5,15 +5,563 @@ title: "Blog posts"
 author_profile: true
 ---
 
-<p>Needless to say, the views and opinions expressed herein are my own as an individual and do not represent those of any institutions I am affiliated with.</p>
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% assign newest_post = site.posts | first %}
+{% assign oldest_post = site.posts | last %}
 
-{% include base_path %}
-{% capture written_year %}'None'{% endcapture %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
-  {% endif %}
-  {% include archive-single.html %}
-{% endfor %}
+<div class="blog-index" data-blog-index>
+  <p class="blog-index__intro">
+    Needless to say, the views and opinions expressed herein are my own as an
+    individual and do not represent those of any institutions I am affiliated with.
+  </p>
+
+  <div class="blog-overview" aria-label="Blog summary">
+    <span><strong>{{ site.posts | size }}</strong> posts</span>
+    <span><strong>{{ posts_by_year | size }}</strong> years</span>
+    <span>
+      <strong>{{ oldest_post.date | date: "%Y" }}–{{ newest_post.date | date: "%Y" }}</strong>
+      archive
+    </span>
+  </div>
+
+  <nav class="blog-year-jumps" data-blog-year-jumps aria-label="Jump to posts by year">
+    {% for year in posts_by_year %}
+      <a href="#blog-year-{{ year.name }}">
+        <span>{{ year.name }}</span><small>{{ year.items | size }}</small>
+      </a>
+    {% endfor %}
+  </nav>
+
+  <section class="blog-controls" data-blog-controls aria-label="Filter blog posts" hidden>
+    <div class="blog-search">
+      <label for="blog-search-input">Find a post</label>
+      <input
+        id="blog-search-input"
+        type="search"
+        inputmode="search"
+        autocomplete="off"
+        placeholder="Search titles and summaries"
+        data-blog-search-input
+      >
+    </div>
+
+    <div class="blog-filter-group">
+      <span class="blog-filter-group__label">Topic</span>
+      <div class="blog-filter-buttons" data-blog-topic-filters></div>
+    </div>
+
+    <div class="blog-filter-group">
+      <span class="blog-filter-group__label">Year</span>
+      <div class="blog-filter-buttons" data-blog-year-filters></div>
+    </div>
+
+    <div class="blog-controls__footer">
+      <p class="blog-results" role="status" aria-live="polite">
+        <strong data-blog-result-count>{{ site.posts | size }}</strong>
+        <span data-blog-result-label>posts shown</span>
+      </p>
+      <button class="blog-clear" type="button" data-blog-clear disabled>Clear filters</button>
+    </div>
+  </section>
+
+  {% for year in posts_by_year %}
+    <section
+      class="blog-year"
+      id="blog-year-{{ year.name }}"
+      data-blog-year-section
+      data-blog-year="{{ year.name }}"
+      aria-labelledby="blog-year-heading-{{ year.name }}"
+    >
+      <h2 class="blog-year__heading" id="blog-year-heading-{{ year.name }}">
+        {{ year.name }} <span class="blog-year__count">{{ year.items | size }}</span>
+      </h2>
+      <div class="blog-post-grid">
+        {% for post in year.items %}
+          {% include archive-single-blog.html %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+
+  <div class="blog-no-results" data-blog-no-results hidden>
+    <strong>No matching posts</strong>
+    <span>Try a different search term, topic, or year.</span>
+  </div>
+</div>
+
+<style>
+  .blog-index__intro {
+    max-width: 48rem;
+    line-height: 1.65;
+  }
+
+  .blog-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 1.3rem 0 0;
+  }
+
+  .blog-overview span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-text-color-light);
+    font-size: 0.82em;
+  }
+
+  .blog-overview strong {
+    color: var(--global-text-color);
+  }
+
+  .blog-year-jumps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    gap: 0.55rem;
+    margin: 1.5rem 0 3rem;
+  }
+
+  .blog-year-jumps a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.62rem 0.72rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.55rem;
+    color: var(--global-text-color) !important;
+    font-size: 0.86em;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+
+  .blog-year-jumps a:hover {
+    border-color: var(--global-link-color-hover);
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .blog-year-jumps small,
+  .blog-year__count,
+  .blog-filter-button small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.65rem;
+    min-height: 1.65rem;
+    padding: 0 0.4rem;
+    border-radius: 999px;
+    background: var(--global-border-color);
+    color: var(--global-text-color);
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .blog-controls {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0 3.2rem;
+    padding: 1rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.7rem;
+    background: var(--global-code-background-color);
+  }
+
+  .blog-search {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .blog-search label,
+  .blog-filter-group__label {
+    color: var(--global-text-color);
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+
+  .blog-search input {
+    width: 100%;
+    min-height: 2.6rem;
+    padding: 0.58rem 0.7rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.5rem;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    font: inherit;
+    font-size: 0.9em;
+  }
+
+  .blog-search input::placeholder {
+    color: var(--global-text-color-light);
+  }
+
+  .blog-filter-group {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .blog-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+  }
+
+  .blog-filter-button,
+  .blog-clear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.38rem;
+    min-height: 2rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    font: inherit;
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .blog-filter-button {
+    text-transform: capitalize;
+  }
+
+  .blog-filter-button:hover,
+  .blog-clear:hover:not(:disabled) {
+    border-color: var(--global-link-color-hover);
+    color: var(--global-link-color-hover);
+  }
+
+  .blog-filter-button[aria-pressed="true"] {
+    border-color: var(--global-link-color);
+    background: var(--global-link-color);
+    color: #fff;
+  }
+
+  .blog-filter-button[aria-pressed="true"] small {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+
+  .blog-controls__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-top: 0.2rem;
+  }
+
+  .blog-results {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: 0.8em;
+  }
+
+  .blog-results strong {
+    color: var(--global-text-color);
+  }
+
+  .blog-clear {
+    border: 0;
+    background: transparent;
+    color: var(--global-link-color);
+  }
+
+  .blog-clear:disabled {
+    color: var(--global-text-color-light);
+    cursor: default;
+    opacity: 0.55;
+  }
+
+  .blog-year {
+    margin-top: 3.25rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .blog-year__heading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .blog-post-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.65rem;
+    background: var(--global-bg-color);
+  }
+
+  .blog-post-card:hover {
+    border-color: var(--global-link-color-hover);
+  }
+
+  .blog-post-card__topline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.45rem;
+  }
+
+  .blog-post-card__topline time {
+    color: var(--global-text-color-light);
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .blog-post-card__topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.32rem;
+  }
+
+  .blog-post-card__topics span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.45rem;
+    padding: 0.1rem 0.42rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-text-color-light);
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+
+  .blog-post-card__title {
+    margin: 0.72rem 0 0;
+    font-size: 1rem;
+    line-height: 1.38;
+  }
+
+  .blog-post-card__title a {
+    color: var(--global-text-color) !important;
+    text-decoration: none !important;
+  }
+
+  .blog-post-card__title a:hover {
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .blog-post-card__excerpt {
+    margin: 0.62rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.8em;
+    line-height: 1.55;
+  }
+
+  .blog-post-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    margin-top: auto;
+    padding-top: 0.85rem;
+  }
+
+  .blog-post-card__action {
+    color: var(--global-link-color) !important;
+    font-size: 0.75rem;
+    font-weight: 650;
+    text-decoration: none !important;
+  }
+
+  .blog-post-card__action:hover {
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .blog-post-card__read-time {
+    color: var(--global-text-color-light);
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .blog-no-results {
+    display: grid;
+    gap: 0.2rem;
+    margin-top: 2.5rem;
+    padding: 1.25rem;
+    border: 1px dashed var(--global-border-color);
+    border-radius: 0.65rem;
+    color: var(--global-text-color-light);
+    text-align: center;
+  }
+
+  .blog-no-results strong {
+    color: var(--global-text-color);
+  }
+
+  .blog-index [hidden] {
+    display: none !important;
+  }
+
+  .blog-year-jumps a:focus-visible,
+  .blog-search input:focus-visible,
+  .blog-filter-button:focus-visible,
+  .blog-clear:focus-visible,
+  .blog-post-card a:focus-visible {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 680px) {
+    .blog-year-jumps,
+    .blog-post-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .blog-controls {
+      padding: 0.85rem;
+    }
+
+    .blog-post-card {
+      padding: 0.9rem;
+    }
+
+    .blog-controls__footer {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-blog-index]');
+    if (!root) return;
+
+    var posts = Array.prototype.slice.call(root.querySelectorAll('[data-blog-post]'));
+    var sections = Array.prototype.slice.call(root.querySelectorAll('[data-blog-year-section]'));
+    var controls = root.querySelector('[data-blog-controls]');
+    var yearJumps = root.querySelector('[data-blog-year-jumps]');
+    var searchInput = root.querySelector('[data-blog-search-input]');
+    var topicContainer = root.querySelector('[data-blog-topic-filters]');
+    var yearContainer = root.querySelector('[data-blog-year-filters]');
+    var resultCount = root.querySelector('[data-blog-result-count]');
+    var resultLabel = root.querySelector('[data-blog-result-label]');
+    var clearButton = root.querySelector('[data-blog-clear]');
+    var noResults = root.querySelector('[data-blog-no-results]');
+    var activeTopic = 'all';
+    var activeYear = 'all';
+
+    function countValues(attribute) {
+      var counts = {};
+      posts.forEach(function (post) {
+        var values = (post.getAttribute(attribute) || '').split('|').filter(Boolean);
+        values.forEach(function (value) {
+          counts[value] = (counts[value] || 0) + 1;
+        });
+      });
+      return counts;
+    }
+
+    function makeButton(label, value, count, groupName) {
+      var button = document.createElement('button');
+      var countElement = document.createElement('small');
+      button.type = 'button';
+      button.className = 'blog-filter-button';
+      button.setAttribute('data-filter-value', value);
+      button.setAttribute('data-filter-group', groupName);
+      button.setAttribute('aria-pressed', value === 'all' ? 'true' : 'false');
+      button.appendChild(document.createTextNode(label));
+      countElement.textContent = count;
+      button.appendChild(countElement);
+      return button;
+    }
+
+    function populateFilters() {
+      var topics = countValues('data-blog-topics');
+      var years = countValues('data-blog-year');
+
+      topicContainer.appendChild(makeButton('All topics', 'all', posts.length, 'topic'));
+      Object.keys(topics).sort().forEach(function (topic) {
+        topicContainer.appendChild(makeButton(topic, topic, topics[topic], 'topic'));
+      });
+
+      yearContainer.appendChild(makeButton('All years', 'all', posts.length, 'year'));
+      Object.keys(years).sort().reverse().forEach(function (year) {
+        yearContainer.appendChild(makeButton(year, year, years[year], 'year'));
+      });
+    }
+
+    function updatePressedState(groupName, activeValue) {
+      var selector = '[data-filter-group="' + groupName + '"]';
+      Array.prototype.slice.call(root.querySelectorAll(selector)).forEach(function (button) {
+        button.setAttribute('aria-pressed', button.getAttribute('data-filter-value') === activeValue ? 'true' : 'false');
+      });
+    }
+
+    function applyFilters() {
+      var query = searchInput.value.trim().toLocaleLowerCase();
+      var visibleCount = 0;
+
+      posts.forEach(function (post) {
+        var topics = (post.getAttribute('data-blog-topics') || '').split('|');
+        var matchesTopic = activeTopic === 'all' || topics.indexOf(activeTopic) !== -1;
+        var matchesYear = activeYear === 'all' || post.getAttribute('data-blog-year') === activeYear;
+        var matchesSearch = !query || (post.getAttribute('data-blog-search') || '').toLocaleLowerCase().indexOf(query) !== -1;
+        var isVisible = matchesTopic && matchesYear && matchesSearch;
+        post.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      sections.forEach(function (section) {
+        section.hidden = !section.querySelector('[data-blog-post]:not([hidden])');
+      });
+
+      resultCount.textContent = visibleCount;
+      resultLabel.textContent = visibleCount === 1 ? 'post shown' : 'posts shown';
+      noResults.hidden = visibleCount !== 0;
+      clearButton.disabled = !query && activeTopic === 'all' && activeYear === 'all';
+    }
+
+    populateFilters();
+    controls.hidden = false;
+    yearJumps.hidden = true;
+
+    topicContainer.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-filter-value]');
+      if (!button) return;
+      activeTopic = button.getAttribute('data-filter-value');
+      updatePressedState('topic', activeTopic);
+      applyFilters();
+    });
+
+    yearContainer.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-filter-value]');
+      if (!button) return;
+      activeYear = button.getAttribute('data-filter-value');
+      updatePressedState('year', activeYear);
+      applyFilters();
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+    searchInput.addEventListener('search', applyFilters);
+
+    clearButton.addEventListener('click', function () {
+      activeTopic = 'all';
+      activeYear = 'all';
+      searchInput.value = '';
+      updatePressedState('topic', activeTopic);
+      updatePressedState('year', activeYear);
+      applyFilters();
+      searchInput.focus();
+    });
+  }());
+</script>
