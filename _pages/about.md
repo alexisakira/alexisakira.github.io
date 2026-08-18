@@ -1,51 +1,277 @@
 ---
 permalink: /
-title: "About"
-excerpt: "About me"
+title: "Alexis Akira Toda"
+excerpt: "Mathematical economist at Emory University"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-Alexis Akira Toda (pronounced `Alexy Akira Toda`) was born in [Montréal, Canada](https://en.wikipedia.org/wiki/Montreal) to a Japanese father and a French-Canadian mother and moved to Japan at the age of four. He received a B.A. in medicine from [University of Tokyo](https://en.wikipedia.org/wiki/University_of_Tokyo) in 2004 and then an M.A. in economics in 2008 while practicing anesthesia. He moved to the United States in 2008 and obtained a Ph.D. in economics from [Yale University](https://en.wikipedia.org/wiki/Yale_University) in 2013. After teaching mathematics for economics, mathematical economics, and finance at [UC San Diego](https://en.wikipedia.org/wiki/University_of_California,_San_Diego) for eleven years, he moved to [Emory University](https://en.wikipedia.org/wiki/Emory_University) in 2024. He is the author of more than 50 research articles published in economics, mathematics, physics, and medical journals on a wide variety of topics, including general equilibrium, macro-finance, consumption and savings, income and wealth distributions, asset price bubbles, power laws, dynamic programming, econometrics, and numerical methods, among others. According to [WikiTree](https://www.wikitree.com/wiki/Toda-2), he is a distant cousin of [Celine Dion](https://www.wikitree.com/index.php?title=Special:Relationship&action=calculate&person1Name=Toda-2&person2Name=Dion-75) (singer), [Justin Trudeau](https://www.wikitree.com/index.php?title=Special:Relationship&action=calculate&person1Name=Toda-2&person2Name=Trudeau-195) (former Prime Minister of Canada), and [Taylor Swift](https://www.wikitree.com/index.php?title=Special:Relationship&action=calculate&person1Name=Toda-2&person2Name=Swift-1298) (singer).
+<section class="home-intro" aria-labelledby="home-role">
+  <p class="home-role" id="home-role">Mathematical economist at <a href="https://economics.emory.edu/">Emory University</a></p>
+  <p class="home-lede">
+    I work in macro-finance and mathematical economics, with particular interests
+    in asset-price bubbles, computational economics, and power laws.
+  </p>
+  <nav class="home-actions" aria-label="Homepage shortcuts">
+    <a class="home-action home-action--primary" href="/publications/">Publications</a>
+    <a class="home-action" href="/files/alexisakira_toda_CV.pdf">CV (PDF)</a>
+    <a class="home-action" href="/talkmap.html">Talks and map</a>
+  </nav>
+</section>
 
-## My research
-I am a mathematical economist with strong interests in applications, in particular macroeconomics and finance. The topics I have worked on include
+<section class="home-section" aria-labelledby="research-areas">
+  <h2 id="research-areas">Research areas</h2>
+  <div class="home-card-grid">
+    <article class="home-card">
+      <h3>Macro-finance</h3>
+      <p>Asset prices, wealth distributions, financial markets, and economic growth.</p>
+    </article>
+    <article class="home-card">
+      <h3>Mathematical economics</h3>
+      <p>General equilibrium, dynamic programming, and the mathematical foundations of economic theory.</p>
+    </article>
+    <article class="home-card">
+      <h3>Asset-price bubbles</h3>
+      <p>The conditions under which bubbles arise, persist, and affect economic growth.</p>
+    </article>
+    <article class="home-card">
+      <h3>Computational economics</h3>
+      <p>Numerical methods for solving and estimating economic models.</p>
+    </article>
+    <article class="home-card">
+      <h3>Power laws</h3>
+      <p>Pareto distributions, tail behavior, and applications to income and wealth inequality.</p>
+    </article>
+  </div>
+  <p class="home-section-note">
+    My work spans economics, mathematics, physics, and medicine. The
+    <a href="/publications/">Publications page</a> contains the complete list;
+    papers I consider especially representative are marked with 👍.
+  </p>
+</section>
 
-- [necessity of asset price bubbles](https://doi.org/10.1086/732528),
-- [computational algorithm for solving macroeconomic models with realistic wealth distributions](https://doi.org/10.3982/QE1817),
-- [simple formula and mathematical foundation for Pareto exponents that arise in random multiplicative processes in Markovian environments](https://doi.org/10.3982/ECTA17984),
-- [optimal epidemic control when testing and government enforcement are imperfect](https://doi.org/10.1016/j.jet.2022.105570),
-- [simple explanation for the saving behavior of the rich that does not rely on ad hoc utility functions](https://doi.org/10.1016/j.jet.2021.105193),
-- [verification of the random multiplicative process to explain the spread of COVID-19](https://doi.org/10.1016/j.physd.2020.132649),
-- [wealth inequality and stock market returns](https://doi.org/10.1093/rfs/hhz121),
-- [determination of academic salaries](https://econjwatch.org/articles/publications-citations-position-and-compensation-of-economics-professors),
-- [implication of financial development to international capital flows and welfare](https://doi.org/10.1016/j.jfineco.2018.08.011),
-- [impossibility of canonical macroeconomic models to explain wealth inequality](https://doi.org/10.1016/j.jet.2019.04.001),
-- [efficient discretization of non-linear, non-Gaussian Markov processes](https://doi.org/10.3982/QE737),
+<section class="home-section" aria-labelledby="professional-roles">
+  <h2 id="professional-roles">Professional roles</h2>
+  <div class="home-role-list">
+    <p><strong>Professor of Economics</strong><span>Emory University</span></p>
+    <p><strong>Research Fellow</strong><span>Research Institute for Economics and Business Administration, Kobe University</span></p>
+    <p><strong>Co-editor</strong><span><a href="https://www.sciencedirect.com/journal/journal-of-mathematical-economics"><i>Journal of Mathematical Economics</i></a></span></p>
+    <p><strong>Associate Editor</strong><span><a href="https://link.springer.com/journal/199"><i>Economic Theory</i></a> and <i>Economic Theory Bulletin</i></span></p>
+  </div>
+</section>
 
-among others.
+<section class="home-section" aria-labelledby="about-me">
+  <h2 id="about-me">About</h2>
+  <p>
+    Alexis Akira Toda (pronounced <code>Alexy Akira Toda</code>) was born in
+    <a href="https://en.wikipedia.org/wiki/Montreal">Montréal, Canada</a> to a
+    Japanese father and a French-Canadian mother and moved to Japan at the age
+    of four. He received a B.A. in medicine from the
+    <a href="https://en.wikipedia.org/wiki/University_of_Tokyo">University of Tokyo</a>
+    in 2004 and an M.A. in economics in 2008 while practicing anesthesia.
+  </p>
+  <p>
+    He moved to the United States in 2008 and received a Ph.D. in economics
+    from <a href="https://en.wikipedia.org/wiki/Yale_University">Yale University</a>
+    in 2013. After eleven years at
+    <a href="https://en.wikipedia.org/wiki/University_of_California,_San_Diego">UC San Diego</a>,
+    he joined Emory University in 2024. He has published more than 50 research
+    articles across economics, mathematics, physics, and medical journals. He
+    is also a medical doctor and anesthesiologist.
+  </p>
+</section>
 
-I have published papers in journals such as [Econometrica](https://onlinelibrary.wiley.com/journal/14680262), [Journal of Political Economy](https://www.journals.uchicago.edu/toc/jpe/current), [Theoretical Economics](https://econtheory.org/), [Quantitative Economics](https://www.econometricsociety.org/publications/quantitative-economics), [Journal of Economic Theory](https://www.journals.elsevier.com/journal-of-economic-theory), [Review of Financial Studies](https://academic.oup.com/rfs), [Journal of Financial Economics](https://www.journals.elsevier.com/journal-of-financial-economics), [Journal of Monetary Economics](https://www.journals.elsevier.com/journal-of-monetary-economics), [American Mathematical Monthly](https://www.maa.org/press/periodicals/american-mathematical-monthly), [SIAM Journal on Numerical Analysis](https://www.siam.org/publications/journals/siam-journal-on-numerical-analysis-sinum), [Operations Research Letters](https://www.journals.elsevier.com/operations-research-letters), and [Physical Review E](https://journals.aps.org/pre/), among others. I am also a medical doctor (anesthesiologist), a co-editor at [Journal of Mathematical Economics](https://www.journals.elsevier.com/journal-of-mathematical-economics), and an associate editor at [Economic Theory](https://www.springer.com/journal/199). Please see my [research page](/publications/) for more details.
+<section class="home-section" aria-labelledby="personal">
+  <h2 id="personal">Personal</h2>
+  <h3>My values</h3>
+  <p>
+    I am a classical liberal and oppose unnecessary government intervention. I
+    find it beautiful when regularity and complexity come together. Some
+    corollaries of this statement are:
+  </p>
+  <ul>
+    <li>I like mathematics,</li>
+    <li>I like power law behavior,</li>
+    <li>I like bubbles,</li>
+    <li>My favorite composer is <a href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach">J. S. Bach</a>,</li>
+    <li>My favorite artist is <a href="https://mcescher.com/">M. C. Escher</a>,</li>
+    <li>I like short, simple papers that are to the point.</li>
+  </ul>
+  <p>I also like programming, chess, and tennis, although I am not particularly good at those activities.</p>
+  <p>
+    According to <a href="https://www.wikitree.com/wiki/Toda-2">WikiTree</a>, I
+    am a distant cousin of
+    <a href="https://www.wikitree.com/index.php?title=Special:Relationship&amp;action=calculate&amp;person1Name=Toda-2&amp;person2Name=Dion-75">Celine Dion</a>,
+    <a href="https://www.wikitree.com/index.php?title=Special:Relationship&amp;action=calculate&amp;person1Name=Toda-2&amp;person2Name=Trudeau-195">Justin Trudeau</a>,
+    and <a href="https://www.wikitree.com/index.php?title=Special:Relationship&amp;action=calculate&amp;person1Name=Toda-2&amp;person2Name=Swift-1298">Taylor Swift</a>.
+  </p>
 
-## My values
-I am a classical liberal and oppose unnecessary government intervention. I find it beautiful when regularity and complexity come together. Some corollaries of this statement are:
+  <h3>My Erdős number</h3>
+  <p>
+    My current <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdős number</a>
+    is 3. The collaboration path is:
+  </p>
+  <div class="home-erdos-chain" aria-label="Erdős collaboration path">
+    <a href="https://en.wikipedia.org/wiki/Paul_Erd%C5%91s">Paul Erdős</a>
+    <span aria-hidden="true">→</span>
+    <a href="https://en.wikipedia.org/wiki/Noga_Alon">Noga Alon</a>
+    <span aria-hidden="true">→</span>
+    <a href="https://en.wikipedia.org/wiki/Gregory_Gutin">Gregory Gutin</a>
+    <span aria-hidden="true">→</span>
+    <strong>Alexis Akira Toda</strong>
+  </div>
+  <p class="home-section-note">
+    You can use the <a href="https://zbmath.org/collaboration-distance/">zbMATH collaboration-distance tool</a>
+    to explore connections between researchers, although the tool is not perfect.
+  </p>
+</section>
 
-- I like mathematics,
-- I like power law behavior,
-- I like bubbles,
-- My favorite composer is [J. S. Bach](https://en.wikipedia.org/wiki/Johann_Sebastian_Bach),
-- My favorite artist is [M. C. Escher](https://mcescher.com/),
-- I like short, simple papers that are to the point.
+<style>
+  .home-intro {
+    padding: 0.25rem 0 2.25rem;
+    border-bottom: 1px solid var(--global-border-color);
+  }
 
-I also like programming, chess, and tennis, although I am not particularly good at those activities.
+  .home-role {
+    margin: 0;
+    color: var(--global-text-color);
+    font-size: clamp(1.2rem, 2.3vw, 1.65rem);
+    font-weight: 650;
+    letter-spacing: -0.015em;
+  }
 
-## My Erdős number
-My current [Erdős number](https://en.wikipedia.org/wiki/Erd%C5%91s_number) is 3, based on the following connections (you can use [this tool](https://zbmath.org/collaboration-distance/) to compute your Erdős number or the collaboration distance between anybody, though the tool is not perfect):
+  .home-lede {
+    max-width: 46rem;
+    margin: 0.85rem 0 0;
+    font-size: 1.05em;
+    line-height: 1.7;
+  }
 
-| 0 | 1 | 2| 3 |
-| :---: | :---: | :---: | :---: |
-| [Paul Erdős][Erdos] | [Noga Alon](https://en.wikipedia.org/wiki/Noga_Alon) | [Gregory Gutin](https://en.wikipedia.org/wiki/Gregory_Gutin) | Alexis Akira Toda |
+  .home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.35rem;
+  }
 
-[Erdos]: https://en.wikipedia.org/wiki/Paul_Erd%C5%91s
+  .home-action {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.4rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-text-color) !important;
+    font-size: 0.9em;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none !important;
+  }
+
+  .home-action:hover {
+    border-color: var(--global-link-color-hover);
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .home-action--primary {
+    border-color: var(--global-base-color);
+    background: var(--global-base-color);
+    color: #fff !important;
+  }
+
+  .home-action--primary:hover {
+    background: var(--global-link-color-hover);
+    color: #fff !important;
+  }
+
+  .home-action:focus-visible {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+
+  .home-section {
+    margin-top: 3rem;
+  }
+
+  .home-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .home-card {
+    padding: 1rem 1.05rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.6rem;
+  }
+
+  .home-card h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1rem;
+  }
+
+  .home-card p {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.55;
+  }
+
+  .home-section-note {
+    margin-top: 1.2rem;
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+
+  .home-role-list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--global-border-color);
+  }
+
+  .home-role-list p {
+    display: grid;
+    grid-template-columns: minmax(9rem, 0.7fr) minmax(12rem, 1.6fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .home-role-list span {
+    line-height: 1.45;
+  }
+
+  .home-erdos-chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.6rem;
+  }
+
+  .home-erdos-chain span {
+    color: var(--global-text-color-light);
+  }
+
+  @media (max-width: 600px) {
+    .home-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .home-action {
+      justify-content: center;
+    }
+
+    .home-role-list p {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+  }
+</style>
