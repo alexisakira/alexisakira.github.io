@@ -8,10 +8,11 @@
 
 # Basic Site Settings
 locale                   : "en-US"
+site_theme               : "default" # Supports automatic light/dark mode; alternatives: air, sunrise, mint, dirt, contrast
 title                    : "Alexis Akira Toda"
 title_separator          : "-"
 name                     : &name "Alexis Akira Toda"
-description              : &description "personal description"
+description              : &description "Personal academic website of Alexis Akira Toda, Professor of Economics at Emory University, featuring research in macro-finance, asset price bubbles, power laws, and computational economics."
 url                      : https://alexisakira.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "alexisakira/alexisakira.github.io"
@@ -31,12 +32,18 @@ author:
   email            : "alexis.akira.toda(at)emory.edu" 
 
   # Academic websites
+  academia         : # URL
   arxiv            : "http://arxiv.org/a/toda_a_1"
   googlescholar    : "https://scholar.google.com/citations?user=29tiOI0AAAAJ"
+  inspire-hep      : # URL
   impactstory      : # URL
   orcid            : "https://orcid.org/0000-0001-5965-7806"
+  semantic         : # URL
+  ssrn             : # URL
   pubmed           : # URL
   researchgate     : "https://www.researchgate.net/profile/Alexis_Toda"
+  scopus           : # URL
+  zotero           : # URL
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
@@ -47,6 +54,7 @@ author:
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
+  artstation       : # Username
   bluesky          : # "bsky.app" # Replace this with you Bluesky username
   facebook         : "alexisakira.toda"
   flickr           : # Username
@@ -126,17 +134,21 @@ facebook:
   app_id                 :
   publisher              :
 og_image                 :  # Open Graph/Twitter default site image
+og_description           : *description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person
+  name                   : "Alexis Akira Toda"
+  links:
+    - "https://scholar.google.com/citations?user=29tiOI0AAAAJ"
+    - "https://orcid.org/0000-0001-5965-7806"
+    - "https://github.com/alexisakira"
 
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               : "false" # Enable google-analytics-4 here only when a tracking ID is configured
   google:
     tracking_id          :
 
@@ -151,6 +163,8 @@ exclude:
   - "*.sublime-workspace"
   - .asset-cache
   - .bundle
+  - .devcontainer
+  - .github
   - .jekyll-assets-cache
   - .sass-cache
   - CHANGELOG
@@ -164,10 +178,12 @@ exclude:
   - assets/js/plugins
   - assets/js/vendor
   - config
+  - Dockerfile
   - gulpfile.js
+  - local
   - log
   - node_modules
-  - package.json
+  - package.json*
   - tmp
   - vendor
 keep_files:
@@ -321,17 +337,19 @@ timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database
 
 # Plugins
 plugins:
+  - jekyll-feed
+  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
   - jekyll-redirect-from
-# mimic GitHub Pages with --safe
+  - jemoji
+# Mimic GitHub Pages with --safe
 whitelist:
+  - jekyll-feed
+  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
+  - jekyll-redirect-from
   - jemoji
 
 

@@ -9,11 +9,11 @@
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
-  {% assign title= post.title %}
+  {% assign title = post.title %}
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
         <img src=
@@ -27,24 +27,25 @@
     {% endif %}
     <h3 class="archive__item-title" itemprop="headline">
       {% if post.link %}
-        <a href="{{ post.link }}">{{ post.title }}</a>
+        <a href="{{ post.link }}">{{ title }}</a>
       {% else %}
-        {{ post.title }}
+        {{ title }}
       {% endif %}
     </h3>
 
 <p class="archive__item-excerpt" itemprop="description">
-    	{% if post.venue %}<b>{{post.venue}}</b>, Last updated <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date| date: '%Y/%m' }}
-	{% else %}
-	Last updated <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date| date: '%Y/%m' }}
-	{% endif %}
-	{% if post.coauthor %}, with <i>{{ post.coauthor }}</i> {% endif %}
-      	{% if post.wpurl %} <a href=" {{ post.wpurl }} ">WP version</a> {% endif %}
-	{% if post.slides %} <a href=" {{ post.slides }} ">Slides</a> {% endif %}
-	{% if post.code %} <a href=" {{ post.code }} ">Code</a> {% endif %}
-	{% if post.corrigendum %} <a href=" {{ post.corrigendum }} ">Corrigendum</a> {% endif %}
-	{% if post.other %} {{ post.other }} {% endif %}
+      {% if post.venue %}<b>{{ post.venue }}</b>, Last updated <i class="fas fa-clock" aria-hidden="true"></i> {{ post.date | date: '%Y/%m' }}
+      {% else %}
+      Last updated <i class="fas fa-clock" aria-hidden="true"></i> {{ post.date | date: '%Y/%m' }}
+      {% endif %}
+      {% if post.coauthor %}, with <i>{{ post.coauthor }}</i>{% endif %}
+      {% if post.wpurl %} <a href="{{ post.wpurl }}">WP version</a>{% endif %}
+      {% if post.slides %} <a href="{{ post.slides }}">Slides</a>{% endif %}
+      {% if post.code %} <a href="{{ post.code }}">Code</a>{% endif %}
+      {% if post.bibtexurl %} <a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
+      {% if post.corrigendum %} <a href="{{ post.corrigendum }}">Corrigendum</a>{% endif %}
+      {% if post.other %} {{ post.other }}{% endif %}
 </p>
-	{% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
   </article>
 </div>
