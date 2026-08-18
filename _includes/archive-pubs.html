@@ -33,7 +33,7 @@
       {% endif %}
     </h3>
     {% if post.venue %}<p class="archive__item-excerpt" itemprop="description"><b>{{ post.venue }}</b>, <i class="fas fa-clock" aria-hidden="true"></i> {{ post.date | date: '%Y' }}
-      {% if post.coauthor %}, with <i>{{ post.coauthor }}</i>{% endif %}
+      {%- if post.coauthor %}, with <i>{{ post.coauthor }}</i>{% endif %}
       {% if post.wpurl %} <a href="{{ post.wpurl }}">WP version</a>{% endif %}
       {% if post.slides %} <a href="{{ post.slides }}">Slides</a>{% endif %}
       {% if post.code %} <a href="{{ post.code }}">Code</a>{% endif %}
