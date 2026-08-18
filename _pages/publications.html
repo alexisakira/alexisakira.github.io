@@ -5,30 +5,224 @@ permalink: /publications/
 author_profile: true
 ---
 
-Below is the complete publication list. My best papers are indicated with 👍.
+<p class="publications-intro">
+  Below is the complete publication list. My best papers are indicated with 👍.
+  {% if site.author.googlescholar %}You can also find my articles on
+  <a href="{{ site.author.googlescholar }}">Google Scholar</a>.{% endif %}
+</p>
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<nav class="publication-section-nav" aria-label="Publication sections">
+  <a href="#working-papers"><span>Working papers</span><small>{{ site.wp | size }}</small></a>
+  <a href="#refereed-articles"><span>Refereed articles</span><small>{{ site.publications | size }}</small></a>
+  <a href="#other-publications"><span>Other publications</span><small>{{ site.other | size }}</small></a>
+</nav>
 
-{% include base_path %}
+<section class="publication-section" aria-labelledby="working-papers">
+  <h2 class="publication-section__heading" id="working-papers">
+    Working papers <span class="publication-count">{{ site.wp | size }}</span>
+  </h2>
+  <div class="publication-list">
+    {% for post in site.wp reversed %}
+      {% include archive-wp.html %}
+    {% endfor %}
+  </div>
+</section>
 
-<h2>Working papers</h2>
+<section class="publication-section" aria-labelledby="refereed-articles">
+  <h2 class="publication-section__heading" id="refereed-articles">
+    Refereed research articles <span class="publication-count">{{ site.publications | size }}</span>
+  </h2>
+  <div class="publication-list">
+    {% for post in site.publications reversed %}
+      {% include archive-pubs.html %}
+    {% endfor %}
+  </div>
+</section>
 
-{% for post in site.wp reversed %}
-  {% include archive-wp.html %}
-{% endfor %}
+<section class="publication-section" aria-labelledby="other-publications">
+  <h2 class="publication-section__heading" id="other-publications">
+    Other publications <span class="publication-count">{{ site.other | size }}</span>
+  </h2>
+  <p class="publication-section__description">
+    Books, conference proceedings, corrigenda, and other publications.
+  </p>
+  <div class="publication-list">
+    {% for post in site.other reversed %}
+      {% include archive-pubs.html %}
+    {% endfor %}
+  </div>
+</section>
 
-<h2>Refereed research articles</h2>
+<style>
+  .publications-intro {
+    max-width: 47rem;
+    line-height: 1.65;
+  }
 
-{% for post in site.publications reversed %}
-  {% include archive-pubs.html %}
-{% endfor %}
+  .publication-section-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin: 1.5rem 0 3rem;
+  }
 
-<h2>Other publications</h2>
+  .publication-section-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.55rem;
+    color: var(--global-text-color) !important;
+    font-size: 0.88em;
+    font-weight: 600;
+    line-height: 1.25;
+    text-decoration: none !important;
+  }
 
-Below is a list of other publications including books, conference proceedings, corrigenda, etc.
+  .publication-section-nav a:hover {
+    border-color: var(--global-link-color-hover);
+    color: var(--global-link-color-hover) !important;
+  }
 
-{% for post in site.other reversed %}
-  {% include archive-pubs.html %}
-{% endfor %}
+  .publication-section-nav a:focus-visible,
+  .publication-action:focus-visible {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+
+  .publication-section-nav small,
+  .publication-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.7rem;
+    min-height: 1.7rem;
+    padding: 0 0.45rem;
+    border-radius: 999px;
+    background: var(--global-border-color);
+    color: var(--global-text-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .publication-section {
+    margin-top: 3.25rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .publication-section__heading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0;
+  }
+
+  .publication-section__description {
+    margin: 0.75rem 0 1.15rem;
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+  }
+
+  .publication-list {
+    margin-top: 1rem;
+    border-top: 1px solid var(--global-border-color);
+  }
+
+  .publication-item {
+    padding: 1.1rem 0 1.15rem;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .publication-item__title {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.4;
+  }
+
+  .publication-item__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.45rem;
+    margin: 0.42rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.86em;
+    line-height: 1.5;
+  }
+
+  .publication-item__venue {
+    color: var(--global-text-color);
+    font-weight: 650;
+  }
+
+  .publication-item__separator {
+    color: var(--global-text-color-light);
+  }
+
+  .publication-item__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+    margin-top: 0.68rem;
+  }
+
+  .publication-action,
+  .publication-action--other a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.8rem;
+    padding: 0.25rem 0.55rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-link-color) !important;
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none !important;
+  }
+
+  .publication-action:hover,
+  .publication-action--other a:hover {
+    border-color: var(--global-link-color-hover);
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .publication-action--other {
+    min-height: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  .publication-item__summary {
+    margin-top: 0.72rem;
+    font-size: 0.88em;
+    line-height: 1.55;
+  }
+
+  .publication-item__summary p {
+    margin: 0;
+  }
+
+  @media (max-width: 680px) {
+    .publication-section-nav {
+      grid-template-columns: 1fr;
+      margin-bottom: 2.5rem;
+    }
+
+    .publication-item {
+      padding: 1rem 0;
+    }
+
+    .publication-item__separator {
+      display: none;
+    }
+
+    .publication-item__meta > span:not(.publication-item__separator),
+    .publication-item__meta > time,
+    .publication-item__meta > strong {
+      width: 100%;
+    }
+  }
+</style>

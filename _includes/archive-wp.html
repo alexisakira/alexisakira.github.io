@@ -1,47 +1,32 @@
-{% include base_path %}
-
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
-
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
-      </div>
-    {% endif %}
-    <h3 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a>
-      {% else %}
-        {{ title }}
-      {% endif %}
+<div class="publication-item publication-item--working">
+  <article itemscope itemtype="https://schema.org/CreativeWork">
+    <h3 class="publication-item__title" itemprop="headline">
+      {% if post.link %}<a href="{{ post.link }}">{{ title }}</a>{% else %}{{ title }}{% endif %}
     </h3>
 
-<p class="archive__item-excerpt" itemprop="description">
-      {% if post.venue %}<b>{{ post.venue }}</b>, {% endif %}Last updated <i class="fas fa-clock" aria-hidden="true"></i> {{ post.date | date: '%Y/%m' }}{% if post.coauthor %}, with <i>{{ post.coauthor }}</i>{% endif %}
-      {% if post.wpurl %} <a href="{{ post.wpurl }}">WP version</a>{% endif %}
-      {% if post.slides %} <a href="{{ post.slides }}">Slides</a>{% endif %}
-      {% if post.code %} <a href="{{ post.code }}">Code</a>{% endif %}
-      {% if post.bibtexurl %} <a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
-      {% if post.corrigendum %} <a href="{{ post.corrigendum }}">Corrigendum</a>{% endif %}
-      {% if post.other %} {{ post.other }}{% endif %}
-</p>
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+    <p class="publication-item__meta" itemprop="description">
+      {% if post.venue %}<strong class="publication-item__venue">{{ post.venue }}</strong><span class="publication-item__separator" aria-hidden="true">·</span>{% endif %}
+      <span>Last updated <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y/%m' }}</time></span>
+      {% if post.coauthor %}<span class="publication-item__separator" aria-hidden="true">·</span><span>with <i>{{ post.coauthor }}</i></span>{% endif %}
+    </p>
+
+    {% if post.wpurl or post.slides or post.code or post.bibtexurl or post.corrigendum or post.other %}
+      <div class="publication-item__actions" aria-label="Resources for {{ post.title | strip_html | escape }}">
+        {% if post.wpurl %}<a class="publication-action" href="{{ post.wpurl }}">WP version</a>{% endif %}
+        {% if post.slides %}<a class="publication-action" href="{{ post.slides }}">Slides</a>{% endif %}
+        {% if post.code %}<a class="publication-action" href="{{ post.code }}">Code</a>{% endif %}
+        {% if post.bibtexurl %}<a class="publication-action" href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
+        {% if post.corrigendum %}<a class="publication-action" href="{{ post.corrigendum }}">Corrigendum</a>{% endif %}
+        {% if post.other %}<span class="publication-action publication-action--other">{{ post.other }}</span>{% endif %}
+      </div>
+    {% endif %}
+
+    {% if post.excerpt %}<div class="publication-item__summary">{{ post.excerpt | markdownify }}</div>{% endif %}
   </article>
 </div>
