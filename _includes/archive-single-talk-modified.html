@@ -1,45 +1,30 @@
-{% include base_path %}
-
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
-
 {% if post.id %}
-  {% assign venue = post.venue | markdownify | remove: "<p>" | remove: "</p>" %}
+  {% assign talk_title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
-  {% assign venue = post.venue %}
+  {% assign talk_title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
+<div class="talk-item">
+  <article itemscope itemtype="https://schema.org/Event">
+    <h3 class="talk-item__title" itemprop="name">{{ talk_title }}</h3>
+
+    <p class="talk-item__meta" itemprop="description">
+      <strong class="talk-item__type">{{ post.type }}</strong>
+      <span class="talk-item__separator" aria-hidden="true">·</span>
+      {% if post.link %}<a class="talk-item__venue" href="{{ post.link }}">{{ post.venue }}</a>{% else %}<span class="talk-item__venue">{{ post.venue }}</span>{% endif %}
+      <span class="talk-item__separator" aria-hidden="true">·</span>
+      {% if post.location == "Online" %}<span class="talk-item__online">Online</span>{% else %}<span>{{ post.location }}</span>{% endif %}
+      <span class="talk-item__separator" aria-hidden="true">·</span>
+      <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="startDate">{{ post.date | date: '%B %-d, %Y' }}</time>
+    </p>
+
+    {% if post.paperurl or post.slides %}
+      <div class="talk-item__actions" aria-label="Resources for {{ post.title | strip_html | escape }}">
+        {% if post.paperurl %}<a class="talk-action" href="{{ post.paperurl }}">Paper</a>{% endif %}
+        {% if post.slides %}<a class="talk-action" href="{{ post.slides }}">Slides</a>{% endif %}
       </div>
     {% endif %}
-    <h3 class="archive__item-venue" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ post.venue }}</a>
-      {% else %}
-        {{ post.venue }}
-      {% endif %}
-    </h3>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fas fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    {% if post.date %}<p class="page__meta"><i class="fas fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>{% endif %}
-    {% if post.location %}<p class="archive__item-excerpt" itemprop="description">{{ post.type }}, {{ post.location }}, "{{ post.title }}"
-      {% if post.paperurl %} <a href="{{ post.paperurl }}">Paper</a>{% endif %}
-      {% if post.slides %} <a href="{{ post.slides }}">Slides</a>{% endif %}
-    </p>{% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>{% endif %}
+
+    {% if post.excerpt %}<div class="talk-item__summary">{{ post.excerpt | markdownify }}</div>{% endif %}
   </article>
 </div>

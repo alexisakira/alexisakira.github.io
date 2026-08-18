@@ -5,15 +5,251 @@ permalink: /talks/
 author_profile: true
 ---
 
-<p>This page lists my seminars, conference presentations, lectures, etc. reverse-chronologically. It is primarily intended for my own record, but it may also be useful for cost-sharing if you would like to invite me for a talk in the future at a nearby place. You can also infer the projects I have most interest, suffered from long reviews, procrastinated, or abandoned.</p>
+{% assign online_talks = site.talks | where: "location", "Online" %}
+{% assign in_person_talks = site.talks | where_exp: "talk", "talk.location != 'Online'" %}
+{% assign talks_by_year = site.talks | group_by_exp: "talk", "talk.date | date: '%Y'" | reverse %}
+
+<p class="talks-intro">
+  This page lists my seminars, conference presentations, lectures, etc.
+  reverse-chronologically. It is primarily intended for my own record, but it
+  may also be useful for cost-sharing if you would like to invite me for a talk
+  in the future at a nearby place. You can also infer the projects I have most
+  interest, suffered from long reviews, procrastinated, or abandoned.
+</p>
+
+<div class="talks-overview" aria-label="Talk summary">
+  <span><strong>{{ site.talks | size }}</strong> total</span>
+  <span><strong>{{ in_person_talks | size }}</strong> in person</span>
+  <span><strong>{{ online_talks | size }}</strong> online</span>
+</div>
 
 {% if site.talkmap_link == true %}
-
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
-
+  <a class="talk-map-action" href="/talkmap.html">
+    <span>
+      <strong>Explore the talk map</strong>
+      <small>Browse in-person presentations by location.</small>
+    </span>
+    <span class="talk-map-action__arrow" aria-hidden="true">→</span>
+  </a>
 {% endif %}
 
-{% include base_path %}
-{% for post in site.talks reversed %}
-  {% include archive-single-talk-modified.html %}
+{% for year in talks_by_year %}
+  <section class="talk-year" aria-labelledby="talk-year-{{ year.name }}">
+    <h2 class="talk-year__heading" id="talk-year-{{ year.name }}">
+      {{ year.name }} <span class="talk-year__count">{{ year.items | size }}</span>
+    </h2>
+    <div class="talk-list">
+      {% for post in year.items reversed %}
+        {% include archive-single-talk-modified.html %}
+      {% endfor %}
+    </div>
+  </section>
 {% endfor %}
+
+<style>
+  .talks-intro {
+    max-width: 48rem;
+    line-height: 1.65;
+  }
+
+  .talks-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 1.3rem 0 0;
+  }
+
+  .talks-overview span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-text-color-light);
+    font-size: 0.82em;
+  }
+
+  .talks-overview strong {
+    color: var(--global-text-color);
+  }
+
+  .talk-map-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1rem 0 3.2rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.6rem;
+    color: var(--global-text-color) !important;
+    text-decoration: none !important;
+  }
+
+  .talk-map-action:hover {
+    border-color: var(--global-link-color-hover);
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .talk-map-action:focus-visible,
+  .talk-action:focus-visible {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+
+  .talk-map-action span:first-child {
+    display: grid;
+    gap: 0.18rem;
+  }
+
+  .talk-map-action small {
+    color: var(--global-text-color-light);
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+
+  .talk-map-action__arrow {
+    color: var(--global-link-color);
+    font-size: 1.35rem;
+  }
+
+  .talk-year {
+    margin-top: 3.2rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .talk-year__heading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0;
+  }
+
+  .talk-year__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.7rem;
+    min-height: 1.7rem;
+    padding: 0 0.45rem;
+    border-radius: 999px;
+    background: var(--global-border-color);
+    color: var(--global-text-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .talk-list {
+    margin-top: 1rem;
+    border-top: 1px solid var(--global-border-color);
+  }
+
+  .talk-item {
+    padding: 1.05rem 0 1.1rem;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .talk-item__title {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.4;
+  }
+
+  .talk-item__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.45rem;
+    margin: 0.45rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.86em;
+    line-height: 1.5;
+  }
+
+  .talk-item__type,
+  .talk-item__online {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.55rem;
+    padding: 0.12rem 0.45rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-text-color);
+    font-size: 0.9em;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .talk-item__online {
+    color: var(--global-link-color);
+  }
+
+  .talk-item__venue {
+    color: var(--global-text-color);
+    font-weight: 600;
+  }
+
+  .talk-item__separator {
+    color: var(--global-text-color-light);
+  }
+
+  .talk-item__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+    margin-top: 0.65rem;
+  }
+
+  .talk-action {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.8rem;
+    padding: 0.25rem 0.55rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    color: var(--global-link-color) !important;
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none !important;
+  }
+
+  .talk-action:hover {
+    border-color: var(--global-link-color-hover);
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .talk-item__summary {
+    margin-top: 0.7rem;
+    font-size: 0.88em;
+    line-height: 1.55;
+  }
+
+  .talk-item__summary p {
+    margin: 0;
+  }
+
+  @media (max-width: 680px) {
+    .talk-map-action {
+      margin-bottom: 2.6rem;
+    }
+
+    .talk-item__separator {
+      display: none;
+    }
+
+    .talk-item__meta > span:not(.talk-item__separator),
+    .talk-item__meta > time,
+    .talk-item__meta > strong,
+    .talk-item__meta > a {
+      width: 100%;
+    }
+
+    .talk-item__type,
+    .talk-item__online {
+      width: fit-content !important;
+    }
+  }
+</style>
