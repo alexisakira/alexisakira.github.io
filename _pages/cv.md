@@ -41,6 +41,7 @@ redirect_from:
   <a href="#appointments">Appointments</a>
   <a href="#background">Background</a>
   <a href="#honors">Honors</a>
+  <a href="#media">Media</a>
   <a href="#service">Service</a>
 </nav>
 
@@ -147,6 +148,58 @@ redirect_from:
     <article>
       <span>2016</span>
       <p><strong>Faculty Teaching Award</strong><br>Department of Economics, UC San Diego</p>
+    </article>
+  </div>
+</section>
+
+<section class="cv-section" id="media" aria-labelledby="media-heading">
+  <h2 id="media-heading">Media and profiles</h2>
+  <p class="cv-section-intro">
+    Selected coverage and profiles, including Japanese-language pieces that are
+    not listed in the detailed academic CV.
+  </p>
+  <div class="cv-media-grid">
+    <article class="cv-media-card">
+      <div class="cv-media-card__meta"><span>Fortune</span><span>2020</span><span>English</span></div>
+      <h3><a href="https://fortune.com/2020/05/04/reopening-reopen-economy-coronavirus-covid-19-lifting-lockdown-economists/">The reopening dilemma</a></h3>
+      <p>A feature on the public-health and economic tradeoffs of reopening during COVID-19, including my model-based perspective on lockdown timing and epidemic dynamics.</p>
+    </article>
+
+    <article class="cv-media-card">
+      <div class="cv-media-card__meta"><span>VoxEU / CEPR</span><span>2020</span><span>English</span></div>
+      <h3><a href="https://cepr.org/voxeu/columns/early-draconian-social-distancing-may-be-suboptimal-fighting-covid-19-epidemic">Early draconian social distancing may be suboptimal</a></h3>
+      <p>My policy column on why temporary early lockdowns can delay rather than eliminate an epidemic, and why the timing and targeting of mitigation matter.</p>
+    </article>
+
+    <article class="cv-media-card">
+      <div class="cv-media-card__meta"><span>TV Asahi</span><span>2019</span><span>Japanese</span></div>
+      <h3 lang="ja"><a href="https://www.tv-asahi.co.jp/aitsuima2021/backnumber_new/0126/">あいつ今何してる？</a></h3>
+      <p>A national television profile tracing my path from a high-school mathematics enthusiast and University of Tokyo medical student to an economist in the United States.</p>
+    </article>
+
+    <article class="cv-media-card">
+      <div class="cv-media-card__meta"><span lang="ja">鉄門だより</span><span>2019</span><span>Japanese</span></div>
+      <h3 lang="ja"><a href="{{ '/files/tetsumon_dayori.pdf' | relative_url }}">南カリフォルニアで高等遊民</a></h3>
+      <p>A first-person essay for the University of Tokyo medical alumni magazine about my transition from medicine to economics, my research, and academic life in Southern California.</p>
+    </article>
+
+    <article class="cv-media-card">
+      <div class="cv-media-card__meta"><span>m3.com</span><span>2019</span><span>Japanese</span></div>
+      <h3 lang="ja"><a href="https://www.m3.com/news/open/iryoishin/647648">麻酔科医から米国で経済学者になるまで</a></h3>
+      <p>A four-part interview about leaving clinical anesthesiology for economics, academic life in the United States, and unconventional career paths for physicians.</p>
+    </article>
+
+    <article class="cv-media-card">
+      <div class="cv-media-card__meta"><span>Data House</span><span>1998</span><span>Japanese</span></div>
+      <h3 lang="ja"><a href="https://ci.nii.ac.jp/ncid/BN06879843?l=en">東大理III 1998：天才たちのメッセージ</a></h3>
+      <p>An interview profile in a book about the experiences and perspectives of students admitted to the University of Tokyo's highly selective Science III program.</p>
+    </article>
+
+    <article class="cv-media-card">
+      <div class="cv-media-card__meta"><span>Nippon TV</span><span>1995</span><span>Japanese</span></div>
+      <h3 lang="ja"><a href="https://www.ntv.co.jp/quiz/index.html">全国高等学校クイズ選手権</a></h3>
+      <p>Archival footage from the 15th All Japan High School Quiz Championship, where I represented the Tokyo team.</p>
+      <p class="cv-media-card__links"><a href="https://www.youtube.com/watch?v=J5kAQxVFaQc">Watch archival footage</a></p>
     </article>
   </div>
 </section>
@@ -279,7 +332,7 @@ redirect_from:
 
   .cv-section-nav {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 0.5rem;
     margin: 0 0 3.2rem;
   }
@@ -302,7 +355,8 @@ redirect_from:
   .cv-action:focus-visible,
   .cv-overview a:focus-visible,
   .cv-section-nav a:focus-visible,
-  .cv-role-card a:focus-visible {
+  .cv-role-card a:focus-visible,
+  .cv-media-card a:focus-visible {
     outline: 3px solid var(--global-link-color);
     outline-offset: 3px;
   }
@@ -314,6 +368,14 @@ redirect_from:
 
   .cv-section > h2 {
     margin-bottom: 1.1rem;
+  }
+
+  .cv-section-intro {
+    max-width: 43rem;
+    margin: -0.45rem 0 1.1rem;
+    color: var(--global-text-color-light);
+    font-size: 0.86em;
+    line-height: 1.55;
   }
 
   .cv-role-grid,
@@ -361,6 +423,49 @@ redirect_from:
     border-radius: 999px;
     color: var(--global-text-color-light);
     font-size: 0.78em;
+  }
+
+  .cv-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .cv-media-card {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.65rem;
+  }
+
+  .cv-media-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.65rem;
+    color: var(--global-text-color-light);
+    font-size: 0.68em;
+    font-weight: 650;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .cv-media-card h3 {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .cv-media-card p {
+    margin: 0.55rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.84em;
+    line-height: 1.55;
+  }
+
+  .cv-media-card .cv-media-card__links {
+    margin-top: 0.65rem;
+    font-size: 0.78em;
+    font-weight: 650;
   }
 
   .cv-columns > div {
@@ -453,8 +558,13 @@ redirect_from:
 
     .cv-role-grid,
     .cv-columns,
-    .cv-compact-grid {
+    .cv-compact-grid,
+    .cv-media-grid {
       grid-template-columns: 1fr;
+    }
+
+    .cv-section-nav {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
