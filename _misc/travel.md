@@ -10,6 +10,8 @@ section_order: 3
 
 I like traveling to new places and eating local food. At the bottom of this page is a list of countries and territories I have visited. The table below lists (in alphabetical order) the places that I particularly like. 
 
+<div class="table-scroll" role="region" aria-label="Favorite places comparison" tabindex="0" markdown="1">
+
 | Places | What I like | What I don't like |
 | --- | --- | --- |
 Canada | Natural beauty; Ethnic diversity; Liberal society | High taxes |
@@ -22,6 +24,8 @@ Scotland | Natural beauty | |
 Taiwan | Great (and cheap) food; Friendly people | Hot and humid climate |
 Turkey | Great food; History; Friendly people | |
 United States | Capitalism; Individualism; Meritocracy; Money can buy (almost) anything; Relatively low taxes | Gun violence; Healthcare system; Public transportation; Non-SI units (mile, ounce, etc.); Bread; Department of Motor Vehicles; Bureaucracy in California |
+
+</div>
 
 1. Argentina
 1. Australia

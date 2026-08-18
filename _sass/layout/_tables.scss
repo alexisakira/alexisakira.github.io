@@ -36,3 +36,21 @@ td {
 tr, td, th {
   vertical-align: middle;
 }
+
+.table-scroll {
+  max-width: 100%;
+  margin-bottom: 1em;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+
+  table {
+    min-width: 48rem;
+    margin-bottom: 0;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+}
