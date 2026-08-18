@@ -13,7 +13,7 @@ Econ 205 is a graduate course and is not open to undergraduate students. Undergr
 
 ## [Syllabus](/files/205_syllabus.pdf)
 
-## [Lecture notes](/files/EME.pdf)
+## [Lecture notes and book resources](https://github.com/alexisakira/EME)
 
 ## [Slides](/files/EME_slides.pdf)
 
