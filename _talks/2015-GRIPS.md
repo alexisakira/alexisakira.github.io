@@ -7,4 +7,3 @@ link: https://www.grips.ac.jp/en/
 date: 2015-05-20
 location: "Tokyo, Japan"
 ---
-

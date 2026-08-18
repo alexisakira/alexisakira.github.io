@@ -7,4 +7,3 @@ link: https://www.kier.kyoto-u.ac.jp/en/workshop/page/59/?anchor=id_4042
 date: 2015-05-18
 location: "Kyoto, Japan"
 ---
-

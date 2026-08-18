@@ -7,4 +7,3 @@ link: https://www.ier.hit-u.ac.jp/English/
 date: 2015-08-04
 location: "Tokyo, Japan"
 ---
-
