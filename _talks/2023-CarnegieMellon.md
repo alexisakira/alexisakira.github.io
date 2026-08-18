@@ -1,6 +1,5 @@
 ---
-title: "Leverage, Endogenous Unbalanced Growth, and Asset
-Price Bubbles"
+title: "Leverage, Endogenous Unbalanced Growth, and Asset Price Bubbles"
 collection: talks
 type: "Seminar"
 venue: "Carnegie Mellon University, Tepper School of Business"

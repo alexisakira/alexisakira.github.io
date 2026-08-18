@@ -1,5 +1,5 @@
 ---
-title: "Note on Bubbles Attached to Real Assets"
+title: "Rational Bubbles Attached to Real Assets"
 collection: talks
 type: "Seminar"
 venue: "Emory University, Department of Economics"
