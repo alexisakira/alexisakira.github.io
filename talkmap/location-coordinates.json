@@ -44,6 +44,16 @@
     "latitude": -27.4689623,
     "longitude": 153.0235009
   },
+  "Burnaby, Canada": {
+    "display_name": "Burnaby, Metro Vancouver Regional District, British Columbia, Canada",
+    "latitude": 49.2433804,
+    "longitude": -122.972545
+  },
+  "Cambridge, UK": {
+    "display_name": "Cambridge, Cambridgeshire, Cambridgeshire and Peterborough, England, United Kingdom",
+    "latitude": 52.1975846,
+    "longitude": 0.1391537
+  },
   "Canberra, Australia": {
     "display_name": "Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
     "latitude": -35.2975906,
@@ -53,6 +63,11 @@
     "display_name": "Charlottesville, Virginia, United States",
     "latitude": 38.029306,
     "longitude": -78.4766781
+  },
+  "Chicago, IL": {
+    "display_name": "Chicago, South Chicago Township, Cook County, Illinois, United States",
+    "latitude": 41.8755616,
+    "longitude": -87.6244212
   },
   "Chicago, Illinois": {
     "display_name": "Chicago, South Chicago Township, Cook County, Illinois, United States",
@@ -79,15 +94,30 @@
     "latitude": 52.4081812,
     "longitude": -1.510477
   },
+  "Davis, CA": {
+    "display_name": "Davis, Yolo County, California, United States",
+    "latitude": 38.5435526,
+    "longitude": -121.739005
+  },
   "Dedham, Massachusetts": {
     "display_name": "Dedham, Norfolk County, Massachusetts, United States",
     "latitude": 42.2489143,
     "longitude": -71.1755732
   },
+  "Durham, NC": {
+    "display_name": "Durham, Durham County, North Carolina, United States",
+    "latitude": 35.996653,
+    "longitude": -78.9018053
+  },
   "Fairfax, Virginia": {
     "display_name": "Fairfax, Virginia, 20030, United States",
     "latitude": 38.8462236,
     "longitude": -77.3063733
+  },
+  "Faro, Portugal": {
+    "display_name": "Faro, Portugal",
+    "latitude": 37.0162944,
+    "longitude": -7.935182
   },
   "Hamburg, Germany": {
     "display_name": "Hamburg, Deutschland",
@@ -98,6 +128,11 @@
     "display_name": "香港 Hong Kong, 中国",
     "latitude": 22.2818333,
     "longitude": 114.1582831
+  },
+  "Irvine, CA": {
+    "display_name": "Irvine, Orange County, California, United States",
+    "latitude": 33.6856969,
+    "longitude": -117.825981
   },
   "Irvine, California": {
     "display_name": "Irvine, Orange County, California, United States",
@@ -124,10 +159,20 @@
     "latitude": 35.0115754,
     "longitude": 135.7681441
   },
+  "La Jolla, CA": {
+    "display_name": "La Jolla, San Diego, San Diego County, California, United States",
+    "latitude": 32.8458529,
+    "longitude": -117.2575702
+  },
   "London, United Kingdom": {
     "display_name": "Greater London, England, United Kingdom",
     "latitude": 51.5074456,
     "longitude": -0.1277653
+  },
+  "Los Angeles, CA": {
+    "display_name": "Los Angeles, Los Angeles County, California, United States",
+    "latitude": 34.0536909,
+    "longitude": -118.242766
   },
   "Los Angeles, California": {
     "display_name": "Los Angeles, Los Angeles County, California, United States",
@@ -144,12 +189,22 @@
     "latitude": 45.5031824,
     "longitude": -73.5698065
   },
+  "Moscow, Russia": {
+    "display_name": "Москва, Центральный федеральный округ, Россия",
+    "latitude": 55.625578,
+    "longitude": 37.6063916
+  },
   "New Haven, Connecticut": {
     "display_name": "New Haven, South Central Connecticut Planning Region, Connecticut, United States",
     "latitude": 41.3082138,
     "longitude": -72.9250518
   },
   "New York City, New York": {
+    "display_name": "New York, United States",
+    "latitude": 40.7127281,
+    "longitude": -74.0060152
+  },
+  "New York, NY": {
     "display_name": "New York, United States",
     "latitude": 40.7127281,
     "longitude": -74.0060152
@@ -234,6 +289,16 @@
     "latitude": 43.061936,
     "longitude": 141.3542924
   },
+  "Shanghai, China": {
+    "display_name": "上海市, 中国",
+    "latitude": 31.2312707,
+    "longitude": 121.4700152
+  },
+  "St. Louis, MO": {
+    "display_name": "Saint Louis, Missouri, United States",
+    "latitude": 38.6254063,
+    "longitude": -90.190009
+  },
   "St. Louis, Missouri": {
     "display_name": "Saint Louis, Missouri, United States",
     "latitude": 38.6254063,
@@ -258,6 +323,16 @@
     "display_name": "東京都, 日本",
     "latitude": 35.6768601,
     "longitude": 139.7638947
+  },
+  "Toulouse, France": {
+    "display_name": "Toulouse, Haute-Garonne, Occitanie, France métropolitaine, France",
+    "latitude": 43.6044638,
+    "longitude": 1.4442433
+  },
+  "Vancouver, Canada": {
+    "display_name": "Vancouver, Metro Vancouver Regional District, British Columbia, Canada",
+    "latitude": 49.2608724,
+    "longitude": -123.113952
   },
   "Venezia, Italy": {
     "display_name": "Venezia, Veneto, 30121-30176, Italia",
