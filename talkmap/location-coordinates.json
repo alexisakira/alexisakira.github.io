@@ -224,6 +224,11 @@
     "latitude": 59.9133301,
     "longitude": 10.7389701
   },
+  "Otaru, Japan": {
+    "display_name": "小樽市, 後志総合振興局, 北海道, 北海道地方, 日本",
+    "latitude": 43.1906806,
+    "longitude": 140.9946021
+  },
   "Ottawa, Canada": {
     "display_name": "Ottawa, Eastern Ontario, Ontario, Canada",
     "latitude": 45.4208777,
@@ -353,5 +358,10 @@
     "display_name": "Waterloo, Region of Waterloo, Southwestern Ontario, Ontario, Canada",
     "latitude": 43.4652699,
     "longitude": -80.5222961
+  },
+  "Yokohama, Japan": {
+    "display_name": "横浜市, 神奈川県, 231-0017, 日本",
+    "latitude": 35.4503381,
+    "longitude": 139.6343802
   }
 }
