@@ -12,7 +12,7 @@ redirect_from:
   <p class="home-role" id="home-role">Mathematical economist at <a href="https://economics.emory.edu/">Emory University</a></p>
   <p class="home-lede">
     I work in macro-finance and mathematical economics, with particular interests
-    in asset-price bubbles, computational economics, and power laws.
+    in asset price bubbles, computational economics, and power laws.
   </p>
   <nav class="home-actions" aria-label="Homepage shortcuts">
     <a class="home-action home-action--primary" href="/publications/">Publications</a>
@@ -33,7 +33,7 @@ redirect_from:
       <p>General equilibrium, dynamic programming, and the mathematical foundations of economic theory.</p>
     </article>
     <article class="home-card">
-      <h3>Asset-price bubbles</h3>
+      <h3>Asset price bubbles</h3>
       <p>The conditions under which bubbles arise, persist, and affect economic growth.</p>
     </article>
     <article class="home-card">
@@ -55,8 +55,8 @@ redirect_from:
 <section class="home-section" aria-labelledby="professional-roles">
   <h2 id="professional-roles">Professional roles</h2>
   <div class="home-role-list">
-    <p><strong>Professor of Economics</strong><span>Emory University</span></p>
-    <p><strong>Research Fellow</strong><span>Research Institute for Economics and Business Administration, Kobe University</span></p>
+    <p><strong>Professor of Economics</strong><span><a href="https://economics.emory.edu/people/faculty/biography/toda-alexis-akira.html">Emory University</a></span></p>
+    <p><strong>Research Fellow</strong><span><a href="https://www.rieb.kobe-u.ac.jp/faculty/research_fellow/index.html">Research Institute for Economics and Business Administration, Kobe University</a></span></p>
     <p><strong>Co-editor</strong><span><a href="https://www.sciencedirect.com/journal/journal-of-mathematical-economics"><i>Journal of Mathematical Economics</i></a></span></p>
     <p><strong>Associate Editor</strong><span><a href="https://link.springer.com/journal/199"><i>Economic Theory</i></a> and <i>Economic Theory Bulletin</i></span></p>
   </div>
