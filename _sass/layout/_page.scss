@@ -270,10 +270,15 @@
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
 
-  &:hover {
-    text-decoration: none;
-    color: var(--global-link-color-hover);
-  }
+}
+
+a.page__taxonomy-item:hover {
+  text-decoration: none;
+  color: var(--global-link-color-hover);
+}
+
+.page__taxonomy-item--static {
+  color: var(--global-text-color);
 }
 
 
