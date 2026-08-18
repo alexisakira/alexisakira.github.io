@@ -5,6 +5,7 @@ type: "Seminar"
 venue: "University of Queensland, School of Economics"
 link: https://economics.uq.edu.au/
 paperurl: https://doi.org/10.2139/ssrn.2336582
+slides: /files/slides/slides_securitization.pdf
 date: 2014-12-14
 location: "Brisbane, Australia"
 ---
