@@ -189,7 +189,7 @@
     }
   }
 
-  button {
+  > button {
     position: absolute;
     height: 2.5rem;
     right: 0;
@@ -200,6 +200,11 @@
     color: var(--global-text-color);
     cursor: pointer;
     z-index: 100;
+
+    &:focus-visible {
+      outline: 3px solid var(--global-link-color);
+      outline-offset: 2px;
+    }
   }
 
   .visible-links {
@@ -226,11 +231,26 @@
     }
 
     #theme-toggle {
-      a {
-        width: 25px;
+      .theme-toggle__button {
         display: flex;
+        width: 44px;
+        min-height: 44px;
+        align-items: center;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: var(--global-masthead-link-color);
         justify-content: center;
         cursor: pointer;
+
+        &:hover {
+          color: var(--global-masthead-link-color-hover);
+        }
+
+        &:focus-visible {
+          outline: 3px solid var(--global-link-color);
+          outline-offset: 2px;
+        }
       }
     }
 
