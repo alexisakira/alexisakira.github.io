@@ -45,6 +45,20 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
+        {% if page.time_sensitive %}
+          <aside class="notice--warning" role="note">
+            {% if page.lang contains 'ja' %}
+              <strong>公開時点の情報です。</strong> この投稿には、公開時点の金融商品、価格、税制、または特典に関する情報が含まれています。内容が変更されている可能性があるため、判断の前に最新の公式情報をご確認ください。
+            {% else %}
+              <strong>Information may have changed.</strong> This post discusses financial products, prices, tax rules, or benefits as they existed when it was published. Check current official sources before acting.
+            {% endif %}
+          </aside>
+        {% endif %}
+
+        {% if page.series %}
+          {% include post-series.html %}
+        {% endif %}
+
         {{ content }}
 
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
