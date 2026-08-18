@@ -1,5 +1,5 @@
 ---
-title: "Pareto's Limits: Improving Inequality Estimates in America, 1917 to 1965"
+title: "Pareto's Limits: Improving Inequality Estimates in America, 1917–1965"
 collection: publications
 link: https://doi.org/10.1007/s11698-025-00316-8
 venue: "Cliometrica"

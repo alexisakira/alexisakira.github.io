@@ -2,13 +2,13 @@
 title: "Susceptible-Infected-Recovered (SIR) Dynamics of COVID-19 and Economic Impact"
 collection: other
 link: https://cepr.org/publications/covid-economics-issue-1
-venue: Covid Economics, Vetted and Real-Time Papers
+venue: "COVID Economics: Vetted and Real-Time Papers"
 date: 2020-04-03
 history: https://alexisakira.github.io/other/covid
 slides: https://alexisakira.github.io/files/slides/slides_covid19.pdf
 ---
 
-After returning from my UK trip in early March 2020, just a few days before the closure of the border, I got interested in COVID-19, like many of us. I played around with some models and I derived a system of differential equations that turned out to be identical to the [Kermack & McKendrick (1927)](https://doi.org/10.1098/rspa.1927.0118) [susceptible-infected-recovered (SIR) model](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology). I searched the literature and found the closed-form solution by [Harko et al. (2014)](10.1016/j.amc.2014.03.030). At that time, little was known about COVID-19, so I decided to estimate the epidemiological parameters from data to predict the epidemic dynamics.
+After returning from my UK trip in early March 2020, just a few days before the closure of the border, I got interested in COVID-19, like many of us. I played around with some models and I derived a system of differential equations that turned out to be identical to the [Kermack & McKendrick (1927)](https://doi.org/10.1098/rspa.1927.0118) [susceptible-infected-recovered (SIR) model](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology). I searched the literature and found the closed-form solution by [Harko et al. (2014)](https://doi.org/10.1016/j.amc.2014.03.030). At that time, little was known about COVID-19, so I decided to estimate the epidemiological parameters from data to predict the epidemic dynamics.
 
 In mid March 2020, the state of California imposed lockdown, my kids' school suddenly closed (teachers were not yet used to online teaching, so education was *laissez faire* to parents), tennis courts closed, and we could no longer eat at restaurants. I thought this was all wrong. I have a medical degree and knew about herd immunity, so just shutting down everything would simply delay the problem without solving it, while imposing significant economic costs to the society. So for the first time in my career as a researcher, I worked on a project not just driven by scientific curiosity but also by a sense of civic duty to inform the public and policy makers.
 
