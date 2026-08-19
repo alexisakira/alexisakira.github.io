@@ -17,11 +17,12 @@
       {% if post.coauthor %}<span class="publication-item__separator" aria-hidden="true">·</span><span>with <i>{{ post.coauthor }}</i></span>{% endif %}
     </p>
 
-    {% if post.wpurl or post.slides or post.code or post.bibtexurl or post.history or post.corrigendum or post.other %}
+    {% if post.wpurl or post.slides or post.code or post.resource or post.bibtexurl or post.history or post.corrigendum or post.other %}
       <div class="publication-item__actions" aria-label="Resources for {{ post.title | strip_html | escape }}">
         {% if post.wpurl %}<a class="publication-action" href="{{ post.wpurl }}">WP version</a>{% endif %}
         {% if post.slides %}<a class="publication-action" href="{{ post.slides }}">Slides</a>{% endif %}
         {% if post.code %}<a class="publication-action" href="{{ post.code }}">Code</a>{% endif %}
+        {% if post.resource %}<a class="publication-action" href="{{ post.resource }}">{{ post.resource_label | default: "Resources" }}</a>{% endif %}
         {% if post.bibtexurl %}<a class="publication-action" href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
         {% if post.history %}<a class="publication-action" href="{{ post.history }}">History</a>{% endif %}
         {% if post.corrigendum %}<a class="publication-action" href="{{ post.corrigendum }}">Corrigendum</a>{% endif %}
