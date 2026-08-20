@@ -12,6 +12,12 @@ author_profile: true
   <a href="{{ site.author.googlescholar }}">Google Scholar</a>.{% endif %}
 </p>
 
+<div class="publication-search" role="search">
+  <label for="publication-search-input">Find a publication</label>
+  <input id="publication-search-input" type="search" placeholder="Search title, journal, or coauthor" autocomplete="off">
+  <p id="publication-search-status" class="publication-search__status" role="status" aria-live="polite"></p>
+</div>
+
 <nav class="publication-section-nav" aria-label="Publication sections">
   <a href="#working-papers"><span>Working papers</span><small>{{ site.wp | size }}</small></a>
   <a href="#refereed-articles"><span>Refereed articles</span><small>{{ site.publications | size }}</small></a>
@@ -58,6 +64,41 @@ author_profile: true
   .publications-intro {
     max-width: 47rem;
     line-height: 1.65;
+  }
+
+  .publication-search {
+    max-width: 36rem;
+    margin-top: 1.4rem;
+  }
+
+  .publication-search label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-size: 0.9em;
+    font-weight: 650;
+  }
+
+  .publication-search input {
+    width: 100%;
+    min-height: 2.7rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.45rem;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    font: inherit;
+  }
+
+  .publication-search input:focus-visible {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+
+  .publication-search__status {
+    min-height: 1.3rem;
+    margin: 0.45rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.84em;
   }
 
   .publication-section-nav {
@@ -227,3 +268,37 @@ author_profile: true
     }
   }
 </style>
+
+<script>
+  (function () {
+    var input = document.getElementById('publication-search-input');
+    var status = document.getElementById('publication-search-status');
+    var items = Array.prototype.slice.call(document.querySelectorAll('.publication-item'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.publication-section'));
+
+    function updateResults() {
+      var query = input.value.trim().toLowerCase();
+      var matches = 0;
+
+      items.forEach(function (item) {
+        var match = !query || item.textContent.toLowerCase().indexOf(query) !== -1;
+        item.hidden = !match;
+        if (match) matches += 1;
+      });
+
+      sections.forEach(function (section) {
+        var hasVisibleItem = Array.prototype.some.call(
+          section.querySelectorAll('.publication-item'),
+          function (item) { return !item.hidden; }
+        );
+        section.hidden = !!query && !hasVisibleItem;
+      });
+
+      status.textContent = query
+        ? matches + (matches === 1 ? ' publication found.' : ' publications found.')
+        : '';
+    }
+
+    input.addEventListener('input', updateResults);
+  }());
+</script>
