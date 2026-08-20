@@ -1,0 +1,7 @@
+# Local preview settings for Docker on Windows.
+# Keep these separate from _config.yml so the published GitHub Pages site
+# continues to use its public address.
+url: "http://localhost:4000"
+host: "0.0.0.0"
+port: 4000
+livereload: true

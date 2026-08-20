@@ -9,15 +9,16 @@ redirect_from:
 ---
 
 <section class="home-intro" aria-labelledby="home-role">
-  <p class="home-role" id="home-role">Mathematical economist at <a href="https://economics.emory.edu/">Emory University</a></p>
+  <p class="home-role" id="home-role">Professor of Economics and mathematical economist at <a href="https://economics.emory.edu/">Emory University</a></p>
   <p class="home-lede">
-    I work in macro-finance and mathematical economics, with particular interests
-    in asset price bubbles, computational economics, and power laws.
+    I study macro-finance and mathematical economics, with particular interests
+    in asset price bubbles, computational methods, and power laws.
   </p>
   <nav class="home-actions" aria-label="Homepage shortcuts">
-    <a class="home-action home-action--primary" href="/publications/">Publications</a>
+    <a class="home-action home-action--primary" href="/research/">Research</a>
+    <a class="home-action" href="/publications/">Publications</a>
     <a class="home-action" href="/files/alexisakira_toda_CV.pdf">CV (PDF)</a>
-    <a class="home-action" href="/talkmap.html">Talks and map</a>
+    <a class="home-action" href="/talks/">Talks</a>
   </nav>
 </section>
 
