@@ -126,8 +126,8 @@ redirect_from:
   <h2 id="honors-heading">Selected honors and awards</h2>
   <div class="cv-list">
     <article>
-      <span>2026</span>
-      <p><strong>Best Data Package of the Year Award</strong><br>Economic Inquiry, for “Optimal Taxation and the Domar-Musgrave Effect”</p>
+      <span>2025</span>
+      <p><strong><a href="https://www.weai.org/news/2025-ei-outstanding-data-package-award">EI Outstanding Data Package Award</a></strong><br>Economic Inquiry, with Brendan K. Beare, for the data package for “Optimal Taxation and the Domar-Musgrave Effect”</p>
     </article>
     <article>
       <span>2021</span>
