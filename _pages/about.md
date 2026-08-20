@@ -25,23 +25,23 @@ redirect_from:
   <h2 id="research-areas">Research areas</h2>
   <div class="home-card-grid">
     <article class="home-card">
-      <h3>Macro-finance</h3>
+      <h3><a href="/research/#macro-finance">Macro-finance</a></h3>
       <p>Asset prices, wealth distributions, financial markets, and economic growth.</p>
     </article>
     <article class="home-card">
-      <h3>Mathematical economics</h3>
+      <h3><a href="/research/#mathematical-economics">Mathematical economics</a></h3>
       <p>General equilibrium, dynamic programming, and the mathematical foundations of economic theory.</p>
     </article>
     <article class="home-card">
-      <h3>Asset price bubbles</h3>
+      <h3><a href="/research/#asset-price-bubbles">Asset price bubbles</a></h3>
       <p>The conditions under which bubbles arise, persist, and affect economic growth.</p>
     </article>
     <article class="home-card">
-      <h3>Computational economics</h3>
+      <h3><a href="/research/#computational-economics">Computational economics</a></h3>
       <p>Numerical methods for solving and estimating economic models.</p>
     </article>
     <article class="home-card">
-      <h3>Power laws</h3>
+      <h3><a href="/research/#power-laws">Power laws</a></h3>
       <p>Pareto distributions, tail behavior, and applications to income and wealth inequality.</p>
     </article>
   </div>
@@ -211,6 +211,15 @@ redirect_from:
   .home-card h3 {
     margin: 0 0 0.45rem;
     font-size: 1rem;
+  }
+
+  .home-card h3 a {
+    color: var(--global-text-color) !important;
+    text-decoration: none !important;
+  }
+
+  .home-card h3 a:hover {
+    color: var(--global-link-color-hover) !important;
   }
 
   .home-card p {

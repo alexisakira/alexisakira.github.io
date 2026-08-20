@@ -1,0 +1,11 @@
+services:
+  jekyll-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    ports:
+      - "4000:4000"
+    command: sleep infinity
