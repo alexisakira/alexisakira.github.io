@@ -143,7 +143,7 @@ redirect_from:
     </article>
     <article>
       <span>2017</span>
-      <p><strong>Wells Fargo Award for Excellence in Research</strong><br>For “The Double Power Law in Consumption and Implications for Testing Euler Equations”</p>
+      <p><strong>Wells Fargo Award for Excellence in Research</strong><br>With Kieran J. Walsh, for “The Double Power Law in Consumption and Implications for Testing Euler Equations”</p>
     </article>
     <article>
       <span>2016</span>
