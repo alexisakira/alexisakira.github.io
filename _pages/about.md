@@ -48,8 +48,7 @@ redirect_from:
   </div>
   <p class="home-section-note">
     My work spans economics, mathematics, physics, and medicine. The
-    <a href="/publications/">Publications page</a> contains the complete list;
-    papers I consider especially representative are marked with 👍.
+    <a href="/publications/">Publications page</a> contains the complete list.
   </p>
 </section>
 
@@ -59,7 +58,7 @@ redirect_from:
     <p><strong>Professor of Economics</strong><span><a href="https://economics.emory.edu/people/faculty/biography/toda-alexis-akira.html">Emory University</a></span></p>
     <p><strong>Research Fellow</strong><span><a href="https://www.rieb.kobe-u.ac.jp/faculty/research_fellow/index.html">Research Institute for Economics and Business Administration, Kobe University</a></span></p>
     <p><strong>Co-editor</strong><span><a href="https://www.sciencedirect.com/journal/journal-of-mathematical-economics"><i>Journal of Mathematical Economics</i></a></span></p>
-    <p><strong>Associate Editor</strong><span><a href="https://link.springer.com/journal/199"><i>Economic Theory</i></a> and <i>Economic Theory Bulletin</i></span></p>
+    <p><strong>Associate Editor</strong><span><a href="https://link.springer.com/journal/199"><i>Economic Theory</i></a> and <a href="https://link.springer.com/journal/40505"><i>Economic Theory Bulletin</i></a></span></p>
   </div>
 </section>
 
