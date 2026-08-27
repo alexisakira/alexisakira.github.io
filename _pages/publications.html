@@ -39,6 +39,9 @@ author_profile: true
   <h2 class="publication-section__heading" id="refereed-articles">
     Refereed articles <span class="publication-count">{{ site.publications | size }}</span>
   </h2>
+  <p class="publication-section__description">
+    Peer-reviewed research articles and comments.
+  </p>
   <div class="publication-list">
     {% for post in site.publications reversed %}
       {% include archive-pubs.html %}
