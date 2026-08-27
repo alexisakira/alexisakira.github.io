@@ -100,7 +100,7 @@ author_profile: true
     </li>
     <li>
       <a href="https://doi.org/10.1093/rfs/hhz121">The Equity Premium and the One Percent</a>
-      <span><em>The Review of Financial Studies</em> · 2020</span>
+      <span><em>Review of Financial Studies</em> · 2020</span>
     </li>
   </ol>
 </section>
