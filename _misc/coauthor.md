@@ -8,35 +8,94 @@ section: research
 section_order: 3
 ---
 
-Below is a list of my coauthors (in alphabetical order by last name, limited to published papers). Let me know if the links are outdated.
+<section class="coauthors-intro" aria-labelledby="coauthors-heading">
+  <p id="coauthors-heading">Collaborators on my published research, listed alphabetically by last name.</p>
+  <p class="coauthors-count">{{ site.data.coauthors | size }} coauthors</p>
+</section>
 
- 1. [Sherzod Akhundjanov](https://sites.google.com/site/sherzodba/)
- 1. Johji Arakawa
- 1. [Brendan Beare](https://www.brendanbeare.com/)
- 1. [Tjeerd de Vries](https://tdevries1.github.io/)
- 1. [Leland Farmer](https://www.lelandfarmer.com/)
- 1. [Joel P. Flynn](https://joelflynn.com/)
- 1. [Émilien Gouin-Bonenfant](https://sites.google.com/view/emilien)
- 1. [Gregory Gutin](https://pure.royalholloway.ac.uk/en/persons/gregory-gutin)
- 1. [Tomohiro Hirano](https://sites.google.com/site/tomohih/)
- 1. [Sung-Ha Hwang](https://sites.google.com/site/sunghahome/)
- 1. Tomoaki Imamura
- 1. [Ji Hyung Lee](https://sites.google.com/site/jihyung412/)
- 1. [Longjian Li](https://as.nyu.edu/departments/econ/doctoral-students.html)
- 1. [Yifei Lyu](https://sites.google.com/view/yifeilyu)
- 1. [Yoshiyuki Miyoshi](https://www.rieti.go.jp/users/miyoshi-yoshiyuki/index_en.html)
- 1. [Qingyin Ma](https://qingyin-ma.github.io/)
- 1. [Mitsuhiro Nakamura](https://www.shinano-mc.com/?page_id=122)
- 1. [Philip Neary](https://sites.google.com/site/prneary/)
- 1. [Gregory Phelan](https://sites.google.com/site/gregoryphelan/)
- 1. [Thomas Phelan](https://sites.google.com/a/umn.edu/thomasphelan/)
- 1. [Yuya Sasaki](https://sites.google.com/site/yuyasasaki/)
- 1. [Lawrence Schmidt](https://lawrencedwschmidt.com/)
- 1. [Won-Ki Seo](https://sites.google.com/site/wkseo86/)
- 1. [John Stachurski](https://johnstachurski.net/)
- 1. Toru Sugihara
- 1. [Ken'ichiro Tanaka](https://kentanakadpp.github.io/)
- 1. Junko Toda
- 1. [Kieran James Walsh](https://sites.google.com/site/kieranjameswalsh/)
- 1. Hideo Yasunaga
- 1. [Yulong Wang](https://sites.google.com/site/yulongwanghome/)
+<div class="coauthor-grid" role="list">
+{% for coauthor in site.data.coauthors %}
+  <div class="coauthor-card" role="listitem">
+  {% if coauthor.url %}
+    <a href="{{ coauthor.url }}">{{ coauthor.name }}</a>
+  {% else %}
+    <span>{{ coauthor.name }}</span>
+  {% endif %}
+  </div>
+{% endfor %}
+</div>
+
+<style>
+  .coauthors-intro {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 54rem;
+    margin-bottom: 1.35rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .coauthors-intro p {
+    margin: 0;
+  }
+
+  .coauthors-intro > p:first-child {
+    color: var(--global-text-color-light);
+    line-height: 1.6;
+  }
+
+  .coauthors-count {
+    flex: 0 0 auto;
+    color: var(--global-link-color);
+    font-size: 0.82em;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .coauthor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    gap: 0.7rem;
+    max-width: 54rem;
+  }
+
+  .coauthor-card {
+    display: flex;
+    align-items: center;
+    min-height: 3.15rem;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 0.45rem;
+    font-size: 0.93em;
+    line-height: 1.35;
+  }
+
+  .coauthor-card a {
+    color: var(--global-text-color) !important;
+    font-weight: 650;
+    text-decoration: none !important;
+  }
+
+  .coauthor-card a:hover {
+    color: var(--global-link-color-hover) !important;
+  }
+
+  .coauthor-card a:focus-visible {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 540px) {
+    .coauthors-intro {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .coauthor-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
