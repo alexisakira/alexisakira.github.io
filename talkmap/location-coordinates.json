@@ -174,6 +174,11 @@
     "latitude": 19.3207722,
     "longitude": -99.1514678
   },
+  "Minneapolis, Minnesota": {
+    "display_name": "Minneapolis, Hennepin County, Minnesota, United States",
+    "latitude": 44.9772995,
+    "longitude": -93.2654692
+  },
   "Montreal, Canada": {
     "display_name": "Montréal, Agglomération de Montréal, Montréal (région administrative), Québec, Canada",
     "latitude": 45.5031824,
