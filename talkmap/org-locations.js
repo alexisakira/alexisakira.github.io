@@ -752,7 +752,7 @@ window.talkMapData = {
         {
           "date": "2026-09-21",
           "location": "Montreal, Canada",
-          "title": "TBA",
+          "title": "General-Purpose Technologies and Stock Market Bubbles",
           "type": "Seminar",
           "url": "/talks/2026-HECMontreal/",
           "venue": "HEC Montréal"
