@@ -1103,7 +1103,7 @@ window.talkMapData = {
       "longitude": -71.2084061,
       "talks": [
         {
-          "date": "2026-09-25",
+          "date": "2026-09-26",
           "location": "Quebec City, Canada",
           "title": "General-Purpose Technologies and Stock Market Bubbles",
           "type": "Conference",
