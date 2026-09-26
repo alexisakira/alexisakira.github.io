@@ -5,6 +5,7 @@ type: "Seminar"
 venue: "City University of Hong Kong, Department of Economics and Finance"
 link: https://www.cb.cityu.edu.hk/ef/
 paperurl: https://doi.org/10.2139/ssrn.2808237
+slides: https://alexisakira.github.io/files/slides/slides_Zipf.pdf
 date: 2017-04-18
 location: "Hong Kong, China"
 ---
