@@ -92,7 +92,7 @@ author_profile: true
     </li>
     <li>
       <a href="https://arxiv.org/abs/2211.13100">Leverage, Endogenous Unbalanced Growth, and Asset Price Bubbles</a>
-      <span>Working paper · revised 2024</span>
+      <span>Working paper · revised 2026</span>
     </li>
     <li>
       <a href="https://doi.org/10.1016/j.jet.2021.105193">A Theory of the Saving Rate of the Rich</a>
