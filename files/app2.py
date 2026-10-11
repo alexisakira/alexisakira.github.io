@@ -11,15 +11,21 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 if "already_logged" not in st.session_state:
     try:
         supabase.table("visits").insert({}).execute()
-    except Exception as e:
-        st.warning("Visitor logging failed.")
+    except Exception:
+        pass
     st.session_state["already_logged"] = True
 
-res = supabase.table("visits").select("id", count="exact").execute()
-visits = res.count
+try:
+    res = supabase.table("visits").select("id", count="exact").execute()
+    visits = res.count
+except Exception:
+    visits = None
 
 st.title("Predicting Salaries of Economics Professors in the United States")
-st.markdown(f"#### 👥 Total Visitors: {visits}")
+if visits is not None:
+    st.markdown(f"#### 👥 Total Visitors: {visits}")
+else:
+    st.caption("Visitor counter temporarily unavailable.")
 
 st.markdown("""
     <style>
