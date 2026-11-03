@@ -483,7 +483,7 @@ window.talkMapData = {
         {
           "date": "2026-11-04",
           "location": "Irvine, California",
-          "title": "TBA",
+          "title": "Does Calibration Pick the Right Model? Likelihood Evidence from Income Risk",
           "type": "Seminar",
           "url": "/talks/2026-UCIrvine/",
           "venue": "UC Irvine, Department of Economics"
@@ -722,7 +722,7 @@ window.talkMapData = {
         {
           "date": "2026-10-09",
           "location": "Mexico City, Mexico",
-          "title": "TBA",
+          "title": "Land and Infinite Debt Rollover",
           "type": "Seminar",
           "url": "/talks/2026-ITAM/",
           "venue": "Instituto Tecnológico Autónomo de México, Department of Economics"
