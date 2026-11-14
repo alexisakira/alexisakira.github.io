@@ -1,5 +1,7 @@
 import streamlit as st
+import json
 import math
+from pathlib import Path
 from supabase import create_client, Client
 
 st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
@@ -63,13 +65,32 @@ st.markdown('<p class="highlight-text">Developed by:</p>', unsafe_allow_html=Tru
 st.markdown('<p class="list-text">- <a href="https://alexisakira.github.io/">Alexis Akira Toda</a>, Professor, Emory University (data analysis)</p>', unsafe_allow_html=True)
 st.markdown('<p class="list-text">- <a href="https://www.linkedin.com/in/zachary-etzioni-5904aa296/">Zachary Etzioni</a>, Class of 2027, Emory University (web tool)</p>', unsafe_allow_html=True)
 
-st.markdown('<p class="highlight-text">The prediction is based on the following parameters (R-squared 71%):</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Education</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Employment</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Field</p>', unsafe_allow_html=True)
-st.markdown('<p class="list-text">- Publications</p>', unsafe_allow_html=True)
+# The model and its numbers come from KT/code/analysis/app_model.py (file app_model.json, copied unchanged).
+MODEL = json.loads((Path(__file__).parent / "app_model.json").read_text(encoding="utf-8"))
+COEF = MODEL["coefficients"]
+LIMITS = MODEL["input_limits"]
+YEAR = MODEL["display_year"]
+ACCURACY = MODEL["accuracy"]["leave_campus_out"]
+SAMPLE = MODEL["sample"]
+TYPICAL_ERROR = round(100 * (math.exp(ACCURACY["median_abs_error"]) - 1))
+SCORE_MIN, SCORE_MAX = LIMITS["score_min"], LIMITS["score_max"]
 
-# st.markdown('<p class="highlight-text">The predictive model is an extension of <a href="https://econjwatch.org/articles/publications-citations-position-and-compensation-of-economics-professors">Lyu and Toda (2019)</a></p>', unsafe_allow_html=True)
+st.markdown('<p class="highlight-text">How it works:</p>', unsafe_allow_html=True)
+for line in [
+    f"- We use public salary records of {SAMPLE['people']:,} economics professors at {SAMPLE['campuses']} "
+    f"campuses of U.S. public universities from {SAMPLE['years'][0]} to {SAMPLE['years'][1]}.",
+    "- We predict your annual base salary from your rank, PhD year, publications, NBER affiliation, "
+    "years at your current school, and the U.S. News score of your department. "
+    "The salary does not include summer pay or other extra pay.",
+    f"- We predict the salary for {SAMPLE['years'][1]} and adjust it to {YEAR} "
+    "with consumer price inflation (CPI).",
+    f"- We tested the model on schools that it had not seen. For half of the professors, "
+    f"the prediction was within {TYPICAL_ERROR}% of their actual salary.",
+    "- Our data cover only public universities. Private universities, business schools, "
+    "and schools outside the U.S. may pay differently.",
+]:
+    st.markdown(f'<p class="list-text">{line}</p>', unsafe_allow_html=True)
+
 st.markdown('<p class="list-text">Disclaimer: the model is still experimental</p>', unsafe_allow_html=True)
 
 st.markdown("""
@@ -158,131 +179,80 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
 st.markdown('<p class="main-title">Enter your values below and click Compute Salary.</p>', unsafe_allow_html=True)
 
 with st.container():
-    region = st.selectbox("Where did you do your undergraduate studies?",
-                         ["North America (Canada and U.S.)","Latin America (Mexico, Central & South America)","Europe","Other"])
-    TPhD = st.number_input("How many years ago did you finish PhD?", min_value=0, step=1, max_value = 50, format="%d")
-    PhD = st.selectbox("Where did you get your PhD from?",
-                        ["Columbia University",
-                         "Harvard University",
-                         "Massachusetts Institute of Technology",
-                         "Northwestern University",
-                         "Princeton University",
-                         "Stanford University",
-                         "University of California, Berkeley",
-                         "University of Chicago",
-                         "University of Michigan",
-                         "University of Minnesota",
-                         "University of Pennsylvania",
-                         "University of Wisconsin, Madison",
-                         "Yale University",
-                         "Other"])
-    field = st.selectbox("What is your field?",
-                         ["Economic Theory","Econometrics","Other"])
-    # top 5 journals
-    npubtop5 = st.number_input("""How many papers have you published in the following journals? American Economic Review (exclude AEA P&P),
-        Econometrica, Journal of Political Economy, Quarterly Journal of Economics, Review of Economic Studies.""", min_value=0, step=1, format="%d")
-    # Alist top journals
-    npubAlist = st.number_input("""How many papers have you published in the following journals? 
-    American Journal of Health Economics, Explorations in Economic History, 
-    Games and Economic Behavior, Health Economics, 
-    Journal of the Association of Environmental and Resource Economists, 
-    Journal of Business and Economic Statistics, Journal of Development Econnomics, 
-    Journal of Environmental Economics and Management, Journal of Economic Growth, 
-    Journal of Economic History, Journal of Economic Theory, Journal of Finance, 
-    Journal of Financial Economics, Journal of Health Economics, Journal of Human Resources, 
-    Journal of Industrial Economics, Journal of International Economics, 
-    Journal of Money, Credit, and Banking, Journal of Monetary Economics, Journal of Econometrics, 
-    Journal of Labor Econmics, Journal of Public Economics, Journal of Urban Economics, 
-    Marketing Science, Management Science, Public Choice, RAND Journal of Economics, Theoretical Economics.""",
-        min_value=0, step=1, format="%d")
-    # top non-econ journals
-    npubnonecon = st.number_input("""How many papers have you published in the following journals? 
-    Nature, Science, PNAS, JAMA, NEJM, Lancet, 
-    American Political Science Review, American Journal of Political Science, Journal of Politics, 
-    American Journal of Sociology, American Sociological Review, Demography, 
-    Academy of Management Journal, Academy of Management Review, Journal of Management.""",
-        min_value=0, step=1, format="%d")
-    
-    rank = st.selectbox("What is your job rank?",
+    rank = st.selectbox("What is your rank?",
                         ["Assistant Professor", "Associate Professor", "Full Professor"])
-    #USNews = st.number_input("What is the [US News Peer Assessment Score](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings) of your department? Enter 1.0 if your school is not listed.", min_value = 1.0, max_value = 5.0, value = "min", step = 0.1, format="%0.1f")
+    phd_year = st.number_input("In what year did you receive your PhD?",
+                               min_value=1950, max_value=YEAR, value=None, step=1, format="%d")
+    top5 = st.number_input(
+        "How many articles have you published in the top 5 journals?",
+        help="American Economic Review, Econometrica, Journal of Political Economy, "
+             "Quarterly Journal of Economics, and Review of Economic Studies. "
+             "Count research articles only. Do not count AER: Papers and Proceedings, "
+             "AER: Insights, comments, or replies.",
+        min_value=0, value=0, step=1, format="%d")
+    total = st.number_input(
+        "How many articles have you published in peer-reviewed journals in total, including the top 5?",
+        help="Count research articles in any peer-reviewed journal. Do not count comments, replies, "
+             "book chapters, AEA Papers and Proceedings, Brookings Papers, NBER Macroeconomics Annual, "
+             "or surveys in the Journal of Economic Literature, the Journal of Economic Perspectives, "
+             "or the Annual Reviews.",
+        min_value=0, value=0, step=1, format="%d")
+    nber = st.radio("Are you, or have you ever been, an NBER Research Associate or Faculty Research Fellow?",
+                    ["No", "Yes"], horizontal=True)
+    score = st.number_input(
+        "What is the U.S. News peer assessment score of your economics department?",
+        help="U.S. News rates economics PhD programs on a scale from 1 to 5 "
+             "(https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings). "
+             f"Our data cover scores from {SCORE_MIN:.1f} to {SCORE_MAX:.1f}.",
+        min_value=1.0, max_value=5.0, value=None, step=0.1, format="%.1f")
+    join_year = st.number_input("In what year did you start your tenure-track or tenured job at your current school?",
+                                min_value=1950, max_value=YEAR, value=None, step=1, format="%d")
 
-# mapping logic for undergraduate region
-def get_region_variables(region_string):
-    region_map = {
-        "North America (Canada and U.S.)":         [1, 0, 0],
-        "Europe":                [0, 1, 0],
-        "Latin America (Mexico, Central & South America)":         [0, 0, 1]
-    }
-    # Return the vector if found, otherwise return a vector of all zeros
-    return region_map.get(region_string, [0] * 3)
 
-# mapping logic for PhD institution
-def get_PhD_variables(PhD_string):
-    # Map school names to their respective binary vectors
-    phd_map = {
-        "Columbia University":                  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        "Harvard University":                   [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        "Massachusetts Institute of Technology": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        "Northwestern University":              [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        "Princeton University":                 [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-        "Stanford University":                  [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-        "University of California, Berkeley":   [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-        "University of Chicago":                [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        "University of Michigan":               [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-        "University of Minnesota":              [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-        "University of Pennsylvania":           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-        "University of Wisconsin, Madison":     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
-        "Yale University":                      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
-    }
-    
-    # Return the vector if found, otherwise return a vector of all zeros
-    return phd_map.get(PhD_string, [0] * 13)
+def clamp(x, lo, hi):
+    return max(lo, min(hi, x))
 
-# mapping logic for field
-def get_field_variables(field_string):
-    if field_string == "Economic Theory":
-        return 1, 0
-    elif field_string == "Econometrics":
-        return 0, 1
-    return 0, 0
 
-# mapping logic for job rank
-def get_rank_variables(rank_string):
-    if rank_string == "Assistant Professor":
-        return 0, 0  # Tenure=0, Full=0
-    elif rank_string == "Associate Professor":
-        return 1, 0  # Tenure=1, Full=0
-    elif rank_string == "Full Professor":
-        return 1, 1  # Tenure=1, Full=1
-    return 0, 0
+def log_salary(age, top5, other, nber, years, tenure, full, score):
+    """Predicted log salary in the base year (formula of KT/code/analysis/app_model.py)."""
+    c = COEF
+    return (c["const"] + c["age"] * age + c["age2_per100"] * age**2 / 100 + c["age3_per10000"] * age**3 / 1e4
+            + c["top5"] * top5 + c["other_refereed"] * other + c["nber"] * nber
+            + c["years_at_school"] * years + c["tenure"] * tenure + c["full"] * full + c["score"] * score)
 
-# regression coefficients of region fixed effects
-b_region = [x / 100 for x in [1.7542, 2.1431, 5.4882]]
 
-# regression coefficients of PhD institution fixed effects
-b_PhD = [x / 100 for x in [0.5952, 5.1522, 2.4980, 7.6258, -1.6635, 4.0943, 0.4295, 1.8369, -0.2128, 3.6225, -3.6796, 3.2324, 4.5397]]
+def problems():
+    if phd_year is None or join_year is None or score is None:
+        return "Please answer every question."
+    if total < top5:
+        return "The total number of articles must include the top-5 articles."
+    if join_year < phd_year - 1:
+        return "Please check the years: you started at your current school long before your PhD."
+    if score < SCORE_MIN - 1e-9:
+        return (f"Our data cover departments with a U.S. News score of {SCORE_MIN:.1f} or higher, "
+                f"so we cannot predict salaries for a score of {score:.1f}.")
+    return None
 
-# function to compute salary
-def compute_y(TPhD, region_vec, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full):
-    # pre-compute inner product
-    region_impact = sum(x * coef for x, coef in zip(b_region, region_vec))
-    phd_impact = sum(x * coef for x, coef in zip(b_PhD, phd_vec))
-    log_y = (11.9951 - 0.003434 * TPhD + 0.000175 * TPhD**2 - 0.009219 * Tenure * TPhD + region_impact + phd_impact
-    - 0.018254 * Theory + 0.017449 * Econometrics
-    + 0.054639 * npubtop5 + 0.006421 * npubAlist + 0.004561 * npubnonecon - 0.000808 * TPhD * npubtop5 + 0.010063 * (1 - Tenure)*npubtop5
-    + 0.2813 * Tenure + 0.2680 * Full)
-    return int(round(1.029*1.027*math.exp(log_y)/1000)*1000)
 
 if st.button("🔍 Compute Salary"):
-    # Convert categorical rank to the binary variables the model needs
-    region_vec = get_region_variables(region)
-    phd_vec = get_PhD_variables(PhD)
-    Theory, Econometrics = get_field_variables(field)
-    Tenure, Full = get_rank_variables(rank)
-    salary = compute_y(TPhD, region_vec, phd_vec, Theory, Econometrics, npubtop5, npubAlist, npubnonecon, Tenure, Full)
-    st.success(f"💰 Your expected salary in 2025 is **${salary:,}**")
+    message = problems()
+    if message:
+        st.warning(message)
+    else:
+        tenure, full = {"Assistant Professor": (0, 0), "Associate Professor": (1, 0),
+                        "Full Professor": (1, 1)}[rank]
+        age = clamp(YEAR - phd_year, 0, LIMITS["career_age_max"])
+        years = clamp(YEAR - join_year, 0, LIMITS["years_at_school_max"])
+        log_y = log_salary(age, min(top5, LIMITS["top5_max"]), min(total - top5, LIMITS["other_refereed_max"]),
+                           int(nber == "Yes"), years, tenure, full, min(score, SCORE_MAX))
+        salary = math.exp(log_y) * MODEL["inflation"]["factor"]
+        low = salary * math.exp(ACCURACY["error_quantiles"]["p25"])
+        high = salary * math.exp(ACCURACY["error_quantiles"]["p75"])
+        def r(x):
+            return int(round(x / 1000) * 1000)
+        st.success(f"💰 Your predicted base salary in {YEAR} is **${r(salary):,}**")
+        st.markdown(f"Half of the professors in our tests earned within about {TYPICAL_ERROR}% of their "
+                    f"prediction. For you, this range is **${r(low):,} to ${r(high):,}**.")

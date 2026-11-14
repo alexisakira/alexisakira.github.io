@@ -1,0 +1,73 @@
+{
+  "description": "Log annual pay (contractual base rate) of tenure-track economics faculty at U.S. public universities. Inputs: career age = display year - PhD year; years at school = display year - year joined; other_refereed excludes top-5 articles. Clamp career age and years at school to [0, max] and counts to [0, max]; give no prediction for scores outside [score_min, score_max]. Displayed pay = exp(log pay) * inflation.factor.",
+  "base_year": 2024,
+  "display_year": 2026,
+  "coefficients": {
+    "const": 11.551202917605902,
+    "age": 0.0032788666926452208,
+    "age2_per100": -0.015033783407415506,
+    "age3_per10000": 0.01830400741134027,
+    "top5": 0.024120632860116068,
+    "other_refereed": 0.0025559147316429735,
+    "nber": 0.04579928577878467,
+    "years_at_school": -0.00955775029574254,
+    "tenure": 0.21319749797654228,
+    "full": 0.2825892454726967,
+    "score": 0.14877541486118834
+  },
+  "inflation": {
+    "index": "CPI-U, U.S. city average, all items, not seasonally adjusted (BLS CUUR0000SA0)",
+    "from_month": "2024-10",
+    "to_month": "2026-10",
+    "from_cpi": 315.664,
+    "to_cpi": 337.511,
+    "factor": 1.0692096659739472
+  },
+  "input_limits": {
+    "score_min": 2.7,
+    "score_max": 5.0,
+    "career_age_max": 50,
+    "years_at_school_max": 45,
+    "top5_max": 36,
+    "other_refereed_max": 248
+  },
+  "accuracy": {
+    "leave_campus_out": {
+      "rmse": 0.18408002861738357,
+      "median_abs_error": 0.10636588200927655,
+      "share_within_10pct": 0.45090562440419446,
+      "share_within_20pct": 0.7244995233555768,
+      "error_quantiles": {
+        "p10": -0.22736563581567848,
+        "p25": -0.1071689251804191,
+        "p50": -0.00023903492931154346,
+        "p75": 0.10515926600106695,
+        "p90": 0.2200297661384923
+      },
+      "evaluation_rows": 1049
+    },
+    "person_5fold": {
+      "rmse": 0.1778219082310538,
+      "median_abs_error": 0.10375923410858512,
+      "share_within_10pct": 0.4652049571020019,
+      "share_within_20pct": 0.7416587225929456,
+      "error_quantiles": {
+        "p10": -0.2164650418833915,
+        "p25": -0.10423063757154338,
+        "p50": 0.0016332218825514389,
+        "p75": 0.10268448691559406,
+        "p90": 0.21420008129628074
+      },
+      "evaluation_rows": 1049
+    }
+  },
+  "sample": {
+    "person_years": 9050,
+    "people": 1100,
+    "campuses": 24,
+    "years": [
+      2010,
+      2024
+    ]
+  }
+}
