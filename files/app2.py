@@ -154,6 +154,10 @@ st.markdown("""
     .stButton button:hover {
         filter: brightness(1.1);
     }
+    /* Hide the +/- buttons of number boxes, so that users type the numbers. */
+    [data-testid="stNumberInputStepUp"], [data-testid="stNumberInputStepDown"] {
+        display: none;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -164,7 +168,8 @@ with st.form("questions"):
     rank = st.selectbox("What is your rank?",
                         ["Assistant Professor", "Associate Professor", "Full Professor"])
     phd_year = st.number_input("In what year did you receive your PhD?",
-                               min_value=1950, max_value=YEAR, value=None, step=1, format="%d")
+                               min_value=1950, max_value=YEAR, value=None, step=1, format="%d",
+                               placeholder="Enter the year in YYYY format")
     top5 = st.number_input(
         "How many articles have you published in the top 5 journals?",
         help="American Economic Review, Econometrica, Journal of Political Economy, "
@@ -186,9 +191,11 @@ with st.form("questions"):
         help="U.S. News rates economics PhD programs on a scale from 1 to 5 "
              "(https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings). "
              f"Our data cover scores from {SCORE_MIN:.1f} to {SCORE_MAX:.1f}.",
-        min_value=1.0, max_value=5.0, value=None, step=0.1, format="%.1f")
+        min_value=1.0, max_value=5.0, value=None, step=0.1, format="%.1f",
+        placeholder="For example, 3.5")
     join_year = st.number_input("In what year did you start your tenure-track or tenured job at your current school?",
-                                min_value=1950, max_value=YEAR, value=None, step=1, format="%d")
+                                min_value=1950, max_value=YEAR, value=None, step=1, format="%d",
+                                placeholder="Enter the year in YYYY format")
     submitted = st.form_submit_button("🔍 Compute Salary")
 
 
