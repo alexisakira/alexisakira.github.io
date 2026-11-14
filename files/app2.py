@@ -2,35 +2,10 @@ import streamlit as st
 import json
 import math
 from pathlib import Path
-from supabase import create_client, Client
 
 st.set_page_config(page_title="Econ Salary", page_icon="📈", layout="centered")
 
-SUPABASE_URL = "https://auqqsiljywsnqghtechh.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1cXFzaWxqeXdzbnFnaHRlY2hoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3MjEwMzAsImV4cCI6MjA2MDI5NzAzMH0.jaDhkMMokUoBIOep1x2gUvdo5kVNzLcd6P_LZbQm8f4"
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-
-if "already_logged" not in st.session_state:
-    try:
-        supabase.table("visits").insert({}).execute()
-    except Exception:
-        pass
-    st.session_state["already_logged"] = True
-
-# Read the count once per visit, so that later reruns do not wait for Supabase.
-if "visits" not in st.session_state:
-    try:
-        res = supabase.table("visits").select("id", count="exact").execute()
-        st.session_state["visits"] = res.count
-    except Exception:
-        st.session_state["visits"] = None
-visits = st.session_state["visits"]
-
 st.title("Predicting Salaries of Economics Professors in the United States")
-if visits is not None:
-    st.markdown(f"#### 👥 Total Visitors: {visits}")
-else:
-    st.caption("Visitor counter temporarily unavailable.")
 
 st.markdown("""
     <style>
