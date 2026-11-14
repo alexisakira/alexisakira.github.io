@@ -17,11 +17,14 @@ if "already_logged" not in st.session_state:
         pass
     st.session_state["already_logged"] = True
 
-try:
-    res = supabase.table("visits").select("id", count="exact").execute()
-    visits = res.count
-except Exception:
-    visits = None
+# Read the count once per visit, so that later reruns do not wait for Supabase.
+if "visits" not in st.session_state:
+    try:
+        res = supabase.table("visits").select("id", count="exact").execute()
+        st.session_state["visits"] = res.count
+    except Exception:
+        st.session_state["visits"] = None
+visits = st.session_state["visits"]
 
 st.title("Predicting Salaries of Economics Professors in the United States")
 if visits is not None:
@@ -181,7 +184,8 @@ st.markdown("""
 
 st.markdown('<p class="main-title">Enter your values below and click Compute Salary.</p>', unsafe_allow_html=True)
 
-with st.container():
+# A form sends the answers only when the user clicks the button, so the page does not rerun on every change.
+with st.form("questions"):
     rank = st.selectbox("What is your rank?",
                         ["Assistant Professor", "Associate Professor", "Full Professor"])
     phd_year = st.number_input("In what year did you receive your PhD?",
@@ -210,6 +214,7 @@ with st.container():
         min_value=1.0, max_value=5.0, value=None, step=0.1, format="%.1f")
     join_year = st.number_input("In what year did you start your tenure-track or tenured job at your current school?",
                                 min_value=1950, max_value=YEAR, value=None, step=1, format="%d")
+    submitted = st.form_submit_button("🔍 Compute Salary")
 
 
 def clamp(x, lo, hi):
@@ -237,7 +242,7 @@ def problems():
     return None
 
 
-if st.button("🔍 Compute Salary"):
+if submitted:
     message = problems()
     if message:
         st.warning(message)
