@@ -189,12 +189,14 @@ with st.form("questions"):
              "or the Annual Reviews.",
         min_value=0, value=0, step=1, format="%d")
     recent_top5 = st.number_input(
-        f"How many of your top-5 articles were published in {YEAR - 1} or {YEAR}?",
-        help="Count them in the same way as above. We use this number only for associate and full professors.",
+        "How many of your top-5 articles were published during the last two years?",
+        help=f"Count articles published in {YEAR - 1} or {YEAR}, in the same way as above. "
+             "We use this number only for associate and full professors.",
         min_value=0, value=0, step=1, format="%d")
     recent_total = st.number_input(
-        f"How many of your peer-reviewed articles, including the top 5, were published in {YEAR - 1} or {YEAR}?",
-        help="Count them in the same way as above. We use this number only for associate and full professors.",
+        "How many of your peer-reviewed articles, including the top 5, were published during the last two years?",
+        help=f"Count articles published in {YEAR - 1} or {YEAR}, in the same way as above. "
+             "We use this number only for associate and full professors.",
         min_value=0, value=0, step=1, format="%d")
     nber = st.radio("Are you, or have you ever been, an NBER Research Associate or Faculty Research Fellow?",
                     ["No", "Yes"], horizontal=True)
@@ -247,9 +249,9 @@ def problems():
     if total < top5:
         return "The total number of articles must include the top-5 articles."
     if recent_top5 > top5 or recent_total > total:
-        return f"The articles published in {YEAR - 1} or {YEAR} cannot exceed all your articles."
+        return "The articles published during the last two years cannot exceed all your articles."
     if recent_total < recent_top5:
-        return f"The peer-reviewed articles published in {YEAR - 1} or {YEAR} must include the top-5 articles."
+        return "The peer-reviewed articles published during the last two years must include the top-5 articles."
     if current_salary is not None and current_salary < 10000:
         return "Please enter your annual salary in dollars, for example 150000, or leave the box blank."
     if join_year < phd_year - 1:
