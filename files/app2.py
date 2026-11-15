@@ -52,6 +52,8 @@ ACCURACY = MODEL["accuracy"]["leave_campus_out"]
 SAMPLE = MODEL["sample"]
 TYPICAL_ERROR = round(100 * (math.exp(ACCURACY["median_abs_error"]) - 1))
 SCORE_MIN, SCORE_MAX = LIMITS["score_min"], LIMITS["score_max"]
+JUMP = MODEL["large_raise"]
+JUMP_LIMITS = JUMP["input_limits"]
 
 st.markdown('<p class="highlight-text">How it works:</p>', unsafe_allow_html=True)
 for line in [
@@ -64,6 +66,8 @@ for line in [
     "with consumer price inflation (CPI).",
     f"- We tested the model on schools that it had not seen. For half of the professors, "
     f"the prediction was within {TYPICAL_ERROR}% of their actual salary.",
+    "- For associate and full professors, we also predict the chance of a large raise in a year "
+    "from the raises of tenured professors at public universities outside the University of California.",
     "- Our data cover only public universities. Private universities, business schools, "
     "and schools outside the U.S. may pay differently.",
 ]:
@@ -184,6 +188,14 @@ with st.form("questions"):
              "or surveys in the Journal of Economic Literature, the Journal of Economic Perspectives, "
              "or the Annual Reviews.",
         min_value=0, value=0, step=1, format="%d")
+    recent_top5 = st.number_input(
+        f"How many of your top-5 articles were published in {YEAR - 1} or {YEAR}?",
+        help="Count them in the same way as above. We use this number only for associate and full professors.",
+        min_value=0, value=0, step=1, format="%d")
+    recent_total = st.number_input(
+        f"How many of your peer-reviewed articles, including the top 5, were published in {YEAR - 1} or {YEAR}?",
+        help="Count them in the same way as above. We use this number only for associate and full professors.",
+        min_value=0, value=0, step=1, format="%d")
     nber = st.radio("Are you, or have you ever been, an NBER Research Associate or Faculty Research Fellow?",
                     ["No", "Yes"], horizontal=True)
     score = st.number_input(
@@ -196,6 +208,12 @@ with st.form("questions"):
     join_year = st.number_input("In what year did you start your tenure-track or tenured job at your current school?",
                                 min_value=1950, max_value=YEAR, value=None, step=1, format="%d",
                                 placeholder="Enter the year in YYYY format")
+    current_salary = st.number_input(
+        "What is your current annual base salary in dollars? (optional)",
+        help="Enter your base salary without summer pay or other extra pay, for example 150000. "
+             "We compare it with the prediction and use the difference to compute the chance of a large raise. "
+             "If you leave this box blank, we use the predicted salary.",
+        min_value=0, value=None, step=1000, format="%d", placeholder="Optional")
     submitted = st.form_submit_button("🔍 Compute Salary")
 
 
@@ -211,11 +229,29 @@ def log_salary(age, top5, other, nber, years, tenure, full, score):
             + c["years_at_school"] * years + c["tenure"] * tenure + c["full"] * full + c["score"] * score)
 
 
+def large_raise_prob(top5_2y, other_2y, full, career_age, years_since_hire, pay_gap, nber):
+    """Chance that a raise exceeds the typical raise at the school by the threshold (formula of
+    KT/code/analysis/app_model.py, with the raise-weighted average year effect)."""
+    c, rt, t = JUMP["jump_logit"], JUMP["routine"], JUMP["threshold"]
+    z = (c["const"] + c["top5_2y"] * top5_2y + c["other_refereed_2y"] * other_2y + c["full"] * full
+         + c["career_age"] * career_age + c["years_since_hire"] * years_since_hire + c["pay_gap"] * pay_gap)
+    pi = 1 / (1 + math.exp(-z))
+    lam = math.exp(JUMP["jump_rate"]["const"] + JUMP["jump_rate"]["nber"] * nber)
+    routine_tail = 0.5 * math.exp(-(t - rt["mu"]) / rt["s"])
+    return (1 - pi) * (1 - rt["tie_prob_mean"]) * routine_tail + pi * math.exp(-lam * t)
+
+
 def problems():
     if phd_year is None or join_year is None or score is None:
         return "Please answer every question."
     if total < top5:
         return "The total number of articles must include the top-5 articles."
+    if recent_top5 > top5 or recent_total > total:
+        return f"The articles published in {YEAR - 1} or {YEAR} cannot exceed all your articles."
+    if recent_total < recent_top5:
+        return f"The peer-reviewed articles published in {YEAR - 1} or {YEAR} must include the top-5 articles."
+    if current_salary is not None and current_salary < 10000:
+        return "Please enter your annual salary in dollars, for example 150000, or leave the box blank."
     if join_year < phd_year - 1:
         return "Please check the years: you started at your current school long before your PhD."
     if score < SCORE_MIN - 1e-9:
@@ -243,3 +279,26 @@ if submitted:
         st.success(f"💰 Your predicted base salary in {YEAR} is **${r(salary):,}**")
         st.markdown(f"Half of the professors in our tests earned within about {TYPICAL_ERROR}% of their "
                     f"prediction. For you, this range is **${r(low):,} to ${r(high):,}**.")
+        pay_gap = 0.0
+        if current_salary is not None:
+            pay_gap = math.log(current_salary / salary)
+            word = "above" if pay_gap >= 0 else "below"
+            st.markdown(f"Your current salary is **{abs(round(100 * (current_salary / salary - 1)))}% {word}** "
+                        "the prediction.")
+        if tenure:
+            prob = large_raise_prob(
+                min(recent_top5, JUMP_LIMITS["top5_2y_max"]),
+                min(recent_total - recent_top5, JUMP_LIMITS["other_refereed_2y_max"]), full,
+                clamp(YEAR - phd_year, JUMP_LIMITS["career_age_min"], JUMP_LIMITS["career_age_max"]),
+                clamp(YEAR - 1 - join_year, 0, JUMP_LIMITS["years_since_hire_max"]),
+                clamp(pay_gap, JUMP_LIMITS["pay_gap_min"], JUMP_LIMITS["pay_gap_max"]), int(nber == "Yes"))
+            shown = "less than 1%" if prob < 0.005 else f"{round(100 * prob)}%"
+            st.info(f"📈 Your chance of a large raise in a year is **{shown}**.")
+            st.markdown(
+                f"A large raise exceeds the typical raise at your school by about "
+                f"{round(100 * JUMP['threshold'])}% of your salary or more. Such raises are rare: "
+                f"{round(100 * JUMP['sample']['share_large'])}% of the raises in our data. They often come with "
+                "outside offers. We estimate this chance from the raises of tenured professors at public "
+                "universities outside the University of California.")
+        else:
+            st.markdown("We predict the chance of a large raise only for associate and full professors.")
