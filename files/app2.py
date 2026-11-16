@@ -181,20 +181,27 @@ with st.form("questions"):
              "Count research articles only. Do not count AER: Papers and Proceedings, "
              "AER: Insights, comments, or replies.",
         min_value=0, value=0, step=1, format="%d")
-    total = st.number_input(
-        "How many articles have you published in peer-reviewed journals in total, including the top 5?",
-        help="Count research articles in any peer-reviewed journal. Do not count comments, replies, "
-             "book chapters, AEA Papers and Proceedings, Brookings Papers, NBER Macroeconomics Annual, "
-             "or surveys in the Journal of Economic Literature, the Journal of Economic Perspectives, "
-             "or the Annual Reviews.",
+    other = st.number_input(
+        "How many articles have you published in other peer-reviewed journals?",
+        help="Count research articles in any peer-reviewed journal other than the top 5, including AER: Insights "
+             "and the American Economic Journals. Do not count comments, replies, book chapters, publications of "
+             "the Federal Reserve or other agencies, policy magazines, or the invited and conference papers "
+             "of the next question.",
+        min_value=0, value=0, step=1, format="%d")
+    invited = st.number_input(
+        "How many invited or conference papers have you published?",
+        help="Count surveys in the Journal of Economic Literature, the Journal of Economic Perspectives, and the "
+             "Annual Reviews; papers in AEA Papers and Proceedings (including the AER May issue); and papers in "
+             "Brookings Papers on Economic Activity, NBER Macroeconomics Annual, the Carnegie-Rochester "
+             "Conference Series on Public Policy, and Tax Policy and the Economy. Do not count comments.",
         min_value=0, value=0, step=1, format="%d")
     recent_top5 = st.number_input(
         "How many of your top-5 articles were published during the last two years?",
         help=f"Count articles published in {YEAR - 1} or {YEAR}, in the same way as above. "
              "We use this number only for associate and full professors.",
         min_value=0, value=0, step=1, format="%d")
-    recent_total = st.number_input(
-        "How many of your peer-reviewed articles, including the top 5, were published during the last two years?",
+    recent_other = st.number_input(
+        "How many of your articles in other peer-reviewed journals were published during the last two years?",
         help=f"Count articles published in {YEAR - 1} or {YEAR}, in the same way as above. "
              "We use this number only for associate and full professors.",
         min_value=0, value=0, step=1, format="%d")
@@ -223,11 +230,12 @@ def clamp(x, lo, hi):
     return max(lo, min(hi, x))
 
 
-def log_salary(age, top5, other, nber, years, tenure, full, score):
+def log_salary(age, top5, other, invited, nber, years, tenure, full, score):
     """Predicted log salary in the base year (formula of KT/code/analysis/app_model.py)."""
     c = COEF
     return (c["const"] + c["age"] * age + c["age2_per100"] * age**2 / 100 + c["age3_per10000"] * age**3 / 1e4
-            + c["top5"] * top5 + c["other_refereed"] * other + c["nber"] * nber
+            + c["top5"] * top5 + c["other_refereed"] * other + c["invited_log1p"] * math.log1p(invited)
+            + c["nber"] * nber
             + c["years_at_school"] * years + c["tenure"] * tenure + c["full"] * full + c["score"] * score)
 
 
@@ -246,12 +254,8 @@ def large_raise_prob(top5_2y, other_2y, full, career_age, years_since_hire, pay_
 def problems():
     if phd_year is None or join_year is None or score is None:
         return "Please answer every question."
-    if total < top5:
-        return "The total number of articles must include the top-5 articles."
-    if recent_top5 > top5 or recent_total > total:
-        return "The articles published during the last two years cannot exceed all your articles."
-    if recent_total < recent_top5:
-        return "The peer-reviewed articles published during the last two years must include the top-5 articles."
+    if recent_top5 > top5 or recent_other > other:
+        return "The articles published during the last two years cannot exceed all your articles of the same kind."
     if current_salary is not None and current_salary < 10000:
         return "Please enter your annual salary in dollars, for example 150000, or leave the box blank."
     if join_year < phd_year - 1:
@@ -271,7 +275,8 @@ if submitted:
                         "Full Professor": (1, 1)}[rank]
         age = clamp(YEAR - phd_year, 0, LIMITS["career_age_max"])
         years = clamp(YEAR - join_year, 0, LIMITS["years_at_school_max"])
-        log_y = log_salary(age, min(top5, LIMITS["top5_max"]), min(total - top5, LIMITS["other_refereed_max"]),
+        log_y = log_salary(age, min(top5, LIMITS["top5_max"]), min(other, LIMITS["other_refereed_max"]),
+                           min(invited, LIMITS["invited_max"]),
                            int(nber == "Yes"), years, tenure, full, min(score, SCORE_MAX))
         salary = math.exp(log_y) * MODEL["inflation"]["factor"]
         low = salary * math.exp(ACCURACY["error_quantiles"]["p25"])
@@ -290,7 +295,7 @@ if submitted:
         if tenure:
             prob = large_raise_prob(
                 min(recent_top5, JUMP_LIMITS["top5_2y_max"]),
-                min(recent_total - recent_top5, JUMP_LIMITS["other_refereed_2y_max"]), full,
+                min(recent_other, JUMP_LIMITS["other_refereed_2y_max"]), full,
                 clamp(YEAR - phd_year, JUMP_LIMITS["career_age_min"], JUMP_LIMITS["career_age_max"]),
                 clamp(YEAR - 1 - join_year, 0, JUMP_LIMITS["years_since_hire_max"]),
                 clamp(pay_gap, JUMP_LIMITS["pay_gap_min"], JUMP_LIMITS["pay_gap_max"]), int(nber == "Yes"))
