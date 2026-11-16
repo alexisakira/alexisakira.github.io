@@ -57,8 +57,8 @@ JUMP_LIMITS = JUMP["input_limits"]
 
 st.markdown('<p class="highlight-text">How it works:</p>', unsafe_allow_html=True)
 for line in [
-    f"- We use public salary records of {SAMPLE['people']:,} economics professors at {SAMPLE['campuses']} "
-    f"campuses of U.S. public universities from {SAMPLE['years'][0]} to {SAMPLE['years'][1]}.",
+    f"- We use public salary records of {SAMPLE['people']:,} economics professors with complete records at "
+    f"{SAMPLE['campuses']} schools of U.S. public universities from {SAMPLE['years'][0]} to {SAMPLE['years'][1]}.",
     "- We predict your annual base salary from your rank, PhD year, publications, NBER affiliation, "
     "years at your current school, and the U.S. News score of your department. "
     "The salary does not include summer pay or other extra pay.",
