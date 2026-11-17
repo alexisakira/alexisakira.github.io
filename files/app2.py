@@ -54,6 +54,10 @@ TYPICAL_ERROR = round(100 * (math.exp(ACCURACY["median_abs_error"]) - 1))
 SCORE_MIN, SCORE_MAX = LIMITS["score_min"], LIMITS["score_max"]
 JUMP = MODEL["large_raise"]
 JUMP_LIMITS = JUMP["input_limits"]
+# Plausible answers. Outside these ranges, the app asks the user to check the answer instead of predicting.
+PHD_YEAR_MIN = YEAR - 70
+MAX_COUNTS = {"top5": 50, "other": 400, "invited": 100, "recent_top5": 10, "recent_other": 40}
+SALARY_MIN, SALARY_MAX = 30_000, 2_000_000
 
 st.markdown('<p class="highlight-text">How it works:</p>', unsafe_allow_html=True)
 for line in [
@@ -172,7 +176,7 @@ with st.form("questions"):
     rank = st.selectbox("What is your rank?",
                         ["Assistant Professor", "Associate Professor", "Full Professor"])
     phd_year = st.number_input("In what year did you receive your PhD?",
-                               min_value=1950, max_value=YEAR, value=None, step=1, format="%d",
+                               value=None, step=1, format="%d",
                                placeholder="Enter the year in YYYY format")
     top5 = st.number_input(
         "How many articles have you published in the top 5 journals?",
@@ -215,7 +219,7 @@ with st.form("questions"):
         min_value=1.0, max_value=5.0, value=None, step=0.1, format="%.1f",
         placeholder="For example, 3.5")
     join_year = st.number_input("In what year did you start your tenure-track or tenured job at your current school?",
-                                min_value=1950, max_value=YEAR, value=None, step=1, format="%d",
+                                value=None, step=1, format="%d",
                                 placeholder="Enter the year in YYYY format")
     current_salary = st.number_input(
         "What is your current annual base salary in dollars? (optional)",
@@ -254,12 +258,24 @@ def large_raise_prob(top5_2y, other_2y, full, career_age, years_since_hire, pay_
 def problems():
     if phd_year is None or join_year is None or score is None:
         return "Please answer every question."
+    if not PHD_YEAR_MIN <= phd_year <= YEAR:
+        return f"Please enter a PhD year between {PHD_YEAR_MIN} and {YEAR}."
+    if not phd_year - 1 <= join_year <= YEAR:
+        return (f"Please enter the year you started at your current school between {phd_year - 1} "
+                f"(the year before your PhD) and {YEAR}.")
+    for value, key, what in [(top5, "top5", "top-5 articles"),
+                             (other, "other", "articles in other peer-reviewed journals"),
+                             (invited, "invited", "invited or conference papers"),
+                             (recent_top5, "recent_top5", "top-5 articles during the last two years"),
+                             (recent_other, "recent_other",
+                              "articles in other peer-reviewed journals during the last two years")]:
+        if value > MAX_COUNTS[key]:
+            return f"Please check the number of {what}: we accept at most {MAX_COUNTS[key]}."
     if recent_top5 > top5 or recent_other > other:
         return "The articles published during the last two years cannot exceed all your articles of the same kind."
-    if current_salary is not None and current_salary < 10000:
-        return "Please enter your annual salary in dollars, for example 150000, or leave the box blank."
-    if join_year < phd_year - 1:
-        return "Please check the years: you started at your current school long before your PhD."
+    if current_salary is not None and not SALARY_MIN <= current_salary <= SALARY_MAX:
+        return (f"Please enter your annual base salary in dollars, between ${SALARY_MIN:,} and ${SALARY_MAX:,}, "
+                "or leave the box blank.")
     if score < SCORE_MIN - 1e-9:
         return (f"Our data cover departments with a U.S. News score of {SCORE_MIN:.1f} or higher, "
                 f"so we cannot predict salaries for a score of {score:.1f}.")
