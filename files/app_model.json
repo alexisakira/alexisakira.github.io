@@ -1,22 +1,23 @@
 {
-  "description": "Log annual pay (contractual base rate) of tenure-track economics faculty at U.S. public universities. Inputs: career age = display year - PhD year; years at school = display year - year joined; top5 enters with kinks at 4 and 8 (top5_above4 multiplies max(top5 - 4, 0), top5_above8 multiplies max(top5 - 8, 0)); other_refereed excludes top-5 articles; invited enters as log(1 + count). Clamp career age and years at school to [0, max] and counts to [0, max]; give no prediction for scores outside [score_min, score_max]. Displayed pay = exp(log pay) * inflation.factor.",
+  "description": "Log annual pay (contractual base rate) of tenure-track economics faculty at U.S. public universities. Inputs: career age = display year - PhD year; years at school = display year - year joined; for tenured faculty, top5 enters with kinks at 4 and 8 (top5_tenured_above4 multiplies max(top5 - 4, 0), top5_tenured_above8 multiplies max(top5 - 8, 0)); for untenured faculty, top5 enters linearly (top5_untenured); other_refereed excludes top-5 articles; invited enters as log(1 + count). Clamp career age and years at school to [0, max] and counts to [0, max]; give no prediction for scores outside [score_min, score_max]. Displayed pay = exp(log pay) * inflation.factor.",
   "base_year": 2024,
   "display_year": 2026,
   "coefficients": {
-    "const": 11.656601870906186,
-    "age": 0.0007889268110230357,
-    "age2_per100": -0.014156934579044635,
-    "age3_per10000": 0.019851209436122536,
-    "top5": 0.04268030148992099,
-    "top5_above4": -0.011216280851805486,
-    "top5_above8": -0.025238527914596666,
-    "other_refereed": 0.0027019060615529533,
-    "invited_log1p": 0.05155206274265878,
-    "nber": 0.019090987026243306,
-    "years_at_school": -0.008520050420522254,
-    "tenure": 0.19892890061668056,
-    "full": 0.2641238705910643,
-    "score": 0.11917890629829653
+    "const": 11.649055098637513,
+    "age": 0.0030857104709595684,
+    "age2_per100": -0.02206626322051805,
+    "age3_per10000": 0.027966668541078946,
+    "top5_tenured": 0.04570370789729532,
+    "top5_tenured_above4": -0.016298151522914677,
+    "top5_tenured_above8": -0.023113890109698082,
+    "top5_untenured": 0.01694451700231944,
+    "other_refereed": 0.0027388260673608415,
+    "invited_log1p": 0.05037135709846717,
+    "nber": 0.022367134788299554,
+    "years_at_school": -0.008430139776688945,
+    "tenure": 0.17419557916443235,
+    "full": 0.25842709794279883,
+    "score": 0.12196552188737891
   },
   "inflation": {
     "index": "CPI-U, U.S. city average, all items, not seasonally adjusted (BLS CUUR0000SA0; FRED CPIAUCNS)",
@@ -37,30 +38,30 @@
   },
   "accuracy": {
     "leave_campus_out": {
-      "rmse": 0.17589347561935498,
-      "median_abs_error": 0.10190380836677448,
-      "share_within_10pct": 0.45662535748331745,
-      "share_within_20pct": 0.7435653002859867,
+      "rmse": 0.1755515839272399,
+      "median_abs_error": 0.10102133338684105,
+      "share_within_10pct": 0.47569113441372735,
+      "share_within_20pct": 0.7426120114394662,
       "error_quantiles": {
-        "p10": -0.206796713978769,
-        "p25": -0.10248286932031192,
-        "p50": -0.0076090555320806885,
-        "p75": 0.10102529555669548,
-        "p90": 0.21409048865516453
+        "p10": -0.20420850577229321,
+        "p25": -0.10125233832678582,
+        "p50": -0.008115121804941339,
+        "p75": 0.1005368929248629,
+        "p90": 0.21366647375439707
       },
       "evaluation_rows": 1049
     },
     "person_5fold": {
-      "rmse": 0.16943643192539212,
-      "median_abs_error": 0.09718276350057131,
-      "share_within_10pct": 0.4899904671115348,
-      "share_within_20pct": 0.7616777883698761,
+      "rmse": 0.16892085368493948,
+      "median_abs_error": 0.09367529941426511,
+      "share_within_10pct": 0.5023832221163013,
+      "share_within_20pct": 0.7607244995233555,
       "error_quantiles": {
-        "p10": -0.20278307969139994,
-        "p25": -0.09734307390282915,
-        "p50": -0.008094962018221352,
-        "p75": 0.09691848698010475,
-        "p90": 0.20172881670471413
+        "p10": -0.20118715316762595,
+        "p25": -0.09325202873611005,
+        "p50": -0.008580187734510858,
+        "p75": 0.09619708208071209,
+        "p90": 0.19822386960233201
       },
       "evaluation_rows": 1049
     }
@@ -68,22 +69,22 @@
   "large_raise": {
     "threshold": 0.1,
     "jump_logit": {
-      "const": -0.08031504246850535,
-      "top5_2y": 0.5629638817186049,
-      "other_refereed_2y": 0.19330444738192842,
-      "full": 0.24322417723511228,
-      "career_age": -0.11897271064596031,
-      "years_since_hire": 0.029649055022662723,
-      "pay_gap": -2.197972044789807
+      "const": -0.07261278546899777,
+      "top5_2y": 0.5615036825887165,
+      "other_refereed_2y": 0.19371863179147905,
+      "full": 0.24121659521608113,
+      "career_age": -0.11934220944163752,
+      "years_since_hire": 0.029803633645101527,
+      "pay_gap": -2.192305316929873
     },
     "jump_rate": {
-      "const": 2.880304365122036,
-      "nber": -0.39782803842513487
+      "const": 2.8796792057044582,
+      "nber": -0.39649849442834795
     },
     "routine": {
       "mu": -0.0018617056177756552,
-      "s": 0.009990697723268672,
-      "tie_prob_mean": 0.371629788725491
+      "s": 0.009992062313731216,
+      "tie_prob_mean": 0.3716046938190535
     },
     "input_limits": {
       "career_age_min": 5,
@@ -91,8 +92,8 @@
       "years_since_hire_max": 56,
       "top5_2y_max": 5,
       "other_refereed_2y_max": 17,
-      "pay_gap_min": -0.45301363434820324,
-      "pay_gap_max": 0.4152589683159995
+      "pay_gap_min": -0.45469184276248775,
+      "pay_gap_max": 0.41657477473323257
     },
     "sample": {
       "raises": 2965,
@@ -102,7 +103,7 @@
         2024
       ],
       "share_large": 0.035075885328836424,
-      "mean_probability": 0.033821505571182985
+      "mean_probability": 0.0338345515497239
     }
   },
   "sample": {

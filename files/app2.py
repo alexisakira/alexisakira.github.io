@@ -95,8 +95,8 @@ def pct(log_points):
 # Model details, with every number taken from app_model.json.
 with st.expander("Model details"):
     c, jl = COEF, JUMP["jump_logit"]
-    seg1, seg2 = c["top5"], c["top5"] + c["top5_above4"]
-    seg3 = seg2 + c["top5_above8"]
+    seg1, seg2 = c["top5_tenured"], c["top5_tenured"] + c["top5_tenured_above4"]
+    seg3 = seg2 + c["top5_tenured_above8"]
     st.markdown(f"""
 **Salary.** We regress the log of the annual base salary on the following variables, with a separate
 effect for each year:
@@ -111,8 +111,9 @@ effect for each year:
 
 Holding the other variables fixed, the model gives these differences in salary:
 
-- each of the first four top-5 articles: {pct(seg1):+.1f}%; each of the next four: {pct(seg2):+.1f}%;
-  each article after eight: {pct(seg3):+.1f}%;
+- each top-5 article of an associate or full professor: {pct(seg1):+.1f}% for each of the first four,
+  {pct(seg2):+.1f}% for each of the next four, and {pct(seg3):+.1f}% for each article after eight;
+- each top-5 article of an assistant professor: {pct(c["top5_untenured"]):+.1f}%;
 - each article in another peer-reviewed journal: {pct(c["other_refereed"]):+.2f}%;
 - invited or conference papers enter as log(1 + number): one paper {pct(c["invited_log1p"] * math.log(2)):+.1f}%,
   three papers {pct(c["invited_log1p"] * math.log(4)):+.1f}%;
@@ -307,8 +308,9 @@ def log_salary(age, top5, other, invited, nber, years, tenure, full, score):
     """Predicted log salary in the base year (formula of KT/code/analysis/app_model.py)."""
     c = COEF
     return (c["const"] + c["age"] * age + c["age2_per100"] * age**2 / 100 + c["age3_per10000"] * age**3 / 1e4
-            + c["top5"] * top5 + c["top5_above4"] * max(top5 - 4, 0) + c["top5_above8"] * max(top5 - 8, 0)
-            + c["other_refereed"] * other + c["invited_log1p"] * math.log1p(invited)
+            + tenure * (c["top5_tenured"] * top5 + c["top5_tenured_above4"] * max(top5 - 4, 0)
+                        + c["top5_tenured_above8"] * max(top5 - 8, 0))
+            + (1 - tenure) * c["top5_untenured"] * top5 + c["other_refereed"] * other + c["invited_log1p"] * math.log1p(invited)
             + c["nber"] * nber
             + c["years_at_school"] * years + c["tenure"] * tenure + c["full"] * full + c["score"] * score)
 
