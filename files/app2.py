@@ -79,6 +79,75 @@ for line in [
 
 st.markdown('<p class="list-text">Disclaimer: the model is still experimental</p>', unsafe_allow_html=True)
 
+
+def month_name(month):
+    """'2026-10' -> 'October 2026'."""
+    names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+             "November", "December"]
+    return f"{names[int(month[5:]) - 1]} {month[:4]}"
+
+
+def pct(log_points):
+    """Percent change in salary implied by a change in log salary."""
+    return 100 * (math.exp(log_points) - 1)
+
+
+# Model details, with every number taken from app_model.json.
+with st.expander("Model details"):
+    c, jl = COEF, JUMP["jump_logit"]
+    seg1, seg2 = c["top5"], c["top5"] + c["top5_above4"]
+    seg3 = seg2 + c["top5_above8"]
+    st.markdown(f"""
+**Salary.** We regress the log of the annual base salary on the following variables, with a separate
+effect for each year:
+
+- job rank (assistant, associate, or full professor);
+- career age (years since the PhD), as a cubic polynomial;
+- years at the current school;
+- NBER affiliation;
+- the U.S. News peer assessment score of the department;
+- the numbers of articles in three classes: top-5 journals, other peer-reviewed journals, and invited
+  or conference papers.
+
+Holding the other variables fixed, the model gives these differences in salary:
+
+- each of the first four top-5 articles: {pct(seg1):+.1f}%; each of the next four: {pct(seg2):+.1f}%;
+  each article after eight: {pct(seg3):+.1f}%;
+- each article in another peer-reviewed journal: {pct(c["other_refereed"]):+.2f}%;
+- invited or conference papers enter as log(1 + number): one paper {pct(c["invited_log1p"] * math.log(2)):+.1f}%,
+  three papers {pct(c["invited_log1p"] * math.log(4)):+.1f}%;
+- associate rather than assistant professor: {pct(c["tenure"]):+.1f}%; full rather than associate
+  professor: {pct(c["full"]):+.1f}%;
+- NBER affiliation: {pct(c["nber"]):+.1f}%;
+- each year at the current school: {pct(c["years_at_school"]):+.1f}%;
+- each 0.1 point of the U.S. News score: {pct(0.1 * c["score"]):+.1f}%.
+
+These numbers are correlations in our data, not causal effects.
+
+**Data.** We estimate the model on {SAMPLE["person_years"]:,} annual salaries of {SAMPLE["people"]:,}
+professors at {SAMPLE["campuses"]} schools from {SAMPLE["years"][0]} to {SAMPLE["years"][1]}. We predict
+the salary for {MODEL["base_year"]} and multiply it by {MODEL["inflation"]["factor"]:.3f}, the change in
+the consumer price index (CPI-U) from {month_name(MODEL["inflation"]["from_month"])} to
+{month_name(MODEL["inflation"]["to_month"])}. If an answer lies beyond the range of our data, we use the edge of the
+range instead (for example, a career age of {LIMITS["career_age_max"]} years).
+
+**Accuracy.** We estimated the model again without each school in turn and predicted the salaries of
+that school in {SAMPLE["years"][1] - 1} and {SAMPLE["years"][1]}. For half of the professors, the
+prediction was within {TYPICAL_ERROR}% of the actual salary, and for
+{round(100 * ACCURACY["share_within_20pct"])}% of them, within 20%. The range shown with your prediction
+contains the middle half of these errors.
+
+**Large raises.** We call the raise of a professor in a year a large raise if it exceeds the typical
+raise at the school in that year by more than {JUMP["threshold"]:.2f} log points (about
+{round(100 * JUMP["threshold"])}% of the salary). We model each raise as either a routine raise or a jump.
+The probability of a jump rises with top-5 and other peer-reviewed articles of the last two years, falls
+with career age, and is higher for professors paid less than the salary model predicts. NBER members
+receive larger jumps. We estimate this model on {JUMP["sample"]["raises"]:,} raises of
+{JUMP["sample"]["people"]} tenured professors at public universities outside the University of
+California from {JUMP["sample"]["years"][0]} to {JUMP["sample"]["years"][1]}, and we use the average
+of the year effects of these years. In these data, {round(100 * JUMP["sample"]["share_large"])}% of raises are large.
+""")
+
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
