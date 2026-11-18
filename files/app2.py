@@ -238,7 +238,8 @@ def log_salary(age, top5, other, invited, nber, years, tenure, full, score):
     """Predicted log salary in the base year (formula of KT/code/analysis/app_model.py)."""
     c = COEF
     return (c["const"] + c["age"] * age + c["age2_per100"] * age**2 / 100 + c["age3_per10000"] * age**3 / 1e4
-            + c["top5"] * top5 + c["other_refereed"] * other + c["invited_log1p"] * math.log1p(invited)
+            + c["top5"] * top5 + c["top5_above4"] * max(top5 - 4, 0) + c["top5_above8"] * max(top5 - 8, 0)
+            + c["other_refereed"] * other + c["invited_log1p"] * math.log1p(invited)
             + c["nber"] * nber
             + c["years_at_school"] * years + c["tenure"] * tenure + c["full"] * full + c["score"] * score)
 
