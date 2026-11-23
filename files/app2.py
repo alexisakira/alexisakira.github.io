@@ -323,7 +323,7 @@ def large_raise_prob(top5_2y, other_2y, full, career_age, years_since_hire, pay_
          + c["career_age"] * career_age + c["years_since_hire"] * years_since_hire + c["pay_gap"] * pay_gap)
     pi = 1 / (1 + math.exp(-z))
     lam = math.exp(JUMP["jump_rate"]["const"] + JUMP["jump_rate"]["nber"] * nber)
-    routine_tail = 0.5 * math.exp(-(t - rt["mu"]) / rt["s"])
+    routine_tail = rt["bp"] / (rt["bp"] + rt["bm"]) * math.exp(-t / rt["bp"])   # asymmetric Laplace, mode 0
     return (1 - pi) * (1 - rt["tie_prob_mean"]) * routine_tail + pi * math.exp(-lam * t)
 
 
